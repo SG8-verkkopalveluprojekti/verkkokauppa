@@ -1,11 +1,13 @@
 
 import './App.css';
-import axios from 'axois'
+import { Cart } from './components/Cart';
+
 
 function App() {
   return (
     <div className="App">
       tähän avataan verkkokauppa!
+      <Cart />
     </div>
   );
 }
