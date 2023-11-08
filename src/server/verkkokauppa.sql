@@ -42,7 +42,7 @@ CREATE TABLE order_line(
     FOREIGN KEY (product_id) REFERENCES product(id)
 );
 
-
+/*testing*/
 INSERT INTO product_category VALUES ('Computers', 'Laptop and desktop computers'),
 ('Sports', 'Sport equipment'),('Bikes', 'City and MTB bikes'),('Music', 'Guitars, drums and other instruments'), ('Phones', 'Mobile devices for all uses');
 
