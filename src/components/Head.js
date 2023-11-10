@@ -8,7 +8,7 @@ export const Head = () => {
             <div className='container d_flex'>
                 <div className='left row'>
                     <i className='fa fa-phone'></i>
-                    <label>+358 044 000 000</label>
+                    <label>+358 44 000 000</label>
                     <i className='fa fa-envelope'></i>
                     <label>example@example.com</label>
                 </div>
