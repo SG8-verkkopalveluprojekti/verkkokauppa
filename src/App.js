@@ -9,7 +9,7 @@ function App() {
   return (
     <div className="App">
       
-      <Navi />
+      
       <Header />
       tähän avataan verkkokauppa!
       <Cart />
