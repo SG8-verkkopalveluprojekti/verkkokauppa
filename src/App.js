@@ -10,7 +10,6 @@ function App() {
     <div className="App">
       <Navi />
       <Header />
-      tähän avataan verkkokauppa!
       <Cart />
       <Footer />
     </div>
