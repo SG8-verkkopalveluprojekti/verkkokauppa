@@ -10,7 +10,6 @@ function App() {
       
       
       <Header />
-      tähän avataan verkkokauppa!
       <Cart />
       <Footer />
     </div>
