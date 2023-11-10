@@ -4,9 +4,9 @@ import { Image } from 'react-bootstrap';
 
 export const Carouselli = () => {
   return (
-    <Carousel>
+    <Carousel className='text-center'>
       <Carousel.Item>
-        <Image src="https://www.io-tech.fi/wp-content/uploads/2022/10/rtx4090-00.jpg" alt='First slide' />
+        <Image src="https://www.io-tech.fi/wp-content/uploads/2022/10/rtx4090-00.jpg" alt='First slide' style={{ width: '30rem' }} />
       
         <Carousel.Caption>
           <h3>First slide label</h3>
@@ -14,7 +14,7 @@ export const Carouselli = () => {
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
-      <Image src='https://www.eckeroline.fi/media/catalog/product/cache/c6a153240b9d57769ada9a8b348b002a/k/a/karhu_export_24pack.png' alt='Second slide' />
+      <Image src='https://www.eckeroline.fi/media/catalog/product/cache/c6a153240b9d57769ada9a8b348b002a/k/a/karhu_export_24pack.png' alt='Second slide' style={{ width: '30rem' }}/>
         
         <Carousel.Caption>
           <h3>Second slide label</h3>
@@ -22,7 +22,7 @@ export const Carouselli = () => {
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
-      <Image src='https://library.avecmedia.fi/wp-content/uploads/2021/12/13593_2000x.jpg' alt='Third slide' />
+      <Image src='https://library.avecmedia.fi/wp-content/uploads/2021/12/13593_2000x.jpg' alt='Third slide' style={{ width: '30rem' }}/>
         <Carousel.Caption>
           <h3>Third slide label</h3>
           <p>

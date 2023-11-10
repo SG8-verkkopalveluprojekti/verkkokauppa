@@ -3,7 +3,9 @@ import { Cart } from "./components/Cart";
 import { Header } from "./components/Header";
 import { Footer } from "./components/Footer";
 import { Carouselli } from "./components/Carouselli";
+import Kortti from "./components/Kortti";
 import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 
 function App() {
@@ -14,6 +16,7 @@ function App() {
       <Header />
       <Cart />
       <Carouselli />
+      <Kortti />
       <Footer />
     </div>
   );
