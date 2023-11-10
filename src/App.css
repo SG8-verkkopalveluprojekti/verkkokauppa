@@ -37,6 +37,7 @@ body {
     display: flex;
 }
 
+
 a {
     text-decoration: none;
     color: #000;
@@ -53,5 +54,3 @@ li {
 .capitalize {
     text-transform: capitalize;
 }
-
-
