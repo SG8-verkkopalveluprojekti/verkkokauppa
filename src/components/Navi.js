@@ -4,11 +4,12 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form'
+import Form from 'react-bootstrap/Form';
+import './navi.css';
 
 export const Navi = () => {
     return (
-      <Navbar expand="lg" className="bg-body-tertiary">
+      <Navbar expand="lg" className="navibar">
         <Container>
           <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -29,7 +30,7 @@ export const Navi = () => {
               </NavDropdown>
             </Nav>
           </Navbar.Collapse>
-          <Form className="d-flex">
+          <Form className="d-flex " >
             <Form.Control type="text" placeholder="Sähköposti" style={{marginRight: "5px"}} />
           </Form>
           <Form className="d-flex">

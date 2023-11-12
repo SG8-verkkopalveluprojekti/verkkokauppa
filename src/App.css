@@ -7,8 +7,9 @@
 }
 
 body {
-    background-color: #ffffff ;
+    background-color: #fa0101 ;
     font-family: 'Poppins', sans-serif;
+ 
 }
 
 .background {
@@ -24,7 +25,6 @@ body {
 .d_flex {
     display: flex;
     justify-content: space-between;
-    
 }
 
 .c_flex{
@@ -53,4 +53,8 @@ li {
 
 .capitalize {
     text-transform: capitalize;
+}
+
+.App {
+    background-color: rgb(149, 141, 141);
 }

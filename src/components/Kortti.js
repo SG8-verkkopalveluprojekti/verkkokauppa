@@ -5,7 +5,7 @@ import React from 'react';
 function Kortti() {
   return (
     <div className="d-flex justify-content-around">
-      <Card style={{ width: '18rem' }}>
+      <Card style={{ width: '18rem'  }}>
         <Card.Img variant="top" src="https://www.io-tech.fi/wp-content/uploads/2022/10/rtx4090-00.jpg"  />
         <Card.Body>
           <Card.Title>Näytönohjaimet</Card.Title>
