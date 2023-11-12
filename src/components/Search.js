@@ -1,11 +1,12 @@
 
 import React from 'react'
+import "./Search.css";
 
 
 export const Search = () => {
   return (
     <>
-    <section className='search'>
+    <section className='search' >
       <div className='container c_flex'>
         <div className='search-box f_flex'>
           <i className='fa fa-search'></i>

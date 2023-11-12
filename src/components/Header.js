@@ -8,7 +8,6 @@ export const Header = () => {
   return (
     <>
       <Head />
-      <Search />
       <Navi />
     </>
   )

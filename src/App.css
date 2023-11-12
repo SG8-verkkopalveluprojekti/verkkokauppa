@@ -7,7 +7,7 @@
 }
 
 body {
-    background-color: #fa0101 ;
+    background-color: #f60000 ;
     font-family: 'Poppins', sans-serif;
  
 }
@@ -40,7 +40,7 @@ body {
 
 a {
     text-decoration: none;
-    color: #000;
+    color: #ffffff;
 }
 
 li {
@@ -55,6 +55,15 @@ li {
     text-transform: capitalize;
 }
 
-.App {
-    background-color: rgb(149, 141, 141);
-}
+body, html, #root {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #dbdada; /* or any color you prefer */
+  }
+  
+  .App {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }

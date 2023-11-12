@@ -4,6 +4,7 @@ import { Header } from "./components/Header";
 import { Footer } from "./components/Footer";
 import { Carouselli } from "./components/Carouselli";
 import Kortti from "./components/Kortti";
+import { Search } from "./components/Search";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
@@ -13,6 +14,7 @@ function App() {
     <div className="App">
       
       <Header />
+      <Search />
       <Cart />
       <Carouselli />
       <Kortti />

@@ -1,7 +1,11 @@
 .navibar {
-    background-color: rgb(45, 45, 56);
+    background-color:grey;
 }
 
-.h1 {
-    font-size: 30px;
+.text {
+    color:white;
+}
+
+.basic-navbar-nav {
+    color: white;
 }

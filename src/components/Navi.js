@@ -11,17 +11,17 @@ export const Navi = () => {
     return (
       <Navbar expand="lg" className="navibar">
         <Container>
-          <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
+          <Navbar.Brand href="#home" className="text-light">React-Bootstrap</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
-              <Nav.Link href="#home">Home</Nav.Link>
-              <Nav.Link href="#link">Link</Nav.Link>
-              <NavDropdown title="Dropdown" id="basic-nav-dropdown">
+              <Nav.Link href="#home"className="text-light">Home</Nav.Link>
+              <Nav.Link href="#link"className="text-light">Link</Nav.Link>
+              <NavDropdown title="Dropdown" className="text-light" id="basic-nav-dropdown">
                 <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
                 <NavDropdown.Item href="#action/3.2">
                   Another action
-                </NavDropdown.Item>
+                </NavDropdown.Item> 
                 <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
                 <NavDropdown.Divider />
                 <NavDropdown.Item href="#action/3.4">
@@ -31,11 +31,11 @@ export const Navi = () => {
             </Nav>
           </Navbar.Collapse>
           <Form className="d-flex " >
-            <Form.Control type="text" placeholder="Sähköposti" style={{marginRight: "5px"}} />
+            <Form.Control type="text" placeholder="Sähköposti" style={{marginRight: "10px"}} />
           </Form>
           <Form className="d-flex">
-            <Form.Control type="password" placeholder="Salasana" style={{marginRight: "5px"}}/>
-            <Button variant="outline-success">Kirjaudu</Button>
+            <Form.Control type="password" placeholder="Salasana" style={{marginRight: "10px"}}/>
+            <Button variant="secondary" style={{color:'white',}}>Kirjaudu</Button>
           </Form>
         </Container>
       </Navbar>
