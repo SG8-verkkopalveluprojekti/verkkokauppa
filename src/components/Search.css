@@ -1,6 +1,6 @@
 .search {
     background-color: #f3f3f3;
-    padding: 10px;
+    padding: 5px;
     display: flex;
     justify-content: center; 
     align-items: center; 
@@ -12,6 +12,7 @@
     background-color: #fff;
     border-radius: 5px;
     padding: 5px;
+  
   }
   
   .search-box input {
@@ -37,3 +38,6 @@
   span {
     color: #000000;
   }
+
+ 
+  
