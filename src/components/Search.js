@@ -13,7 +13,7 @@ export const Search = () => {
           <input type='text' placeholder='Etsi tuotteita' ></input>
           <span>Kaikki tuotteet</span>
         </div>
-        <div className='icon f_flex width'>
+        <div className='cart-icon f_flex width'>
           <div className='cart'>
           {/* <Link to="/cart"> */}
               <i className='fa fa-shopping-bag icon-circle'></i>
