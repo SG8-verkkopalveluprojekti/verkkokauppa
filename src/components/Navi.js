@@ -11,13 +11,13 @@ export const Navi = () => {
     return (
       <Navbar expand="lg" className="navibar">
         <Container>
-          <Navbar.Brand href="#home" className="text-light">React-Bootstrap</Navbar.Brand>
+          <Navbar.Brand href="#home" className="text-light">Nettikaubba</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
               <Nav.Link href="#home"className="text-light">Home</Nav.Link>
-              <Nav.Link href="#link"className="text-light">Link</Nav.Link>
-              <NavDropdown title="Dropdown" className="text-light" id="basic-nav-dropdown">
+              <Nav.Link href="#link"className="text-light">Apua?</Nav.Link>
+              <NavDropdown title="Näytä lisää" className="text-light" id="basic-nav-dropdown">
                 <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
                 <NavDropdown.Item href="#action/3.2">
                   Another action
