@@ -3,7 +3,8 @@ footer .container{
 }
 
 footer {
-    position: fixed;
+    position: bottom absolute;
+    margin-top: 20px;
     bottom: 0;
     padding-top: 10px;
     width: 100%;
