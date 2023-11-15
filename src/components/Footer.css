@@ -1,9 +1,5 @@
-footer .container{
-    margin-top: 0;
-}
-
-footer {
-    position:absolute;
+.footer {
+    position: fixed; /* Muutettu absolute -> fixed */
     bottom: 0;
     width: 100%;
     height: 60px;
@@ -14,7 +10,7 @@ footer {
     text-align: center;
 }
 
-.icon{
+.icon {
     height: 50px;
     width: 60px;
     padding: 10px;
@@ -28,26 +24,24 @@ footer {
     animation-iteration-count: infinite;
     -webkit-animation-iteration-count: infinite;
     color: white;
-  
-      
 }
 
 @keyframes bounce {
-	0%, 100%, 20%, 50%, 80% {
-		-webkit-transform: translateY(0);
-		-ms-transform:     translateY(0);
-		transform:         translateY(0)
-	}
-	40% {
-		-webkit-transform: translateY(-30px);
-		-ms-transform:     translateY(-30px);
-		transform:         translateY(-30px)
-	}
-	60% {
-		-webkit-transform: translateY(-15px);
-		-ms-transform:     translateY(-15px);
-		transform:         translateY(-15px)
-	}
+    0%, 100%, 20%, 50%, 80% {
+        -webkit-transform: translateY(0);
+        -ms-transform: translateY(0);
+        transform: translateY(0)
+    }
+    40% {
+        -webkit-transform: translateY(-30px);
+        -ms-transform: translateY(-30px);
+        transform: translateY(-30px)
+    }
+    60% {
+        -webkit-transform: translateY(-15px);
+        -ms-transform: translateY(-15px);
+        transform: translateY(-15px)
+    }
 }
 
 .icon:hover {
