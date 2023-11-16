@@ -10,16 +10,9 @@ export const Search = () => {
           <div className="search-box f_flex">
             <i className="fa fa-search"></i>
             <input type="text" placeholder="Etsi tuotteita"></input>
-            <span>Kaikki tuotteet</span>
+            <span style={{width:'auto'}}>Kaikki tuotteet</span>
           </div>
-          <div className="signin-icon f_flex width">
-            <Link to="/signin">
-              <i class="fa fa-user-secret">  Kirjaudu &nbsp; </i>
-            </Link>
-            <Link to="/register">
-              <i class="fa fa-user-secret-hidden">  /&nbsp; Luo uusi tili</i>
-            </Link>
-          </div>
+        
           <div className="cart-icon f_flex width">
             <div className="cart">
               <Link to="/cart">
@@ -33,3 +26,11 @@ export const Search = () => {
     </>
   );
 };
+/**
+ *      <Link to="/signin">
+              <i class="fa fa-user-secret">  Kirjaudu &nbsp; </i>
+            </Link>
+            <Link to="/register">
+              <i class="fa fa-user-secret-hidden">  /&nbsp; Luo uusi tili</i>
+            </Link>  
+ */

@@ -4,6 +4,7 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import './navi.css';
+import { Link } from "react-router-dom";
 
 export const Navi = () => {
     return (
@@ -15,16 +16,15 @@ export const Navi = () => {
             <Nav className="me-auto">
               <Nav.Link href="/"className="text-light">Home</Nav.Link>
               <Nav.Link href="/help"className="text-light">Apua?</Nav.Link>
-              <NavDropdown title="Näytä lisää" className="text-light" id="basic-nav-dropdown">
-                <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.2">
-                  Another action
-                </NavDropdown.Item> 
-                <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-                <NavDropdown.Divider />
-                <NavDropdown.Item href="#action/3.4">
-                  Separated link
-                </NavDropdown.Item>
+              <NavDropdown title="Kirjaudu"  className="text-light" id="basic-nav-dropdown">
+              <Link to="/signin">
+              <i class="fa fa-user-secret">  Kirjaudu &nbsp; </i>
+            </Link>
+            <Link to="/register">
+              <i class="fa fa-user-secret-hidden">  &nbsp; Luo uusi tili</i>
+            </Link>
+                
+              
               </NavDropdown>
             </Nav>
           </Navbar.Collapse>
