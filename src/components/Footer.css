@@ -1,5 +1,5 @@
 .footer {
-    position: fixed; /* Muutettu absolute -> fixed */
+    position: bottom absolute;
     bottom: 0;
     width: 100%;
     height: 60px;
