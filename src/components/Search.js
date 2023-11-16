@@ -1,5 +1,6 @@
 
 import React from 'react'
+import { Link } from 'react-router-dom';
 import "./Search.css";
 
 
@@ -15,10 +16,10 @@ export const Search = () => {
         </div>
         <div className='cart-icon f_flex width'>
           <div className='cart'>
-          {/* <Link to="/cart"> */}
+          <Link to="/cart"> 
               <i className='fa fa-shopping-bag icon-circle'></i>
               <span>0</span>
-            {/*  </Link> */}
+            </Link>
           </div>
         </div>
       </div>
