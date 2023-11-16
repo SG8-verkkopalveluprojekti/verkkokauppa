@@ -1,7 +1,164 @@
 import React from 'react'
+import axios from "axios"
+import { useState } from 'react';
+
+
+import { Container, Form, Button, Col, Row } from 'react-bootstrap';
+
+
 
 export const Register = () => {
-  return (
-    <div>Register</div>
-  )
-}
+      
+  const [fname, setFname] = useState('');
+  const [lname, setLname] = useState('');
+  const [uname, setUname] = useState('');
+  const [pw, setPw] = useState('');
+  
+
+  function registerPost(){
+    if (!fname || !lname || !uname || !pw) {
+      alert("Täytä kaikki pakolliset kentät ennen rekisteröitymistä.");
+      return;
+    }
+    
+    axios.postForm('http://localhost:3001/register',{fname,lname,uname,pw})
+      .then(resp => alert("Kiitos rekisteröitymisestä!"))
+      .catch(err => alert("Jotain meni pieleen"))
+  }
+
+          return (
+            <>
+            <Container style={{border:"3px solid grey", marginTop:"100px", borderRadius:"5px", background:"#d3d3d3" }}>
+              <Row className="justify-content-md-center">
+                <Col md={12}>
+                  <Form style={{margin:"25px"}}>
+                  <Row>
+                      <Col>
+                        <Form.Group controlId="email">
+                          <Form.Label>Sähköposti</Form.Label>
+                          <Form.Control
+                            type="email"
+                            placeholder="Syötä sähköpostiosoite"
+                            //value={email}
+                            //onChange={e => setEmail(e.target.value)}
+                            //required
+                          />
+                        </Form.Group>
+                      </Col>
+                      <Col>
+                        <Form.Group controlId="uname">
+                          <Form.Label>Käyttäjänimi</Form.Label>
+                          <Form.Control
+                            type="text"
+                            placeholder="Syötä käyttäjänimesi"
+                            name="uname"
+                            value={uname}
+                            onChange={e => setUname(e.target.value)}
+                            required
+                          />
+                        </Form.Group>
+                      </Col>
+                      <Col>
+                        <Form.Group controlId="pw">
+                          <Form.Label>Salasana</Form.Label>
+                          <Form.Control
+                            type="password"
+                            placeholder="Syötä salasana"
+                            name="pw"
+                            value={pw}
+                            onChange={e => setPw(e.target.value)}
+                            required
+                          />
+                        </Form.Group><br></br>
+                      </Col><hr></hr>
+                    </Row>
+                    <Row>
+                      <Col>
+                        <Form.Group controlId="fname">
+                          <Form.Label>Etunimi</Form.Label>
+                          <Form.Control
+                            type="text"
+                            placeholder="Syötä etunimesi"
+                            name="fname"
+                            value={fname}
+                            onChange={e => setFname(e.target.value)}
+                            required
+                          />
+                        </Form.Group>
+                      </Col>
+                      <Col>
+                        <Form.Group controlId="lname">
+                          <Form.Label>Sukunimi</Form.Label>
+                          <Form.Control
+                            type="text"
+                            placeholder="Syötä sukunimesi"
+                            name="lname"
+                            value={lname}
+                            onChange={e => setLname(e.target.value)}
+                            required
+                          />
+                        </Form.Group>
+                      </Col>
+                      <Col>
+                        <Form.Group controlId="pnumber">
+                          <Form.Label>Puhelinnumero</Form.Label>
+                          <Form.Control
+                            type="number"
+                            placeholder="Syötä puhelinnumerosi" 
+
+                          />
+                        </Form.Group><br></br>
+                      </Col>
+                      </Row>
+                      <Row>
+                      <Col>
+                        <Form.Group controlId="katuosoite">
+                          <Form.Label>Katuosoite</Form.Label>
+                          <Form.Control
+                            type="text"
+                            placeholder="Katuosoite"
+                            //value={osoite}
+                            //onChange={e => setOsoite(e.target.value)}
+                          />
+                        </Form.Group>
+                      </Col>
+                      <Col>
+                        <Form.Group controlId="kunta">
+                          <Form.Label>Kunta</Form.Label>
+                          <Form.Control
+                            type="text"
+                            placeholder="Kunta"
+                          />
+                        </Form.Group>
+                      </Col>
+                      <Col>
+                        <Form.Group controlId="postitmn">
+                          <Form.Label>Postinumero</Form.Label>
+                          <Form.Control
+                            type="text"
+                            placeholder="Postinumerosi"
+                          
+                          />
+                        </Form.Group><br></br>
+                      </Col>
+                    </Row>
+                    <Form.Check 
+                      type="switch"
+                      id="custom-switch"
+                      required
+                      label={
+                        <span> Olen lukenut ja hyväksyn &nbsp;<a href="#" target="_blank" rel="noopener noreferrer">tietosuojaselosteen</a></span>
+                      }
+                      //onChange={() => setCheck(!check)}
+                    />
+                    <Button onClick={registerPost} variant="success" type="submit" style={{ marginTop: '10px', marginBottom:"10px"}}>
+                      Rekisteröidy
+                    </Button>
+                    
+                  </Form>
+                </Col>
+              </Row>
+            </Container>
+            </>
+          );
+        };
