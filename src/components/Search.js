@@ -10,7 +10,7 @@ export const Search = () => {
           <div className="search-box f_flex">
             <i className="fa fa-search"></i>
             <input type="text" placeholder="Etsi tuotteita"></input>
-            <span style={{width:'auto'}}>Kaikki tuotteet</span>
+            <span style={{width:'auto', padding:'0.6px'}}>Kaikki tuotteet</span>
           </div>
         
           <div className="cart-icon f_flex width">
