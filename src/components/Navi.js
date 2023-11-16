@@ -3,9 +3,6 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
-import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form';
-import { Link } from 'react-router-dom';
 import './navi.css';
 
 export const Navi = () => {
@@ -31,7 +28,7 @@ export const Navi = () => {
               </NavDropdown>
             </Nav>
           </Navbar.Collapse>
-          <Form className="d-flex " >
+           {/* <Form className="d-flex " >
             <Form.Control type="text" placeholder="Sähköposti" style={{marginRight: "10px"}} />
           </Form>
           <Form className="d-flex">
@@ -39,7 +36,7 @@ export const Navi = () => {
             <Link to='/signin'>
             <Button variant="secondary" style={{color:'white',}}>Kirjaudu</Button>
             </Link>
-          </Form>
+          </Form> */}
         </Container>
       </Navbar>
     );
