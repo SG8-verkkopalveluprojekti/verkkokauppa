@@ -5,6 +5,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
+import { Link } from 'react-router-dom';
 import './navi.css';
 
 export const Navi = () => {
@@ -35,7 +36,9 @@ export const Navi = () => {
           </Form>
           <Form className="d-flex">
             <Form.Control type="password" placeholder="Salasana" style={{marginRight: "10px"}}/>
+            <Link to='/login'>
             <Button variant="secondary" style={{color:'white',}}>Kirjaudu</Button>
+            </Link>
           </Form>
         </Container>
       </Navbar>
