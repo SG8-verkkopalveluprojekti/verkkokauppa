@@ -14,7 +14,10 @@ export const Search = () => {
           </div>
           <div className="signin-icon f_flex width">
             <Link to="/signin">
-              <i class="fa fa-user-secret"> Kirjaudu / Luo uusi tili</i>
+              <i class="fa fa-user-secret">  Kirjaudu &nbsp; </i>
+            </Link>
+            <Link to="/register">
+              <i class="fa fa-user-secret-hidden">  /&nbsp; Luo uusi tili</i>
             </Link>
           </div>
           <div className="cart-icon f_flex width">

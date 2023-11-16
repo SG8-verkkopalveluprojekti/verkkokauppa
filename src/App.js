@@ -7,6 +7,7 @@ import { Route, Routes} from 'react-router-dom';
 import { Home } from "./pages/Home";
 import { Help } from "./pages/Help";
 import { SignIn } from "./pages/SignIn";
+import { Register } from "./pages/Register";
 import { Cart } from "./pages/Cart";
 
 
@@ -25,6 +26,7 @@ function App() {
       
       <Route path="/" element={<Home />} />
       <Route path="/help" element={<Help />} />
+      <Route path="/register" element={<Register />} />
       <Route path="/signin" element={<SignIn />} />
       <Route path="/cart" element={<Cart />} />
       
