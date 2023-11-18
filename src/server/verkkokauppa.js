@@ -222,7 +222,7 @@ app.post('/login', upload.none(), async (req, res) => {
         if(rows.length > 0){
             const isAuth = await bcrypt.compare(pw, rows[0].pw);
             if(isAuth){
-                const token = jwt.sign({username: uname}, process.env.JWT_KEY);
+                const token = jwt.sign({username: uname}, 'mysecretkey');
                 res.status(200).json({jwtToken: token});
             }else{
                 res.status(401).end('User not authorized');
