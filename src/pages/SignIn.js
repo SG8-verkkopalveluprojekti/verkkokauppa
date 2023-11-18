@@ -20,7 +20,7 @@ export const SignIn = () => {
             <Form.Control type="password" placeholder="kännissä" />
           </Form.Group>
 
-          <Button style={{marginTop: '10px', backgroundColor:'black'}} variant="primary" type="submit">
+          <Button style={{marginTop: '10px', backgroundColor:'green'}} variant="primary" type="submit">
            Kirjaudu
           </Button>
         </Form>
