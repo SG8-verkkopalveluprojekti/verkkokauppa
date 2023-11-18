@@ -12,23 +12,25 @@ export const Register = () => {
       
   const [fname, setFname] = useState('');
   const [lname, setLname] = useState('');
-  const [uname, setUname] = useState('');
+  const [username, setUsername] = useState('');
   const [pw, setPw] = useState('');
   const [cpw, setCpw] = useState('');
   
 
   function registerPost(){
-    if (!fname || !lname || !uname || !pw) {
+    if (!fname || !lname || !username || !pw) {
       alert("Täytä kaikki pakolliset kentät ennen rekisteröitymistä.");
       return;
-    }else if(cpw !== pw){
+    }
+    if(cpw !== pw){
       alert("Salasanat eivät täsmää!")
       return;
-    }else{
-    axios.postForm('http://localhost:3001/register',{fname,lname,uname,pw})
+    }
+
+    axios.postForm('http://localhost:3001/register',{fname,lname,username,pw})
       .then(resp => alert("Kiitos rekisteröitymisestä!"))
       .catch(err => alert("Jotain meni pieleen"))
-  }}
+  }
 
           return (
             <>
@@ -56,8 +58,8 @@ export const Register = () => {
                             type="text"
                             placeholder="Syötä käyttäjänimesi"
                             name="uname"
-                            value={uname}
-                            onChange={e => setUname(e.target.value)}
+                            value={username}
+                            onChange={e => setUsername(e.target.value)}
                             required
                           />
                         </Form.Group>
