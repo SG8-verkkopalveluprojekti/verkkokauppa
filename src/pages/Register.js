@@ -3,6 +3,7 @@ import axios from "axios"
 import { useState } from 'react';
 
 
+
 import { Container, Form, Button, Col, Row } from 'react-bootstrap';
 
 
@@ -13,18 +14,21 @@ export const Register = () => {
   const [lname, setLname] = useState('');
   const [uname, setUname] = useState('');
   const [pw, setPw] = useState('');
+  const [cpw, setCpw] = useState('');
   
 
   function registerPost(){
     if (!fname || !lname || !uname || !pw) {
       alert("Täytä kaikki pakolliset kentät ennen rekisteröitymistä.");
       return;
-    }
-    
+    }else if(cpw !== pw){
+      alert("Salasanat eivät täsmää!")
+      return;
+    }else{
     axios.postForm('http://localhost:3001/register',{fname,lname,uname,pw})
       .then(resp => alert("Kiitos rekisteröitymisestä!"))
       .catch(err => alert("Jotain meni pieleen"))
-  }
+  }}
 
           return (
             <>
@@ -69,8 +73,21 @@ export const Register = () => {
                             onChange={e => setPw(e.target.value)}
                             required
                           />
+                        </Form.Group>
+                      </Col>
+                      <Col>
+                        <Form.Group controlId="cpw">
+                          <Form.Label>Vahvista salasana</Form.Label>
+                          <Form.Control
+                            type="password"
+                            placeholder="Vahvista salasana"
+                            name="cpw"
+                            value={cpw}
+                            onChange={e => setCpw(e.target.value)}
+                            required
+                          />
                         </Form.Group><br></br>
-                      </Col><hr></hr>
+                        </Col><hr></hr>
                     </Row>
                     <Row>
                       <Col>
@@ -146,8 +163,9 @@ export const Register = () => {
                       type="switch"
                       id="custom-switch"
                       required
+                      //tähän pitää saada linkki niin ettei päivitä sivua uudelleen kun menee tietosuojaselosteeseen
                       label={
-                        <span> Olen lukenut ja hyväksyn &nbsp;<a href="#" target="_blank" rel="noopener noreferrer">tietosuojaselosteen</a></span>
+                        <span> Olen lukenut ja hyväksyn &nbsp; <a href="/Help" target="_blank" rel="noopener noreferrer">tietosuojaselosteen</a></span>
                       }
                       //onChange={() => setCheck(!check)}
                     />
