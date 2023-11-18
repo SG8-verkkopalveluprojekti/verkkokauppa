@@ -18,7 +18,7 @@ export const Register = () => {
   
 
   function registerPost(){
-    if (!fname || !lname || !uname || !pw || !cpw) {
+    if (!fname || !lname || !uname || !pw) {
       alert("Täytä kaikki pakolliset kentät ennen rekisteröitymistä.");
       return;
     }else if(cpw !== pw){
