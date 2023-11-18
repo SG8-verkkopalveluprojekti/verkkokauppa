@@ -23,6 +23,9 @@ export const SignIn = () => {
           <Button style={{marginTop: '10px', backgroundColor:'green'}} variant="primary" type="submit">
            Kirjaudu
           </Button>
+          <Button href="/register" style={{marginTop: '10px', marginLeft:'30px', backgroundColor:'green'}} variant="primary" type="submit">
+           rekisteröidy
+          </Button>
         </Form>
       </Col>
     </Row>
