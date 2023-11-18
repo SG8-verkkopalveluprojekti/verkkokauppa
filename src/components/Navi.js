@@ -17,7 +17,7 @@ export const Navi = () => {
               <Nav.Link href="/"className="text-light">Home</Nav.Link>
               <Nav.Link href="/help"className="text-light">Apua?</Nav.Link>
             </Nav>
-            <Nav className="ms-auto"> {/* Use ms-auto class to push items to the right */}
+            <Nav className="ms-auto">
               <Nav.Link href="/signin" className="text-light">Kirjaudu</Nav.Link>
               <Nav.Link href="/register" className="text-light">Rekisteröidy</Nav.Link>
             </Nav>
