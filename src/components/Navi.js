@@ -16,16 +16,12 @@ export const Navi = () => {
             <Nav className="me-auto">
               <Nav.Link href="/"className="text-light">Home</Nav.Link>
               <Nav.Link href="/help"className="text-light">Apua?</Nav.Link>
-              <NavDropdown title="Kirjaudu"  className="text-light" id="basic-nav-dropdown">
-              <Link to="/signin">
-              <i class="fa fa-user-secret">  Kirjaudu &nbsp; </i>
-            </Link>
-            <Link to="/register">
-              <i class="fa fa-user-secret-hidden">  &nbsp; Luo uusi tili</i>
-            </Link>
+              <Nav.Link href="/signin" className="text-light">Kirjaudu</Nav.Link>
+              <Nav.Link href="/register" className="text-light">Rekisteröidy</Nav.Link>
+            
                 
               
-              </NavDropdown>
+              
             </Nav>
           </Navbar.Collapse>
            {/* <Form className="d-flex " >
