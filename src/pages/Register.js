@@ -9,16 +9,17 @@ import { Container, Form, Button, Col, Row } from 'react-bootstrap';
 
 
 export const Register = () => {
-      
+
   const [fname, setFname] = useState('');
   const [lname, setLname] = useState('');
   const [username, setUsername] = useState('');
   const [pw, setPw] = useState('');
   const [cpw, setCpw] = useState('');
+  const [email, setEmail] = useState("");
   
 
   function registerPost(){
-    if (!fname || !lname || !username || !pw) {
+    if (!email || !fname || !lname || !username || !pw) {
       alert("Täytä kaikki pakolliset kentät ennen rekisteröitymistä.");
       return;
     }
@@ -41,19 +42,19 @@ export const Register = () => {
                   <Row>
                       <Col>
                         <Form.Group controlId="email">
-                          <Form.Label>Sähköposti</Form.Label>
+                          <Form.Label>Sähköposti</Form.Label><Form.Label style={{ color: 'red' }}> *</Form.Label>
                           <Form.Control
                             type="email"
                             placeholder="Syötä sähköpostiosoite"
-                            //value={email}
-                            //onChange={e => setEmail(e.target.value)}
-                            //required
+                            value={email}
+                            onChange={e => setEmail(e.target.value)}
+                            required
                           />
                         </Form.Group>
                       </Col>
                       <Col>
                         <Form.Group controlId="uname">
-                          <Form.Label>Käyttäjänimi</Form.Label>
+                          <Form.Label>Käyttäjänimi</Form.Label><Form.Label style={{ color: 'red' }}> *</Form.Label>
                           <Form.Control
                             type="text"
                             placeholder="Syötä käyttäjänimesi"
@@ -66,7 +67,7 @@ export const Register = () => {
                       </Col>
                       <Col>
                         <Form.Group controlId="pw">
-                          <Form.Label>Salasana</Form.Label>
+                          <Form.Label>Salasana</Form.Label><Form.Label style={{ color: 'red' }}> *</Form.Label>
                           <Form.Control
                             type="password"
                             placeholder="Syötä salasana"
@@ -79,7 +80,7 @@ export const Register = () => {
                       </Col>
                       <Col>
                         <Form.Group controlId="cpw">
-                          <Form.Label>Vahvista salasana</Form.Label>
+                          <Form.Label>Vahvista salasana</Form.Label><Form.Label style={{ color: 'red' }}> *</Form.Label>
                           <Form.Control
                             type="password"
                             placeholder="Vahvista salasana"
@@ -94,7 +95,7 @@ export const Register = () => {
                     <Row>
                       <Col>
                         <Form.Group controlId="fname">
-                          <Form.Label>Etunimi</Form.Label>
+                          <Form.Label>Etunimi</Form.Label><Form.Label style={{ color: 'red' }}> *</Form.Label>
                           <Form.Control
                             type="text"
                             placeholder="Syötä etunimesi"
@@ -107,7 +108,7 @@ export const Register = () => {
                       </Col>
                       <Col>
                         <Form.Group controlId="lname">
-                          <Form.Label>Sukunimi</Form.Label>
+                          <Form.Label>Sukunimi</Form.Label><Form.Label style={{ color: 'red' }}> *</Form.Label>
                           <Form.Control
                             type="text"
                             placeholder="Syötä sukunimesi"
@@ -167,10 +168,14 @@ export const Register = () => {
                       required
                       //tähän pitää saada linkki niin ettei päivitä sivua uudelleen kun menee tietosuojaselosteeseen
                       label={
-                        <span> Olen lukenut ja hyväksyn &nbsp; <a href="/Help" target="_blank" rel="noopener noreferrer">tietosuojaselosteen</a></span>
+                        <span> Olen lukenut ja hyväksyn&nbsp;<a href="/Help" target="_blank" rel="noopener noreferrer">tietosuojaselosteen</a><Form.Label style={{ color: 'red' }}> *</Form.Label></span>
                       }
+                      
                       //onChange={() => setCheck(!check)}
                     />
+                    <div>
+                      <span>Pakolliset kentät on merkitty tähdellä:</span><span> </span><span style={{ color: 'red' }}>*</span>
+                    </div>
                     <Button onClick={registerPost} variant="success" type="submit" style={{ marginTop: '10px', marginBottom:"10px"}}>
                       Rekisteröidy
                     </Button>
