@@ -7,6 +7,8 @@ import axios from 'axios';
 export const SignIn = () => {
   const [username, setUsername] = useState('');
   const [pw, setPw] = useState('');
+  const [showPassword, setShowPassword] = useState(false);
+
 
   function login(){
     axios.postForm('http://localhost:3001/login',{username, pw})
@@ -22,7 +24,7 @@ export const SignIn = () => {
             <Form.Label>Käyttäjänimi</Form.Label>
             <Form.Control 
             type="text" 
-            placeholder="ookko nää"
+            placeholder="Syötä käyttäjänimi"
             value={username}
             onChange={e => setUsername(e.target.value)}/>
             
@@ -31,10 +33,21 @@ export const SignIn = () => {
           <Form.Group controlId="formBasicPassword">
             <Form.Label>Salasana</Form.Label>
             <Form.Control 
-            type="password" 
-            placeholder="ookko nää"
+            type={
+              showPassword ? "text" : "password"
+            }
+            placeholder="Syötä salasana"
             value={pw}
             onChange={e => setPw(e.target.value)}/>
+            <label for="check">Show Password</label>
+            <input
+              id="check"
+              type="checkbox"
+              value={showPassword}
+              onChange={() =>
+                setShowPassword((prev) => !prev)
+              }
+            />
           </Form.Group>
 
           <Button onClick={login} style={{marginTop: '10px', backgroundColor:'green'}} variant="primary" type="submit">

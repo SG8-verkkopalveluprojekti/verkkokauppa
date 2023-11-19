@@ -16,6 +16,7 @@ export const Register = () => {
   const [pw, setPw] = useState('');
   const [cpw, setCpw] = useState('');
   const [email, setEmail] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
   
 
   function registerPost(){
@@ -69,20 +70,33 @@ export const Register = () => {
                         <Form.Group controlId="pw">
                           <Form.Label>Salasana</Form.Label><Form.Label style={{ color: 'red' }}> *</Form.Label>
                           <Form.Control
-                            type="password"
+                            type={
+                              showPassword ? "text" : "password"
+                            }
                             placeholder="Syötä salasana"
                             name="pw"
                             value={pw}
                             onChange={e => setPw(e.target.value)}
                             required
                           />
+                            <label for="check">Show Password</label>
+                            <input
+                                id="check"
+                                type="checkbox"
+                                value={showPassword}
+                                onChange={() =>
+                                    setShowPassword((prev) => !prev)
+                                }
+                            />
                         </Form.Group>
                       </Col>
                       <Col>
                         <Form.Group controlId="cpw">
                           <Form.Label>Vahvista salasana</Form.Label><Form.Label style={{ color: 'red' }}> *</Form.Label>
                           <Form.Control
-                            type="password"
+                             type={
+                              showPassword ? "text" : "password"
+                            }
                             placeholder="Vahvista salasana"
                             name="cpw"
                             value={cpw}
