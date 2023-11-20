@@ -73,11 +73,12 @@ function Kortti() {
         </Card.Body>
       </Card>
       <ListGroup className='d-block d-sm-none' style={{marginTop: '30px', width: '100%', padding:'30px' }}>
-      <ListGroup.Item>Näytönohjaimet</ListGroup.Item>
-      <ListGroup.Item>Emolevyt</ListGroup.Item>
-      <ListGroup.Item>Muistit</ListGroup.Item>
-      <ListGroup.Item>Prosessorit</ListGroup.Item>
-      <ListGroup.Item>Kotelot ja oheistuotteet</ListGroup.Item>
+      <ListGroup.Item><Button variant="primary" href="/Naytonojaimet">Näytönohjaimet</Button></ListGroup.Item>
+      <ListGroup.Item><Button variant="primary" href="/Emolevyt">Emolevyt</Button></ListGroup.Item>
+      <ListGroup.Item><Button variant="primary" href="/Muistit">Muistit</Button></ListGroup.Item>
+      <ListGroup.Item><Button variant="primary" href="/Prosessorit">Prosessorit</Button></ListGroup.Item>
+      <ListGroup.Item><Button variant="primary" href="/Kotelot">Kotelot ja oheistuotteet</Button></ListGroup.Item>
+      <ListGroup.Item><Button variant="primary" href="/Virtalahteet">Virtalahteet</Button></ListGroup.Item>
     </ListGroup>
     </div>
     
