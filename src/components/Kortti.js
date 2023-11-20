@@ -13,7 +13,7 @@ function Kortti() {
           <Card.Text>
             Pitää tähän joku myyntipuhe keksiä
           </Card.Text>
-          <Button variant="primary">Go somewhere</Button>
+          <Button variant="primary" href="/Naytonojaimet">Näytönohjaimet</Button>
         </Card.Body>
       </Card>
 
@@ -25,7 +25,7 @@ function Kortti() {
             Some quick example text to build on the card title and make up the
             bulk of the card's content.
           </Card.Text>
-          <Button variant="primary">Go somewhere</Button>
+          <Button variant="primary" href="/Emolevyt">Emolevyt</Button>
         </Card.Body>
       </Card>
       <Card  className='d-none d-sm-block' style={{ width: '18rem', backgroundColor: 'grey', marginTop: '20px', marginBottom:'10rem' }}>
@@ -36,7 +36,7 @@ function Kortti() {
             Some quick example text to build on the card title and make up the
             bulk of the card's content.
           </Card.Text>
-          <Button variant="primary">Go somewhere</Button>
+          <Button variant="primary" href="/Muistit">Muistit</Button>
         </Card.Body>
       </Card>
       <Card className='d-none d-sm-block' style={{ width: '18rem', backgroundColor: 'grey', marginTop: '20px', marginBottom:'10rem' }}>
@@ -47,7 +47,7 @@ function Kortti() {
             Some quick example text to build on the card title and make up the
             bulk of the card's content.
           </Card.Text>
-          <Button variant="primary">Go somewhere</Button>
+          <Button variant="primary" href="/Prosessorit">Prosessorit</Button>
         </Card.Body>
       </Card>
       <Card className='d-none d-sm-block' style={{ width: '18rem', backgroundColor: 'grey', marginTop: '20px', marginBottom:'10rem' }}>
@@ -58,7 +58,7 @@ function Kortti() {
             Some quick example text to build on the card title and make up the
             bulk of the card's content.
           </Card.Text>
-          <Button variant="primary">Go somewhere</Button>
+          <Button variant="primary" href="/Kotelot">Kotelot ja oheistuotteet</Button>
         </Card.Body>
       </Card>
       <Card className='d-none d-sm-block' style={{ width: '18rem', backgroundColor: 'grey', marginTop: '20px', marginBottom:'10rem'}}>
@@ -69,7 +69,7 @@ function Kortti() {
             Some quick example text to build on the card title and make up the
             bulk of the card's content.
           </Card.Text>
-          <Button variant="primary">Go somewhere</Button>
+          <Button variant="primary" href="/Virtalahteet">Virtalähteet</Button>
         </Card.Body>
       </Card>
       <ListGroup className='d-block d-sm-none' style={{marginTop: '30px', width: '100%', padding:'30px' }}>
