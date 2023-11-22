@@ -36,10 +36,10 @@ export const Register = () => {
 
           return (
             <>
-            <Container style={{border:"3px solid grey", marginTop:"100px", borderRadius:"5px", background:"#d3d3d3" }}>
+            <Container style={{border:"3px solid grey",maxWidth:'80%',height:'80%', marginTop:"100px", borderRadius:"5px", background:"#d3d3d3" }}>
               <Row className="justify-content-md-center">
                 <Col md={12}>
-                  <Form style={{margin:"25px"}}>
+                  <Form style={{margin:"25px",height:'80%'}}>
                   <Row>
                       <Col>
                         <Form.Group controlId="email">

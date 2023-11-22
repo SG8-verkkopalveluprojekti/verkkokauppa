@@ -1,6 +1,5 @@
 import React from 'react';
 import { Container, Row, Col, Form, Button } from 'react-bootstrap';
-import { Link } from "react-router-dom";
 import { useState } from 'react';
 import axios from 'axios';
 
@@ -16,7 +15,7 @@ export const SignIn = () => {
       .catch(err => alert("wrong password or username"))
   }
   return (
-    <Container style={{marginTop:'30px', width:'60%'}}>
+    <Container style={{marginTop:'60px', maxwidth:'100%'}}>
     <Row className="justify-content-md-center">
       <Col xs={12} md={6}>
       <Form style={{ border: '1px solid black', padding: '50px', borderRadius: '4px', backgroundColor:'#D3D3D3' }}>

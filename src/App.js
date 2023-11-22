@@ -9,6 +9,7 @@ import { Help } from "./pages/Help";
 import { SignIn } from "./pages/SignIn";
 import { Register } from "./pages/Register";
 import { Cart } from "./pages/Cart";
+import { SearchResult } from "./components/SearchResult";
 
 
 
@@ -20,6 +21,7 @@ function App() {
     <>
     <Header />
     <Search />
+    <SearchResult />
     <div className="App">
       <Routes>
       

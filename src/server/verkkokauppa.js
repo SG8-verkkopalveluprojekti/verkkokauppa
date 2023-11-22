@@ -43,12 +43,17 @@ app.get('/products', async (req, res) => {
         const connection = await mysql.createConnection(conf);
 
         const category = req.query.category;
+        const search = req.query.search;
 
         let result;        
 
         if(category){
             result = await connection.execute("SELECT id, product_name productName, price, image_url imageUrl, category  FROM product WHERE category=?", [category]);
-        }else{
+        } else if (search) {
+            result = await connection.execute("SELECT id, product_name productName, price, image_url imageUrl, category FROM product WHERE product_name LIKE ?", [`%${search}%`])
+        }
+        
+        else{
             result = await connection.execute("SELECT id, product_name productName, price, image_url imageUrl, category  FROM product");
         }
         
