@@ -12,7 +12,15 @@ import { Cart } from "./pages/Cart";
 import { Changepw } from "./pages/Changepw";
 import { SearchResult } from "./components/SearchResult";
 import { Naytonohjaimet } from "./pages/Gpu";
+<<<<<<< HEAD
 import { Admin } from "./pages/Admin_settings";
+=======
+import { Cpu } from "./pages/Cpu";
+import { Emolevyt } from "./pages/Emolevyt";
+import { Kotelot } from "./pages/Kotelot";
+import { Virtalähteet } from "./pages/Virtalähteet";
+import { Muistit } from "./pages/Muisti";
+>>>>>>> 54636eca34bac3fa8bac6d08a23772f92ab0a2f7
 
 
 
@@ -36,7 +44,16 @@ function App() {
       <Route path="/cart" element={<Cart />} />
       <Route path="/changepw" element={<Changepw />} />
       <Route path="/naytonohjaimet" element={<Naytonohjaimet />} />
+<<<<<<< HEAD
       <Route path="/admin" element ={<Admin />} />
+=======
+      <Route path="/emolevyt" element={<Emolevyt />} />
+      <Route path="/prosessorit" element={<Cpu />} />
+      <Route path="/kotelot" element={<Kotelot />} />
+      <Route path="/virtalahteet" element={<Virtalähteet />} />
+      <Route path="/muistit" element={<Muistit />} />
+
+>>>>>>> 54636eca34bac3fa8bac6d08a23772f92ab0a2f7
       
       
       
