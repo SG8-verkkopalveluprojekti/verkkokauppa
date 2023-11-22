@@ -55,12 +55,13 @@ export const SignIn = () => {
                 placeholder="Syötä salasana"
                 value={pw}
                 onChange={e => setPw(e.target.value)} />
-              <label htmlFor="check">Show Password</label>
+              <label htmlFor="check" >Show Password</label>
               <input
                 id="check"
                 type="checkbox"
                 value={showPassword}
-                onChange={() => setShowPassword(prev => !prev)} />
+                onChange={() => setShowPassword(prev => !prev)} 
+                style={{marginLeft:"5px"}}/>
                  <a href="/changepw" style={{marginLeft: "10px"}}>  
                       Unohditko salasanasi?
                 </a>
