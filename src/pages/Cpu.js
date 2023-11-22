@@ -2,7 +2,7 @@ import React from 'react'
 import axios from 'axios'
 import { useState,useEffect } from 'react';
 import { Card, Button} from 'react-bootstrap'
-import Corsair from "./Kuvat/Corsair 32GB.jpg"
+
 
 export const  Cpu = () => {
 
