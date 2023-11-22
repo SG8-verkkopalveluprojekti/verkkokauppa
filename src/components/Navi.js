@@ -21,6 +21,9 @@ export const Navi = () => {
               <Nav.Link href="/signin" className="text-light">Kirjaudu</Nav.Link>
               <Nav.Link href="/register" className="text-light">Rekisteröidy</Nav.Link>
             </Nav>
+            <Nav>
+              <Nav.Link href="/Admin_settings" className="text-light">Ylläpito</Nav.Link>
+            </Nav>
           </Navbar.Collapse>
            {/* <Form className="d-flex " >
             <Form.Control type="text" placeholder="Sähköposti" style={{marginRight: "10px"}} />

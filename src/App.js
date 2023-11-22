@@ -12,6 +12,7 @@ import { Cart } from "./pages/Cart";
 import { Changepw } from "./pages/Changepw";
 import { SearchResult } from "./components/SearchResult";
 import { Naytonohjaimet } from "./pages/Gpu";
+import { Admin } from "./pages/Admin_settings";
 
 
 
@@ -35,6 +36,7 @@ function App() {
       <Route path="/cart" element={<Cart />} />
       <Route path="/changepw" element={<Changepw />} />
       <Route path="/naytonohjaimet" element={<Naytonohjaimet />} />
+      <Route path="/admin" element ={<Admin />} />
       
       
       

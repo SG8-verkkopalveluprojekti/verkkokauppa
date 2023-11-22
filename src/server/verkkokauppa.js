@@ -305,7 +305,7 @@ app.post('/image', upload2.single('pic'), async (req, res) => {
 
     res.send('Ok');
 
-   /* const currentPath = req.file.path;
+   const currentPath = req.file.path;
     const dest = req.file.destination;
     const category = req.body.category;
     const filename = req.file.filename;
@@ -324,7 +324,9 @@ app.post('/image', upload2.single('pic'), async (req, res) => {
         res.json({imageUrl: imageUrl});
     } catch (error) {
         res.json({error: error.message});
-    }*/
+    }
 
     //res.send('images/'+req.file.filename);
 });
+
+/**/

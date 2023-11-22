@@ -1,1 +1,0 @@
-/*Tietokoneen rakennus sivu asiakkaalle*/
