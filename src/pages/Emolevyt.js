@@ -27,8 +27,8 @@ export const  Emolevyt = () => {
               <Card.Text>
                 {product.price + "€" || 'ei hintaa'}
               </Card.Text>
-              <Button className="btn btn-primary btn-md" style={{width:"100%"}} variant="primary" href={`/${product.category}/${product.id}`}>
-                Katso lisää
+              <Button className="btn btn-primary btn-md" style={{width:"100%"}} variant="primary">
+              Lisää ostoskoriin
               </Button>
             </Card.Body>
           </Card>
