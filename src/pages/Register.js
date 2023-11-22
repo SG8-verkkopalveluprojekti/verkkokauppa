@@ -82,6 +82,7 @@ export const Register = () => {
                           />
                             <label htmlFor="check">Show Password</label>
                             <input
+                                style={{marginLeft:"7px"}}
                                 id="check"
                                 type="checkbox"
                                 value={showPassword}
