@@ -26,11 +26,3 @@ export const Search = () => {
     </>
   );
 };
-/**
- *      <Link to="/signin">
-              <i class="fa fa-user-secret">  Kirjaudu &nbsp; </i>
-            </Link>
-            <Link to="/register">
-              <i class="fa fa-user-secret-hidden">  /&nbsp; Luo uusi tili</i>
-            </Link>  
- */
