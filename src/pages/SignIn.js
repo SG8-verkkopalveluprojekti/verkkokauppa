@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Container, Row, Col, Form, Button, Spinner } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom'; // Import the hook
 import axios from 'axios';
 
 export const SignIn = () => {
@@ -8,6 +9,7 @@ export const SignIn = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [isButtonDisabled, setButtonDisabled] = useState(false);
   const [isLoading, setLoading] = useState(false);
+  const navigate = useNavigate(); // Initialize the hook
 
   function login() {
     if (isButtonDisabled) {
@@ -17,9 +19,10 @@ export const SignIn = () => {
     setButtonDisabled(true);
     setLoading(true);
 
-    axios.postForm('http://localhost:3001/login', { username, pw })
+    axios.post('http://localhost:3001/login', { username, pw })
       .then(resp => {
         alert("Kirjauduttu sisään");
+        navigate('/index.js'); // Redirect to a different page after successful login
       })
       .catch(err => {
         alert("Väärä salasana tai käyttäjätunnus");
@@ -42,7 +45,6 @@ export const SignIn = () => {
                 placeholder="Syötä käyttäjänimi"
                 value={username}
                 onChange={e => setUsername(e.target.value)} />
-
             </Form.Group>
 
             <Form.Group controlId="formBasicPassword">
