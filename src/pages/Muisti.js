@@ -14,10 +14,10 @@ export const  Muistit = () => {
     }, []);
 
     return (
-      <div className="row">
+<div className="row justify-content-center">
         {products && products.map(product => (
-          <Card key={product.id} className='col-md-3 mb-3 d-none d-sm-block' style={{ width: '250px', backgroundColor: 'grey', marginTop: '60px', marginBottom:'10rem', marginLeft:'10px'}}>
-            <Card.Img variant="top" src={product.imageUrl || 'https://www.io-tech.fi/wp-content/uploads/2022/02/12400f-00.jpg'} style={{height:'15rem', marginTop:'5px', padding:'15px'}}/>
+          <Card key={product.id} className='col-3' style={{ width: '250px', backgroundColor: 'grey', marginTop: '30px', margin:'10px'}}>
+            <Card.Img variant="top" src={product.imageUrl || 'https://hh2.pigugroup.eu/colours/241/450/8/2414508/memory-d4-4266-32gb-c17-gskill-tz-d9af0_reference.jpg'} style={{height:'15rem', marginTop:'5px', padding:'15px'}}/>
             <Card.Body>
               <Card.Title>{product.productName}</Card.Title>
               <Card.Text>
