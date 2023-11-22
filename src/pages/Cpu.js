@@ -24,6 +24,9 @@ export const  Cpu = () => {
                 {/* Tähän voit lisätä tuotteen kuvaus */}
                 {product.description || 'Tuotteen kuvaus puuttuu'}
               </Card.Text>
+              <Card.Text>
+                {product.price + "€" || 'ei hintaa'}
+              </Card.Text>
               <Button className="btn btn-primary btn-md" style={{width:"100%"}} variant="primary" href={`/${product.category}/${product.id}`}>
                 Katso lisää
               </Button>
