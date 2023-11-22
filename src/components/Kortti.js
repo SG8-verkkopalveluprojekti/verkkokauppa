@@ -14,7 +14,7 @@ function Kortti() {
           <Card.Text>
             Pitää tähän joku myyntipuhe keksiä
           </Card.Text>
-          <Button class="btn btn-primary btn-md" style={{width:"100%"}} variant="primary" href="/Naytonojaimet">Näytönohjaimet</Button>
+          <Button className="btn btn-primary btn-md" style={{width:"100%"}} variant="primary" href="/Naytonojaimet">Näytönohjaimet</Button>
         </Card.Body>
       </Card>
 
@@ -25,7 +25,7 @@ function Kortti() {
           <Card.Text>
           Pitää tähän joku myyntipuhe keksiä
           </Card.Text>
-          <Button class="btn btn-primary btn-md" style={{width:"100%"}} variant="primary" href="/Emolevyt">Emolevyt</Button>
+          <Button className="btn btn-primary btn-md" style={{width:"100%"}} variant="primary" href="/Emolevyt">Emolevyt</Button>
         </Card.Body>
       </Card>
       <Card  className='col-md-3 mb-3 d-none d-sm-block' style={{ width: '250px', backgroundColor: 'grey', marginTop: '60px', marginBottom:'10rem'}}>
@@ -35,7 +35,7 @@ function Kortti() {
           <Card.Text>
           Pitää tähän joku myyntipuhe keksiä
           </Card.Text>
-          <Button class="btn btn-primary btn-md" style={{width:"100%"}} variant="primary" href="/Muistit">Muistit</Button>
+          <Button className="btn btn-primary btn-md" style={{width:"100%"}} variant="primary" href="/Muistit">Muistit</Button>
         </Card.Body>
       </Card>
       <Card className='col-md-3 mb-3 d-none d-sm-block' style={{ width: '250px', backgroundColor: 'grey', marginTop: '60px', marginBottom:'10rem'}}>
@@ -45,7 +45,7 @@ function Kortti() {
           <Card.Text>
           Pitää tähän joku myyntipuhe keksiä
           </Card.Text>
-          <Button class="btn btn-primary btn-md" style={{width:"100%"}} variant="primary" href="/Prosessorit">Prosessorit</Button>
+          <Button className="btn btn-primary btn-md" style={{width:"100%"}} variant="primary" href="/Prosessorit">Prosessorit</Button>
         </Card.Body>
       </Card>
       <Card className='col-md-3 mb-3 d-none d-sm-block' style={{ width: '250px', backgroundColor: 'grey', marginTop: '60px', marginBottom:'10rem'}}>
@@ -55,7 +55,7 @@ function Kortti() {
           <Card.Text>
           Pitää tähän joku myyntipuhe keksiä
           </Card.Text>
-          <Button class="btn btn-primary btn-md" style={{width:"100%"}} variant="primary" href="/Kotelot">Kotelot ja oheistuotteet</Button>
+          <Button className="btn btn-primary btn-md" style={{width:"100%"}} variant="primary" href="/Kotelot">Kotelot ja oheistuotteet</Button>
         </Card.Body>
       </Card>
       <Card className='col-md-3 mb-3 d-none d-sm-block' style={{ width: '250px', backgroundColor: 'grey', marginTop: '60px', marginBottom:'10rem'}}>
@@ -65,16 +65,16 @@ function Kortti() {
           <Card.Text>
           Pitää tähän joku myyntipuhe keksiä
           </Card.Text>
-          <Button class="btn btn-primary btn-md" style={{width:"100%"}} variant="primary" href="/Virtalahteet">Virtalähteet</Button>
+          <Button className="btn btn-primary btn-md" style={{width:"100%"}} variant="primary" href="/Virtalahteet">Virtalähteet</Button>
         </Card.Body>
       </Card>
       <ListGroup className='d-block d-sm-none' style={{marginTop: '30px', width: '100%', padding:'30px' }}>
-      <ListGroup.Item><Button class="btn btn-primary btn-lg" style={{width:"100%"}} variant="primary" href="/Naytonojaimet">Näytönohjaimet</Button></ListGroup.Item>
-      <ListGroup.Item><Button class="btn btn-primary btn-lg" style={{width:"100%"}} variant="primary" href="/Emolevyt">Emolevyt</Button></ListGroup.Item>
-      <ListGroup.Item><Button class="btn btn-primary btn-lg" style={{width:"100%"}} variant="primary" href="/Muistit">Muistit</Button></ListGroup.Item>
-      <ListGroup.Item><Button class="btn btn-primary btn-lg" style={{width:"100%"}} variant="primary" href="/Prosessorit">Prosessorit</Button></ListGroup.Item>
-      <ListGroup.Item><Button class="btn btn-primary btn-lg" style={{width:"100%"}} variant="primary" href="/Kotelot">Kotelot ja oheistuotteet</Button></ListGroup.Item>
-      <ListGroup.Item><Button class="btn btn-primary btn-lg" style={{width:"100%"}} variant="primary" href="/Virtalahteet">Virtalahteet</Button></ListGroup.Item>
+      <ListGroup.Item><Button className="btn btn-primary btn-lg" style={{width:"100%"}} variant="primary" href="/Naytonojaimet">Näytönohjaimet</Button></ListGroup.Item>
+      <ListGroup.Item><Button className="btn btn-primary btn-lg" style={{width:"100%"}} variant="primary" href="/Emolevyt">Emolevyt</Button></ListGroup.Item>
+      <ListGroup.Item><Button className="btn btn-primary btn-lg" style={{width:"100%"}} variant="primary" href="/Muistit">Muistit</Button></ListGroup.Item>
+      <ListGroup.Item><Button className="btn btn-primary btn-lg" style={{width:"100%"}} variant="primary" href="/Prosessorit">Prosessorit</Button></ListGroup.Item>
+      <ListGroup.Item><Button className="btn btn-primary btn-lg" style={{width:"100%"}} variant="primary" href="/Kotelot">Kotelot ja oheistuotteet</Button></ListGroup.Item>
+      <ListGroup.Item><Button className="btn btn-primary btn-lg" style={{width:"100%"}} variant="primary" href="/Virtalahteet">Virtalahteet</Button></ListGroup.Item>
     </ListGroup>
     </div>
     </div>
