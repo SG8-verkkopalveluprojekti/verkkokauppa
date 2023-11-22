@@ -14,10 +14,10 @@ export const  Kotelot = () => {
     }, []);
 
     return (
-      <div className="row">
+<div className="row justify-content-center">
         {products && products.map(product => (
-          <Card key={product.id} className='col-md-3 mb-3 d-none d-sm-block' style={{ width: '250px', backgroundColor: 'grey', marginTop: '60px', marginBottom:'10rem', marginLeft:'10px'}}>
-            <Card.Img variant="top" src={product.imageUrl || 'https://www.io-tech.fi/wp-content/uploads/2022/02/12400f-00.jpg'} style={{height:'15rem', marginTop:'5px', padding:'15px'}}/>
+          <Card key={product.id} className='col-3' style={{ width: '250px', backgroundColor: 'grey', marginTop: '30px', margin:'10px'}}>
+            <Card.Img variant="top" src={product.imageUrl || 'https://ic.jimms.fi/product/5/7/331652-ig800gg.jpg'} style={{height:'15rem', marginTop:'5px', padding:'15px'}}/>
             <Card.Body>
               <Card.Title>{product.productName}</Card.Title>
               <Card.Text>
