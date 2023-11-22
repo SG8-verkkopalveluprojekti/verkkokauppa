@@ -1,9 +1,13 @@
 import React from 'react'
 
-export const Naytonojaimet = () => {
-  return (
+export const  Naytonohjaimet = () => {
+
+    return(
     <div>
-        
+      asdasda
+
     </div>
-  )
-}
+    )
+  }
+
+  

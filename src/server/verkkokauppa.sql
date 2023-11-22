@@ -43,9 +43,11 @@ CREATE TABLE order_line(
 );
 
 /*testing*/
-INSERT INTO product_category VALUES ('Computers', 'Laptop and desktop computers'),
-('Sports', 'Sport equipment'),('Bikes', 'City and MTB bikes'),('Music', 'Guitars, drums and other instruments'), ('Phones', 'Mobile devices for all uses');
+INSERT INTO product_category VALUES ('Naytonohjaimet', 'AMD ja NVIDIA'),
+('Emolevyt', 'AMD ja Intel'),('Muistit', 'DDR4 ja DDR5'),('Prosessorit', 'AMD ja Intel'), ('Kotelot', 'Torni ja Mini'), ('Virtalahteet', 'ATX ja mATX');
 
 
-INSERT INTO product (product_name, price, category) VALUES ('Macbook Pro 13', 1200, 'Computers'),('iPhone 13', 700, 'Phones'), ('Umbro football', 25, 'Sports'),
-('Fender Stratocaster', 1550, 'Music'), ('Gipson Les Paul', 2100, 'Music'), ('Google Pixel', 780, 'Phones');
+INSERT INTO product (product_name, price, category) VALUES ('Asus GeForce RTX 4070', 699, 'Naytonohjaimet'),('Asus ROG STRIX B550-F', 149, 'Emolevyt'), ('Asus 1000W TUF Gaming Gold', 189, 'Virtalahteet'),
+('Intel Core i7-14700K, LGA1700, 3.40 GHz, 33MB, Boxed ', 499, 'Prosessorit'), ('Fractal Design Pop XL Air RGB Black, tornikotelo', 126, 'Kotelot'), ('Kingston 32GB (2 x 16GB) Fury Beast DDR5 6000MHz', 144, 'Muistit'),('MSI GeForce RTX 4070', 619, 'Naytonohjaimet'),('Gigabyte Z790 GAMING X AX', 269, 'Emolevyt'), ('SilverStone 500W Strider SFX', 118, 'Virtalahteet'),
+('Intel Core i5-13600K, LGA1700, 3.50 GHz, 24MB, Boxed ', 369, 'Prosessorit'), ('Lian Li LANCOOL II Mesh C Performance, ikkunallinen miditornikotelo', 129, 'Kotelot'), ('Corsair 32GB (2 x 16GB) Vengeance RGB, DDR5 6000MHz', 164, 'Muistit'),('Gigabyte Radeon RX 7800 XT', 629, 'Naytonohjaimet'),('Asus TUF GAMING Z790-PLUS', 309, 'Emolevyt'), ('Corsair 850W RM850e', 144, 'Virtalahteet'),
+('AMD Ryzen 7 7800X3D, AM5, 4.2 GHz, 8-Core', 439, 'Prosessorit'), ('Aerocool CS-107 v2, ikkunallinen minitornikotelo', 39, 'Kotelot'), ('Kingston 16GB (2 x 8GB) FURY Beast, DDR4 3200MHz', 49, 'Muistit');

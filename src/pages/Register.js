@@ -1,37 +1,38 @@
-import React from 'react'
-import axios from "axios"
-import { useState } from 'react';
-
-
-
+import React, { useState } from 'react';
 import { Container, Form, Button, Col, Row } from 'react-bootstrap';
-
-
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom'; // Import the hook
 
 export const Register = () => {
-
   const [fname, setFname] = useState('');
   const [lname, setLname] = useState('');
   const [username, setUsername] = useState('');
   const [pw, setPw] = useState('');
   const [cpw, setCpw] = useState('');
-  const [email, setEmail] = useState("");
+  const [email, setEmail] = useState('');
   const [showPassword, setShowPassword] = useState(false);
-  
 
-  function registerPost(){
+  const navigate = useNavigate(); // Initialize the hook
+
+  function registerPost(event) {
+    event.preventDefault();
+    
     if (!email || !fname || !lname || !username || !pw) {
-      alert("Täytä kaikki pakolliset kentät ennen rekisteröitymistä.");
+      alert('Täytä kaikki pakolliset kentät ennen rekisteröitymistä.');
       return;
     }
-    if(cpw !== pw){
-      alert("Salasanat eivät täsmää!")
+    if (cpw !== pw) {
+      alert('Salasanat eivät täsmää!');
       return;
     }
 
-    axios.postForm('http://localhost:3001/register',{fname,lname,username,pw})
-      .then(resp => alert("Kiitos rekisteröitymisestä!"))
-      .catch(err => alert("Jotain meni pieleen"))
+    axios
+      .post('http://localhost:3001/register', { fname, lname, username, pw })
+      .then((resp) => {
+        alert('Kiitos rekisteröitymisestä!');
+        navigate('/signin'); // Redirect to SignIn page after successful registration
+      })
+      .catch((err) => alert('Jotain meni pieleen'));
   }
 
           return (
@@ -79,8 +80,9 @@ export const Register = () => {
                             onChange={e => setPw(e.target.value)}
                             required
                           />
-                            <label for="check">Show Password</label>
+                            <label htmlFor="check">Show Password</label>
                             <input
+                                style={{marginLeft:"7px"}}
                                 id="check"
                                 type="checkbox"
                                 value={showPassword}
