@@ -24,7 +24,7 @@ export const  Virtalähteet = () => {
                 {/* Tähän voit lisätä tuotteen kuvaus */}
                 {product.description || 'Tuotteen kuvaus puuttuu'}
               </Card.Text>
-              <Card.Text>
+              <Card.Text style={{fontSize:"25px"}}>
                 {product.price + "€" || 'ei hintaa'}
               </Card.Text>
               <Button className="btn btn-primary btn-md" style={{width:"100%"}} variant="primary">
