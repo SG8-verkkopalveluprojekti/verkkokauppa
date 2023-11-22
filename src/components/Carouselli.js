@@ -1,6 +1,7 @@
 import React from 'react';
 import Carousel from 'react-bootstrap/Carousel';
 import { Image } from 'react-bootstrap';
+import rtx4090 from "./Images/4090.jpg"
 
 export const Carouselli = () => {
   const carouselItemStyle = {
@@ -19,7 +20,7 @@ export const Carouselli = () => {
     <Carousel className="text-center" style={{ marginTop: '20px' }}>
       <Carousel.Item style={carouselItemStyle}>
         <Image
-          src="https://www.io-tech.fi/wp-content/uploads/2022/10/rtx4090-00.jpg"
+          src={rtx4090}
           alt="First slide"
           style={imageStyle}
           className="mx-auto"
