@@ -23,7 +23,7 @@ export const SignIn = () => {
     axios.post('http://localhost:3001/login', { username, pw })
       .then(resp => {
         alert("Kirjauduttu sisään");
-        navigate('/index.js'); // Redirect to a different page after successful login
+        navigate('/');           // Redirect to a different page after successful login
       })
       .catch(err => {
         alert("Väärä salasana tai käyttäjätunnus");
@@ -61,7 +61,7 @@ export const SignIn = () => {
                 type="checkbox"
                 value={showPassword}
                 onChange={() => setShowPassword(prev => !prev)} />
-                 <a href="/changepw" style={{marginLeft: "10px"}}>
+                 <a href="/changepw" style={{marginLeft: "10px"}}>  
                       Unohditko salasanasi?
                 </a>
             </Form.Group>
