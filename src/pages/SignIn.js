@@ -23,7 +23,7 @@ export const SignIn = () => {
     axios.post('http://localhost:3001/login', { username, pw })
       .then(resp => {
         alert("Kirjauduttu sisään");
-        navigate('/');           // Redirect to a different page after successful login
+        navigate('/');           // Redirect to root page after successful login
       })
       .catch(err => {
         alert("Väärä salasana tai käyttäjätunnus");
