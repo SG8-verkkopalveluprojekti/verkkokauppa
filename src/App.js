@@ -9,6 +9,7 @@ import { Help } from "./pages/Help";
 import { SignIn } from "./pages/SignIn";
 import { Register } from "./pages/Register";
 import { Cart } from "./pages/Cart";
+import { Changepw } from "./pages/Changepw";
 import { SearchResult } from "./components/SearchResult";
 
 
@@ -31,6 +32,7 @@ function App() {
       <Route path="/register" element={<Register />} />
       <Route path="/signin" element={<SignIn />} />
       <Route path="/cart" element={<Cart />} />
+      <Route path="/changepw" element={<Changepw />} />
       
       
       

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Container, Row, Col, Form, Button, Spinner } from 'react-bootstrap';
 import axios from 'axios';
 
+
 export const SignIn = () => {
   const [username, setUsername] = useState('');
   const [pw, setPw] = useState('');
@@ -58,6 +59,9 @@ export const SignIn = () => {
                 type="checkbox"
                 value={showPassword}
                 onChange={() => setShowPassword(prev => !prev)} />
+                 <a href="/changepw" style={{marginLeft: "10px"}}>
+                      Unohditko salasanasi?
+                </a>
             </Form.Group>
 
             <Button
@@ -85,6 +89,8 @@ export const SignIn = () => {
             <Button href="/register" style={{ marginTop: '10px', marginLeft: '30px', backgroundColor: 'green' }} variant="primary" type="submit">
               Rekisteröidy
             </Button>
+           
+
           </Form>
         </Col>
       </Row>
