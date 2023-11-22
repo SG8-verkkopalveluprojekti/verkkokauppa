@@ -287,3 +287,44 @@ async function getOrders(username){
         res.status(500).json({ error: err.message });
     }
 }
+
+/**--------- */
+
+const storage = multer.diskStorage({
+    destination: ( req, file, cb)=>{
+        cb(null, './public/images');
+    },
+    filename: (req, file, cb) => {
+        cb(null, Date.now() + file.originalname);
+    }
+});
+
+const upload2 = multer({storage: storage});
+
+app.post('/image', upload2.single('pic'), async (req, res) => {
+
+    res.send('Ok');
+
+   /* const currentPath = req.file.path;
+    const dest = req.file.destination;
+    const category = req.body.category;
+    const filename = req.file.filename;
+
+    //linkki rakenne--> images/kotelot/329048294039kuvatiedosto.jpg
+    const imageUrl = 'images/'+category+'/'+filename;
+    const targetDir = 'public/images/'+category;
+
+    //if problemos
+    try{
+        if(!fs.existsSync(targetDir)) {
+            await fs.promises.mkdir(targetDir);
+        }
+        await fs.promises.rename(currentPath, targetDir + '/' + filename);
+
+        res.json({imageUrl: imageUrl});
+    } catch (error) {
+        res.json({error: error.message});
+    }*/
+
+    //res.send('images/'+req.file.filename);
+});
