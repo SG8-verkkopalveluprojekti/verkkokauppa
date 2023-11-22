@@ -38,7 +38,7 @@ export const SignIn = () => {
             placeholder="Syötä salasana"
             value={pw}
             onChange={e => setPw(e.target.value)}/>
-            <label for="check">Show Password</label>
+            <label htmlFor="check">Show Password</label>
             <input
               id="check"
               type="checkbox"
