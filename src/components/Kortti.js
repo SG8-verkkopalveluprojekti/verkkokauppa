@@ -14,7 +14,7 @@ function Kortti() {
           <Card.Text>
             Pitää tähän joku myyntipuhe keksiä
           </Card.Text>
-          <Button className="btn btn-primary btn-md" style={{width:"100%"}} variant="primary" href="/Naytonojaimet">Näytönohjaimet</Button>
+          <Button className="btn btn-primary btn-md" style={{width:"100%"}} variant="primary" href="/Naytonohjaimet">Näytönohjaimet</Button>
         </Card.Body>
       </Card>
 
@@ -69,7 +69,7 @@ function Kortti() {
         </Card.Body>
       </Card>
       <ListGroup className='d-block d-sm-none' style={{marginTop: '30px', width: '100%', padding:'30px' }}>
-      <ListGroup.Item><Button className="btn btn-primary btn-lg" style={{width:"100%"}} variant="primary" href="/Naytonojaimet">Näytönohjaimet</Button></ListGroup.Item>
+      <ListGroup.Item><Button className="btn btn-primary btn-lg" style={{width:"100%"}} variant="primary" href="/Naytonohjaimet">Näytönohjaimet</Button></ListGroup.Item>
       <ListGroup.Item><Button className="btn btn-primary btn-lg" style={{width:"100%"}} variant="primary" href="/Emolevyt">Emolevyt</Button></ListGroup.Item>
       <ListGroup.Item><Button className="btn btn-primary btn-lg" style={{width:"100%"}} variant="primary" href="/Muistit">Muistit</Button></ListGroup.Item>
       <ListGroup.Item><Button className="btn btn-primary btn-lg" style={{width:"100%"}} variant="primary" href="/Prosessorit">Prosessorit</Button></ListGroup.Item>

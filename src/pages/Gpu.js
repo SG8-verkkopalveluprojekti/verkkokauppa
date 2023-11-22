@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const Naytonojaimet = () => {
+export const Naytonohjaimet = () => {
   return (
     <div>
         
