@@ -14,7 +14,7 @@ export const Search = () => {
         `http://localhost:3001/products?search=${searchTerm}`
       );
       setProducts(response.data);
-      console.log(response);
+      console.log(response.data);
     } catch (error) {
       console.error("Error fetching products", error);
     }
