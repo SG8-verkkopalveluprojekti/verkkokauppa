@@ -18,7 +18,7 @@ CREATE TABLE
     product(
         id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
         product_name VARCHAR(255) NOT NULL,
-        description TEXT,
+        product_description VARCHAR(500),
         price DECIMAL(10, 2),
         image_url VARCHAR(255),
         category VARCHAR(255),
@@ -63,7 +63,7 @@ VALUES (
 INSERT INTO
     product (
         product_name,
-        description,
+        product_description,
         price,
         image_url,
         category

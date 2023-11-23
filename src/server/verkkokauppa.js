@@ -48,13 +48,13 @@ app.get('/products', async (req, res) => {
         let result;        
 
         if(category){
-            result = await connection.execute("SELECT id, product_name productName, price, image_url imageUrl, category  FROM product WHERE category=?", [category]);
+            result = await connection.execute("SELECT id, product_name productName, product_description description, price, image_url imageUrl, category  FROM product WHERE category=?", [category]);
         } else if (search) {
-            result = await connection.execute("SELECT id, product_name productName, price, image_url imageUrl, category FROM product WHERE product_name LIKE ?", [`%${search}%`])
+            result = await connection.execute("SELECT id, product_name productName,product_description description, price, image_url imageUrl, category FROM product WHERE product_name LIKE ?", [`%${search}%`])
         }
         
         else{
-            result = await connection.execute("SELECT id, product_name productName, price, image_url imageUrl, category  FROM product");
+            result = await connection.execute("SELECT id, product_name productName,product_description description, price, image_url imageUrl, category  FROM product");
         }
         
         //First index in the result contains the rows in an array
