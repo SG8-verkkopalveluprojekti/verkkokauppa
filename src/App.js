@@ -18,6 +18,7 @@ import { Emolevyt } from "./pages/Emolevyt";
 import { Kotelot } from "./pages/Kotelot";
 import { Virtalähteet } from "./pages/Virtalähteet";
 import { Muistit } from "./pages/Muisti";
+import { NotFound } from "./pages/NotFound";
 
 
 
@@ -47,6 +48,7 @@ function App() {
       <Route path="/kotelot" element={<Kotelot />} />
       <Route path="/virtalahteet" element={<Virtalähteet />} />
       <Route path="/muistit" element={<Muistit />} />
+      <Route path="*" element={<NotFound />} />
 
       
       
