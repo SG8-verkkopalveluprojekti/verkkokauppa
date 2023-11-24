@@ -2,9 +2,9 @@ import React from 'react'
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
+
 import './navi.css';
-import { Link } from "react-router-dom";
+
 
 export const Navi = () => {
     return (
@@ -25,16 +25,7 @@ export const Navi = () => {
               <Nav.Link href="/Admin_settings" className="text-light">Ylläpito</Nav.Link>
             </Nav>
           </Navbar.Collapse>
-           {/* <Form className="d-flex " >
-            <Form.Control type="text" placeholder="Sähköposti" style={{marginRight: "10px"}} />
-          </Form>
-          <Form className="d-flex">
-            <Form.Control type="password" placeholder="Salasana" style={{marginRight: "10px"}}/>
-            <Link to='/signin'>
-            <Button variant="secondary" style={{color:'white',}}>Kirjaudu</Button>
-            </Link>
-          </Form> */}
-        </Container>
+          </Container>
       </Navbar>
     );
   }
