@@ -18,7 +18,7 @@ export const NotFound = () => {
     <p>
       <a href="https://giphy.com/gifs/utmZFnsMhUHqU">via GIPHY</a>
     </p>
-    <Button className='homebutton' variant="success">
+    <Button className='homebutton' href="/" variant="success">
       Go Home
     </Button>
   </div>
