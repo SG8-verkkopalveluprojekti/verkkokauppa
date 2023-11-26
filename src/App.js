@@ -19,6 +19,7 @@ import { Kotelot } from "./pages/Kotelot";
 import { Virtalähteet } from "./pages/Virtalähteet";
 import { Muistit } from "./pages/Muisti";
 import { NotFound } from "./pages/NotFound";
+import {BottomNavbar} from "./pages/phonenavbar"
 
 
 
@@ -49,6 +50,7 @@ function App() {
       <Route path="/virtalahteet" element={<Virtalähteet />} />
       <Route path="/muistit" element={<Muistit />} />
       <Route path="*" element={<NotFound />} />
+     
 
       
       
@@ -57,7 +59,7 @@ function App() {
       </Routes>
     </div>
     <Footer />
-    
+    <BottomNavbar />
     </>
   );
 }

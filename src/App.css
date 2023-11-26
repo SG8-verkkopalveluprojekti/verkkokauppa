@@ -67,3 +67,8 @@ body, html, #root {
     flex-direction: column;
     min-height: 100vh;
   }
+
+  
+  .bottom-navbar {
+    display: none;
+  }
