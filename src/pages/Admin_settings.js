@@ -1,8 +1,9 @@
 /**admin osio */
-import React from 'react';
+import React from 'react'
 //import {effect, signal} from '@preact/signals-react';
-import axios from 'axios';
-import {useEffect, useState} from 'react';
+import axios from 'axios'
+import {useEffect, useState} from 'react'
+
 
 export const Admin = () => {
   
@@ -24,7 +25,6 @@ export const Admin = () => {
 
   return (
     <div>
-      
       <input type='file' onChange={e=> setFile (e.target.files[0])}/>
       <input value={category} onChange={e => setCategory(e.target.value)}/>
       <button onClick={sendImage}>Add photo</button><br/><br/>

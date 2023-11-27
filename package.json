@@ -18,6 +18,10 @@
     "cors": "^2.8.5",
     "mysql": "^2.18.1",
     "mysql2": "^3.6.5",
+<<<<<<< HEAD
+    "nodemon": "^3.0.1",
+=======
+>>>>>>> 9abbefbadee2020ed05181c4beb09808124bcc79
     "react": "^18.2.0",
     "react-bootstrap": "^2.9.1",
     "react-dom": "^18.2.0",
