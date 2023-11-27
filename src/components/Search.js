@@ -1,20 +1,31 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import "./Search.css";
 import axios from "axios";
-import { useState } from "react";
 
 export const Search = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [products, setProducts] = useState([]);
+  const navigate = useNavigate();
 
   const handleSearchClick = async () => {
     try {
+      if (searchTerm.trim() === "") {
+        // Display an error message or prevent the search action
+        alert("Hakukenttä ei voi olla tyhjä");
+        return;
+      }
+
       const response = await axios.get(
         `http://localhost:3001/products?search=${searchTerm}`
       );
+
+      console.log("API Response:", response.data)
       setProducts(response.data);
-      console.log(response.data);
+
+      // Navigate to the search results page
+     // navigate("/search-results");
+
     } catch (error) {
       console.error("Error fetching products", error);
     }
@@ -57,15 +68,16 @@ export const Search = () => {
           </div>
         </div>
       </section>
-
+      <div>
       <section className="search-results">
         {products.map((product) => (
           <div key={product.id}>
             <h3>{product.productName}</h3>
-            <p>Hinta: {product.price}</p>
+            <p>Hinta: {product.price}€</p>
           </div>
         ))}
       </section>
+    </div>
     </>
   );
 };

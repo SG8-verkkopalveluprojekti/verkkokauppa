@@ -1,4 +1,5 @@
 import "./App.css";
+import React, { useState, useEffect } from "react";
 import { Header } from "./components/Header";
 import { Footer } from "./components/Footer";
 import { Search } from "./components/Search";
@@ -10,7 +11,6 @@ import { SignIn } from "./pages/SignIn";
 import { Register } from "./pages/Register";
 import { Cart } from "./pages/Cart";
 import { Changepw } from "./pages/Changepw";
-import { SearchResult } from "./components/SearchResult";
 import { Naytonohjaimet } from "./pages/Gpu";
 import { Admin } from "./pages/Admin";
 import { Cpu } from "./pages/Cpu";
@@ -20,6 +20,7 @@ import { Virtalähteet } from "./pages/Virtalähteet";
 import { Muistit } from "./pages/Muisti";
 import { NotFound } from "./pages/NotFound";
 import {BottomNavbar} from "./pages/phonenavbar"
+import { SearchResultPage } from "./pages/SearchResultPage";
 
 
 
@@ -27,11 +28,12 @@ import {BottomNavbar} from "./pages/phonenavbar"
 
 
 function App() {
+ 
   return (
     <>
     <Header />
     <Search />
-    <SearchResult />
+    
     <div className="App">
       <Routes>
       
@@ -50,6 +52,7 @@ function App() {
       <Route path="/virtalahteet" element={<Virtalähteet />} />
       <Route path="/muistit" element={<Muistit />} />
       <Route path="*" element={<NotFound />} />
+      {/*<Route path="/search-results" element={<SearchResultPage products={products} />} /> */}
      
 
       
