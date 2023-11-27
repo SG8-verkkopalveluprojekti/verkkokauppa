@@ -1,15 +1,16 @@
 import React from 'react';
 import Carousel from 'react-bootstrap/Carousel';
 import { Image } from 'react-bootstrap';
+import rtx4090 from "./Images/4090.jpg"
 
 export const Carouselli = () => {
   const carouselItemStyle = {
-    width: '100%', 
-    height: '400px', // Set a fixed height
+    width: '100%',
+    height: '500px', // Set a fixed height
   };
 
   const imageStyle = {
-    objectFit: 'contain', // tai 'cover'
+    objectFit: 'cover', // Use 'contain' to maintain aspect ratio without stretching
     width: '100%',
     height: '100%',
     borderRadius: '5px',
@@ -19,7 +20,7 @@ export const Carouselli = () => {
     <Carousel className="text-center" style={{ marginTop: '20px' }}>
       <Carousel.Item style={carouselItemStyle}>
         <Image
-          src="https://www.io-tech.fi/wp-content/uploads/2022/10/rtx4090-00.jpg"
+          src={rtx4090}
           alt="First slide"
           style={imageStyle}
           className="mx-auto"
@@ -43,7 +44,7 @@ export const Carouselli = () => {
       </Carousel.Item>
       <Carousel.Item style={carouselItemStyle}>
         <Image
-          src="https://www.io-tech.fi/wp-content/uploads/2023/11/scythe-fuma3-otsikko-221123.jpg"
+          src="https://www.techpowerup.com/img/eDrwEiDLxY1w5kWf.jpg"
           alt="Third slide"
           style={imageStyle}
           className="mx-auto"
