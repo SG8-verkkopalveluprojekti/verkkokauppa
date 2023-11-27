@@ -60,10 +60,12 @@ export const Search = () => {
 
       <section className="search-results">
         {products.map((product) => (
-          <div key={product.id}>
-            <h3>{product.productName}</h3>
-            <p>Price: {product.price}</p>
-          </div>
+          <Link to={`/product/${product.id}`} key={product.id}>
+            <div>
+              <h3>{product.productName}</h3>
+              <p>Hinta: {product.price}€</p>
+            </div>
+          </Link>
         ))}
       </section>
     </>
