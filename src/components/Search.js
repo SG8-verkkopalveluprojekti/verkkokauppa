@@ -70,16 +70,7 @@ export const Search = () => {
             </div>
           </div>
         </div>
-      </section>
-
-      <section className="search-results">
-        {products.map((product) => (
-          <div key={product.id}>
-            <h3>{product.productName}</h3>
-            <p>Price: {product.price}</p>
-          </div>
-        ))}
-      </section>
+       </section>
     </>
   );
 };
