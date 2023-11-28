@@ -28,7 +28,8 @@ import { SearchResultPage } from "./pages/SearchResultPage";
 
 
 function App() {
- 
+  const [products, setProducts] = useState([]);
+  const [searchTerm, setSearchTerm] = useState("");
   return (
     <>
     <Header />
@@ -52,7 +53,7 @@ function App() {
       <Route path="/virtalahteet" element={<Virtalähteet />} />
       <Route path="/muistit" element={<Muistit />} />
       <Route path="*" element={<NotFound />} />
-      {/*<Route path="/search-results" element={<SearchResultPage products={products} />} /> */}
+      <Route path="/search-results" element={<SearchResultPage products={products} searchTerm={searchTerm}/>} /> 
      
 
       

@@ -12,7 +12,7 @@ export const Search = () => {
     try {
       if (searchTerm.trim() === "") {
         // Display an error message or prevent the search action
-        alert("Hakukenttä ei voi olla tyhjä");
+        alert("Hakukenttä ei voi olla tyhjä!");
         return;
       }
 
@@ -22,9 +22,10 @@ export const Search = () => {
 
       console.log("API Response:", response.data)
       setProducts(response.data);
+      console.log("set products", products);
 
       // Navigate to the search results page
-     // navigate("/search-results");
+      navigate(`/search-results?searchTerm=${searchTerm}`);
 
     } catch (error) {
       console.error("Error fetching products", error);
@@ -67,17 +68,7 @@ export const Search = () => {
             </div>
           </div>
         </div>
-      </section>
-      <div>
-      <section className="search-results">
-        {products.map((product) => (
-          <div key={product.id}>
-            <h3>{product.productName}</h3>
-            <p>Hinta: {product.price}€</p>
-          </div>
-        ))}
-      </section>
-    </div>
+       </section>
     </>
   );
 };
