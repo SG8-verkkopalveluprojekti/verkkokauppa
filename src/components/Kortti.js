@@ -2,6 +2,7 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { ListGroup } from 'react-bootstrap';
 import React from 'react';
+import { Container, Row, Col } from 'react-bootstrap';
 //import axios from 'axios';
 
 
@@ -70,16 +71,24 @@ function Kortti() {
           <Button className="btn btn-primary btn-md" style={{width:"100%"}} variant="primary" href="/Virtalahteet">Virtalähteet</Button>
         </Card.Body>
       </Card>
-      <ListGroup className='d-block d-sm-none' style={{marginTop: '30px', width: '100%', padding:'30px' }}>
-      <ListGroup.Item><Button className="btn btn-primary btn-lg" style={{width:"100%"}} variant="primary" href="/Naytonohjaimet">Näytönohjaimet</Button></ListGroup.Item>
-      <ListGroup.Item><Button className="btn btn-primary btn-lg" style={{width:"100%"}} variant="primary" href="/Emolevyt">Emolevyt</Button></ListGroup.Item>
-      <ListGroup.Item><Button className="btn btn-primary btn-lg" style={{width:"100%"}} variant="primary" href="/Muistit">Muistit</Button></ListGroup.Item>
-      <ListGroup.Item><Button className="btn btn-primary btn-lg" style={{width:"100%"}} variant="primary" href="/Prosessorit">Prosessorit</Button></ListGroup.Item>
-      <ListGroup.Item><Button className="btn btn-primary btn-lg" style={{width:"100%"}} variant="primary" href="/Kotelot">Kotelot ja oheistuotteet</Button></ListGroup.Item>
-      <ListGroup.Item><Button className="btn btn-primary btn-lg" style={{width:"100%"}} variant="primary" href="/Virtalahteet">Virtalahteet</Button></ListGroup.Item>
+      <Container>
+      <Row className="justify-content-center">
+      <Col xs={8} sm={6} md={4}>
+      <ListGroup className="text-center" style={{marginTop:"10px"}}>
+      <ListGroup.Item><Button className="btn btn-primary btn-lg" style={{width:"100%", margin:"10px", padding:"10px" }} variant="primary" href="/Naytonohjaimet">Näytönohjaimet</Button></ListGroup.Item>
+      <ListGroup.Item><Button className="btn btn-primary btn-lg" style={{width:"100%", margin:"10px", padding:"10px" }} variant="primary" href="/Emolevyt">Emolevyt</Button></ListGroup.Item>
+      <ListGroup.Item><Button className="btn btn-primary btn-lg" style={{width:"100%", margin:"10px", padding:"10px" }} variant="primary" href="/Muistit">Muistit</Button></ListGroup.Item>
+      <ListGroup.Item><Button className="btn btn-primary btn-lg" style={{width:"100%", margin:"10px", padding:"10px" }} variant="primary" href="/Prosessorit">Prosessorit</Button></ListGroup.Item>
+      <ListGroup.Item><Button className="btn btn-primary btn-lg" style={{width:"100%", margin:"10px", padding:"10px" }} variant="primary" href="/Kotelot">Kotelot ja oheistuotteet</Button></ListGroup.Item>
+      <ListGroup.Item><Button className="btn btn-primary btn-lg" style={{width:"100%", margin:"10px", padding:"10px" }} variant="primary" href="/Virtalahteet">Virtalahteet</Button></ListGroup.Item>
     </ListGroup>
+    </Col>
+    </Row>
+    </Container>
     </div>
     </div>
+   
+   
   );
 }
 
