@@ -62,7 +62,7 @@ export const SignIn = () => {
                 value={showPassword}
                 onChange={() => setShowPassword(prev => !prev)} 
                 style={{marginLeft:"5px"}}/>
-                 <a href="/changepw" style={{marginLeft: "10px"}}>  
+                 <a href="/" style={{marginLeft: "10px"}}>  
                       Unohditko salasanasi?
                 </a>
             </Form.Group>

@@ -210,6 +210,42 @@ app.post('/register', upload.none(), async (req,res) => {
 
 });
 
+//päivittää käyttäjän salasanan 
+app.post('/changepassword', upload.none(), async (req, res) => {
+    const username = req.body.username;
+    const oldPassword = req.body.pw;  
+    const newPassword = req.body.upw;  
+
+    try {
+        const connection = await mysql.createConnection(conf);
+
+        const [rows] = await connection.execute('SELECT id, pw FROM customer WHERE username=?', [username]);
+
+        if (rows.length === 0) {
+            return res.status(404).json({ error: 'Käyttäjää ei löydy' });
+        }
+
+        const userId = rows[0].id;
+        const currentPasswordHash = rows[0].pw;
+
+        const isPasswordValid = await bcrypt.compare(oldPassword, currentPasswordHash);
+
+        if (!isPasswordValid) {
+            return res.status(401).json({ error: 'Virheellinen vanha salasana' });
+        }
+
+
+        const newPasswordHash = await bcrypt.hash(newPassword, 10);
+
+
+        await connection.execute('UPDATE customer SET pw=? WHERE id=?', [newPasswordHash, userId]);
+
+        res.status(200).json({ message: 'Salasana vaihdettu onnistuneesti' });
+
+    } catch (err) {
+        res.status(500).json({ error: err.message });
+    }
+});
 /**
  * Checks the username and password and returns jwt authentication token if authorized. 
  * Supports urlencoded or multipart
