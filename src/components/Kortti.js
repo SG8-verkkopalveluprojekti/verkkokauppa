@@ -71,7 +71,7 @@ function Kortti() {
           <Button className="btn btn-primary btn-md" style={{width:"100%"}} variant="primary" href="/Virtalahteet">Virtalähteet</Button>
         </Card.Body>
       </Card>
-      <Container>
+      <Container className="d-block d-sm-none">
       <Row className="justify-content-center">
       <Col xs={8} sm={6} md={4}>
       <ListGroup className="text-center" style={{marginTop:"10px"}}>
