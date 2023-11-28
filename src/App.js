@@ -12,7 +12,7 @@ import { Register } from "./pages/Register";
 import { Cart } from "./pages/Cart";
 import { Changepw } from "./pages/Changepw";
 import { Naytonohjaimet } from "./pages/Gpu";
-import { Admin } from "./pages/Admin_settings";
+import { Admin } from "./pages/Admin";
 import { Cpu } from "./pages/Cpu";
 import { Emolevyt } from "./pages/Emolevyt";
 import { Kotelot } from "./pages/Kotelot";

@@ -20,12 +20,10 @@ export const Navi = () => {
               <Nav.Link href="/register" className="text-light">Rekisteröidy</Nav.Link>
             </Nav>
             <Nav>
-              <Nav.Link href="/Admin_settings" className="text-light">Ylläpito</Nav.Link>
+              <Nav.Link href="/Admin" className="text-light">Ylläpito</Nav.Link>
             </Nav>
           </Navbar.Collapse>
           </Container>
       </Navbar>
     );
   }
-
-
