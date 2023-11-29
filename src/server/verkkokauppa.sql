@@ -178,8 +178,8 @@ VALUES (
         'Naytonohjaimet'
     ), (
         'Asus TUF GAMING Z790-PLUS',
-        'Intel LGA1700 -kanta
-        Tukee 13. sukupolven Intel Core -prosessoreja ja 12. sukupolven Intel Core, Pentium Gold ja Celeron -prosessoreja
+        'Intel LGA1700 -kanta<br>
+        <br>Tukee 13. sukupolven Intel Core -prosessoreja ja 12. sukupolven Intel Core, Pentium Gold ja Celeron -prosessoreja
         Muisti: 4 x DDR5 DIMM, maks. 128GB
          Audio: Realtek S1220A 7.1 Surround Sound High Definition Audio CODEC  ',
         309,
