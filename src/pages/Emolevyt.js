@@ -1,10 +1,23 @@
 import React from 'react'
 import axios from 'axios'
 import { useState,useEffect } from 'react';
-import { Card, Button} from 'react-bootstrap'
+import { Card, Button, Modal} from 'react-bootstrap'
+import ProductDetails from '../components/ProductDetails';
 
 export const  Emolevyt = () => {
 
+  const [showModal, setShowModal] = useState(false);
+  const [selectedProduct, setSelectedProduct] = useState(null);
+
+  const openModal = (product) => {
+    setSelectedProduct(product);
+    setShowModal(true);
+  };
+
+  const closeModal = () => {
+    setSelectedProduct(null);
+    setShowModal(false);
+  };
  
     const [products, setProducts] = useState(null);
     useEffect(() => {
@@ -21,18 +34,44 @@ export const  Emolevyt = () => {
             <Card.Body>
               <Card.Title>{product.productName}</Card.Title>
               <Card.Text>
-                {/* Tähän voit lisätä tuotteen kuvaus */}
-                {product.description || 'Tuotteen kuvaus puuttuu'}
               </Card.Text>
               <Card.Text style={{fontSize:"25px"}}>
                 {product.price + "€" || 'ei hintaa'}
               </Card.Text>
-              <Button className="btn btn-primary btn-md" style={{width:"100%"}} variant="primary">
+              <Button className="btn btn-primary btn-md" 
+              style={{width:"100%"}}
+               variant="primary">
               Lisää ostoskoriin
               </Button>
+              <Button className="btn btn-primary btn-md" 
+              style={{width:"100%"}}
+               variant="primary"
+               onClick={() => openModal(product)}>
+              Lisätietoa
+              </Button>
+              
             </Card.Body>
           </Card>
         ))}
+         <Modal show={showModal} onHide={closeModal}>
+        <Modal.Header closeButton>
+          <Modal.Title>Product Details</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          {selectedProduct && <ProductDetails product={selectedProduct} />}
+          <Button className="btn btn-primary btn-md" style={{width:"100%"}} variant="primary">
+              Lisää ostoskoriin
+              </Button>
+              <div>
+            tähän tulis arvostelujuttu alle
+          </div>
+        </Modal.Body>
+      </Modal>
       </div>
     );
   }
+
+
+ 
+
+  
