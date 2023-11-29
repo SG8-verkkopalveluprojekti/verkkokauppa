@@ -32,7 +32,7 @@ export const Changepw = () => {
           <Col xs={12} md={6}>
           <h1>Vaihda salasanasi</h1>
             <Form style={{ border: '1px solid black', padding: '50px', borderRadius: '4px', backgroundColor: '#D3D3D3' }}>
-              <Form.Group controlId="formBasicUsername">
+              <Form.Group>
                 <Form.Label>Käyttäjänimi</Form.Label><Form.Label style={{ color: 'red' }}> *</Form.Label>
                 <Form.Control
                   type="text"
@@ -42,7 +42,7 @@ export const Changepw = () => {
                   />
               </Form.Group>
   
-              <Form.Group controlId="formBasicPassword" style={{marginTop:"10px"}}>
+              <Form.Group  style={{marginTop:"10px"}}>
                 <Form.Label>Vanha salasana</Form.Label><Form.Label style={{ color: 'red' }}> *</Form.Label>
                 <Form.Control
                   type='password'
@@ -52,7 +52,7 @@ export const Changepw = () => {
                   />
                
               </Form.Group>
-              <Form.Group controlId="formBasicPassword" style={{marginTop:"10px"}}>
+              <Form.Group  style={{marginTop:"10px"}}>
                 <Form.Label>Uusi salasana</Form.Label><Form.Label style={{ color: 'red' }}> *</Form.Label>
                 <Form.Control
                   type='password'
@@ -62,7 +62,7 @@ export const Changepw = () => {
                   />
                
               </Form.Group>
-              <Form.Group controlId="formBasicPassword" style={{marginTop:"10px"}}>
+              <Form.Group  style={{marginTop:"10px"}}>
                 <Form.Label>Vahvista uusi salasana</Form.Label><Form.Label style={{ color: 'red' }}> *</Form.Label>
                 <Form.Control
                   type='password' 
@@ -73,10 +73,10 @@ export const Changepw = () => {
               </Form.Group>
   
               
-              <Button onClick={Changepassword()} href="#" style={{ marginTop: '20px' , backgroundColor: 'green' }} variant="primary" type="submit">
+              <Button onClick={Changepassword} style={{ marginTop: '20px' , backgroundColor: 'green' }} variant="primary" type="submit">
                 Vaihda salasanasi
               </Button>
-             
+              
   
             </Form>
           </Col>

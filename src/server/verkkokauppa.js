@@ -214,7 +214,7 @@ app.post('/register', upload.none(), async (req,res) => {
 app.post('/changepassword', upload.none(), async (req, res) => {
     const username = req.body.username;
     const oldPassword = req.body.pw;  
-    const newPassword = req.body.upw;  
+    const newPassword = req.body.npw;  
 
     try {
         const connection = await mysql.createConnection(conf);
