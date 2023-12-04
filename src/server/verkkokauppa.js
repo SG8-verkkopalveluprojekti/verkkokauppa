@@ -219,26 +219,23 @@ app.post('/changepassword', upload.none(), async (req, res) => {
     try {
         const connection = await mysql.createConnection(conf);
 
-        const [rows] = await connection.execute('SELECT id, pw FROM customer WHERE username=?', [username]);
+        const [rows] = await connection.execute('SELECT pw FROM customer WHERE username=?', [username]);
 
         if (rows.length === 0) {
-            return res.status(404).json({ error: 'Käyttäjää ei löydy' });
+            res.status(404).json({ error: 'Käyttäjää ei löydy' });
         }
 
-        const userId = rows[0].id;
         const currentPasswordHash = rows[0].pw;
 
         const isPasswordValid = await bcrypt.compare(oldPassword, currentPasswordHash);
 
         if (!isPasswordValid) {
-            return res.status(401).json({ error: 'Virheellinen vanha salasana' });
+        res.status(401).json({ error: 'Virheellinen vanha salasana' });
         }
-
 
         const newPasswordHash = await bcrypt.hash(newPassword, 10);
 
-
-        await connection.execute('UPDATE customer SET pw=? WHERE id=?', [newPasswordHash, userId]);
+        await connection.execute('UPDATE customer SET pw=? WHERE username=?', [newPasswordHash, username]);
 
         res.status(200).json({ message: 'Salasana vaihdettu onnistuneesti' });
 
