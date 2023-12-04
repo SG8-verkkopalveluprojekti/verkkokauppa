@@ -2,7 +2,7 @@ import "./SearchResult.css"
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useLocation } from "react-router-dom";
-import { Button } from "react-bootstrap";
+import { AddCart } from "../components/AddCart";
 
 export const SearchResultPage = () => {
   const location = useLocation();
@@ -31,13 +31,7 @@ export const SearchResultPage = () => {
           <div className="product" key={product.id}>
             <h3 className="product-name">{product.productName}</h3>
             <p className="product-price">Hinta: {product.price}€</p>
-            <Button
-              className="btn btn-primary btn-md"
-              style={{ width: "100%" }}
-              variant="primary"
-            >
-              Lisää ostoskoriin
-            </Button>
+            <AddCart product={product} key={product.id} />
           </div>
         ))}
       </section>

@@ -1,5 +1,6 @@
 import React from 'react'
 import axios from 'axios'
+import { AddCart } from '../components/AddCart';
 import { useState,useEffect } from 'react';
 import { Card, Button, Modal} from 'react-bootstrap'
 import ProductDetails from '../components/ProductDetails';
@@ -41,9 +42,7 @@ export const  Naytonohjaimet = () => {
               <Card.Text style={{fontSize:"25px"}}>
                 {product.price + "€" || 'ei hintaa'}
               </Card.Text>
-              <Button className="btn btn-primary btn-md" style={{width:"100%"}} variant="primary">
-              Lisää ostoskoriin
-              </Button>
+              <AddCart product={product} key={product.id} />
               <Button className="btn btn-primary btn-md" style={{width:"100%"}} variant="primary" onClick={() => openModal(product)}>
           
               Lisätietoa
