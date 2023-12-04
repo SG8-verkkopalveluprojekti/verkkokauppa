@@ -1,23 +1,21 @@
 import React from 'react'
 import axios from 'axios'
+import { AddCart } from '../components/AddCart';
+import MoreInfo from '../components/MoreInfo';
 import { useState,useEffect } from 'react';
 import { Card, Button, Modal} from 'react-bootstrap'
-import ProductDetails from '../components/ProductDetails';
-import { Image } from 'react-bootstrap';
-import { useNavigate } from 'react-router-dom';
+
 
 export const  Emolevyt = () => {
 
   const [showModal, setShowModal] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState(null);
-  const navigate = useNavigate();
+ 
   const openModal = (product) => {
     setSelectedProduct(product);
     setShowModal(true);
   };
-const addToCart = (product) => {
-  navigate("/cart",{state:{product},});
-  };
+
 
   const closeModal = () => {
     setSelectedProduct(null);
@@ -43,11 +41,7 @@ const addToCart = (product) => {
               <Card.Text style={{fontSize:"25px"}}>
                 {product.price + "€" || 'ei hintaa'}
               </Card.Text>
-              <Button className="btn btn-primary btn-md" 
-              style={{width:"100%"}}
-               variant="primary" onClick={()=>addToCart(product)}>
-              Lisää ostoskoriin
-              </Button>
+              <AddCart product={product} key={product.id} />
               <Button className="btn btn-primary btn-md" 
               style={{width:"100%"}}
                variant="primary"
@@ -58,29 +52,7 @@ const addToCart = (product) => {
             </Card.Body>
           </Card>
         ))}
-         <Modal show={showModal} onHide={closeModal} size='lg' style={{margin:'auto'}}>
-        <Modal.Header closeButton>
-          <Modal.Title>
-          {selectedProduct && (
-              <>
-                <Image src={selectedProduct.imageUrl || 'default-image-url'}
-                 alt={selectedProduct.productName} 
-                 style={{ marginRight: 'auto', maxHeight: '300px' }} />
-                {selectedProduct.productName}
-              </>
-            )}
-          </Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          {selectedProduct && <ProductDetails product={selectedProduct} />}
-          <Button className="btn btn-primary btn-md" style={{width:"100%"}} variant="primary">
-              Lisää ostoskoriin
-              </Button>
-              <div>
-            tähän tulis arvostelujuttu alle
-          </div>
-        </Modal.Body>
-      </Modal>
+          <MoreInfo showModal={showModal} closeModal={closeModal} selectedProduct={selectedProduct} />
       </div>
     );
   }
