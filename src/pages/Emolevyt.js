@@ -4,15 +4,19 @@ import { useState,useEffect } from 'react';
 import { Card, Button, Modal} from 'react-bootstrap'
 import ProductDetails from '../components/ProductDetails';
 import { Image } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
 
 export const  Emolevyt = () => {
 
   const [showModal, setShowModal] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState(null);
-
+  const navigate = useNavigate();
   const openModal = (product) => {
     setSelectedProduct(product);
     setShowModal(true);
+  };
+const addToCart = (product) => {
+  navigate("/cart",{state:{product},});
   };
 
   const closeModal = () => {
@@ -41,7 +45,7 @@ export const  Emolevyt = () => {
               </Card.Text>
               <Button className="btn btn-primary btn-md" 
               style={{width:"100%"}}
-               variant="primary">
+               variant="primary" onClick={()=>addToCart(product)}>
               Lisää ostoskoriin
               </Button>
               <Button className="btn btn-primary btn-md" 
