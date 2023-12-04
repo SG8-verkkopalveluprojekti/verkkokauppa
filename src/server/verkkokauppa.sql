@@ -27,12 +27,15 @@ CREATE TABLE
 
 CREATE TABLE
     customer(
-        id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
         first_name VARCHAR(255),
         last_name VARCHAR(255),
         username VARCHAR(255) UNIQUE,
-        pw VARCHAR(255)
+        pw VARCHAR(255),
+        is_admin BOOLEAN DEFAULT false
     );
+
+    INSERT INTO customer (first_name, last_name, username, pw, is_admin) VALUES ('Admin', 'User', 'admin_user', 'admin_password', true);
+
 
 CREATE TABLE
     customer_order(
