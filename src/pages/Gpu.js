@@ -1,10 +1,10 @@
 import React from 'react'
 import axios from 'axios'
+import MoreInfo from '../components/MoreInfo';
 import { AddCart } from '../components/AddCart';
 import { useState,useEffect } from 'react';
 import { Card, Button, Modal} from 'react-bootstrap'
-import ProductDetails from '../components/ProductDetails';
-import { Image } from 'react-bootstrap';
+
 
 export const  Naytonohjaimet = () => {
 
@@ -50,29 +50,7 @@ export const  Naytonohjaimet = () => {
             </Card.Body>
           </Card>
         ))}
-          <Modal show={showModal} onHide={closeModal} size='lg'>
-        <Modal.Header closeButton>
-          <Modal.Title>
-          {selectedProduct && (
-              <>
-                <Image src={selectedProduct.imageUrl || 'default-image-url'}
-                 alt={selectedProduct.productName} 
-                 style={{ marginRight: '10px', maxHeight: '300px' }} />
-                {selectedProduct.productName}
-              </>
-            )}
-          </Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          {selectedProduct && <ProductDetails product={selectedProduct} />}
-          <Button className="btn btn-primary btn-md" style={{width:"100%"}} variant="primary">
-              Lisää ostoskoriin
-              </Button>
-              <div>
-            tähän tulis arvostelujuttu alle
-          </div>
-        </Modal.Body>
-      </Modal>
+          <MoreInfo showModal={showModal} closeModal={closeModal} selectedProduct={selectedProduct} />
       </div>
     );
   }
