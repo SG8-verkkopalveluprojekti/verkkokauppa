@@ -14,7 +14,11 @@ export const Navi = () => {
             <Nav className="me-auto">
               <Nav.Link href="/"className="text-light">Home</Nav.Link>
               <Nav.Link href="/help"className="text-light">Apua?</Nav.Link>
+              <Nav.Link href="/feedback"className="text-light">Asiakaspalaute</Nav.Link>
             </Nav>
+            
+              
+            
             <Nav className="ms-auto">
               <Nav.Link href="/signin" className="text-light">Kirjaudu</Nav.Link>
               <Nav.Link href="/register" className="text-light">Rekisteröidy</Nav.Link>

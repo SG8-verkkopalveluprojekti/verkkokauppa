@@ -21,6 +21,7 @@ import { Muistit } from "./pages/Muisti";
 import { NotFound } from "./pages/NotFound";
 import {BottomNavbar} from "./pages/phonenavbar"
 import { SearchResultPage } from "./pages/SearchResultPage";
+import { Feedback } from "./pages/Feedback";
 
 
 
@@ -54,6 +55,7 @@ function App() {
       <Route path="/muistit" element={<Muistit />} />
       <Route path="*" element={<NotFound />} />
       <Route path="/search-results" element={<SearchResultPage products={products} searchTerm={searchTerm}/>} /> 
+      <Route path="/feedback" element={<Feedback />} />
      
 
       
