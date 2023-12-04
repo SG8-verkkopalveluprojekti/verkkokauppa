@@ -1,4 +1,4 @@
-import "./SearchResult.css"
+import "./SearchResult.css";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useLocation } from "react-router-dom";
@@ -12,7 +12,9 @@ export const SearchResultPage = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`http://localhost:3001/products?search=${searchTerm}`);
+        const response = await axios.get(
+          `http://localhost:3001/products?search=${searchTerm}`
+        );
         setProducts(response.data);
       } catch (error) {
         console.error("Error fetching products", error);
