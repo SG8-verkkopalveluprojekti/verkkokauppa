@@ -10,7 +10,7 @@ export const Navi = () => {
       <Navbar expand="lg" className="navibar">
         <Container>
           <Navbar.Brand href="/" className="text-light">
-          <img src='https://www.students.oamk.fi/~n2tyto00/Kevat23/img/logo2.2.png' style={{height:"50px" }}></img> 
+          <img src='https://www.students.oamk.fi/~n2tyto00/Kevat23/img/logo2.2.png' style={{height:"50px" }} alt='logo'></img> 
             </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">

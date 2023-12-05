@@ -1,6 +1,6 @@
 import React from "react";
 import { AddCart } from "./AddCart";
-import { Modal, Image, Button } from "react-bootstrap";
+import { Modal, Image,  } from "react-bootstrap";
 import ProductDetails from "./ProductDetails";
 
 const MoreInfo = ({ showModal, closeModal, selectedProduct }) => {
