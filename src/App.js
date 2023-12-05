@@ -1,5 +1,5 @@
 import "./App.css";
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Header } from "./components/Header";
 import { Footer } from "./components/Footer";
 import { Search } from "./components/Search";
@@ -28,9 +28,8 @@ import { Feedback } from "./pages/Feedback";
 
 
 
-function App() {
-  const [products, setProducts] = useState([]);
-  const [searchTerm, setSearchTerm] = useState("");
+function App({products, searchTerm}) {
+
   return (
     <>
     <Header />
