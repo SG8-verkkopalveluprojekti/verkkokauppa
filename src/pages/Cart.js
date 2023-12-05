@@ -76,7 +76,7 @@ export const Cart = () => {
                 <button onClick={() => updateCount(item, -1)}>-</button>
               </div>
               <div>
-                <span>{item.price * item.count}€</span>
+                <span>${item.price * item.count}</span>
                 <button onClick={() => removeItemFromCart(item)}>Remove</button>
               </div>
             </div>
