@@ -5,6 +5,7 @@ import ProductDetails from "./ProductDetails";
 
 const MoreInfo = ({ showModal, closeModal, selectedProduct }) => {
   return (
+    <>
     <Modal show={showModal} onHide={closeModal} size="lg">
       <Modal.Header closeButton>
         <Modal.Title>
@@ -32,6 +33,7 @@ const MoreInfo = ({ showModal, closeModal, selectedProduct }) => {
         )}
       </Modal.Body>
     </Modal>
+    </>
   );
 };
 
