@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import "./Search.css";
 import axios from "axios";
 
-export const Search = () => {
+export const Search = ({ shoppingCart = [] }) => {
   const [searchTerm, setSearchTerm] = useState("");
   const [products, setProducts] = useState([]);
   const navigate = useNavigate();
@@ -65,7 +65,7 @@ export const Search = () => {
             <div className="cart">
               <Link to="/cart" >
                 <i className="fa fa-shopping-bag icon-circle"></i>
-                <span>0</span>
+                <span>{shoppingCart.length}</span>
               </Link>
             </div>
           </div>

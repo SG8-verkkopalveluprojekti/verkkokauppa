@@ -22,7 +22,7 @@ export const Emolevyt = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3001/products?category=Virtalahteet")
+      .get("http://localhost:3001/products?category=Emolevyt")
       .then((resp) => setProducts(resp.data))
       .catch((error) => console.log(error.message));
   }, []);

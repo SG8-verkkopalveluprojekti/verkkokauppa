@@ -64,7 +64,7 @@ export const Cart = () => {
 					shoppingCart.length && shoppingCart.map((item) => (
 						<div className='cart_box' key={item.id}>
 							<div className='cart_img'>
-								<img src={item.imageUrl} />
+								<img src={item.imageUrl} alt='' />
 								<div className='details'>
 									<p>{item.productName}</p>
 									{/* <p>{item.description}</p> */}
