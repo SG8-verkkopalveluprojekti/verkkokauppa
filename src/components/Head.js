@@ -1,6 +1,11 @@
 import React from "react";
+import { useCurrency } from './CurrencyContext';
+import Button from 'react-bootstrap/Button';
+
 
 export const Head = () => {
+  const { selectedCurrency, toggleCurrency } = useCurrency();
+
   return (
     <div>
       <section className="head" style={{ backgroundColor: "#333" }}>
@@ -17,7 +22,9 @@ export const Head = () => {
           <span>🏴‍☠️</span>
           <label htmlFor="">FI</label>
           <span>🏁</span>
-          <label htmlFor="">EUR</label>
+          <div>
+          <Button variant="outline-info" size="sm" onClick={toggleCurrency}>({selectedCurrency.toUpperCase()})</Button>
+          </div>
         </div>
       </section>
     </div>

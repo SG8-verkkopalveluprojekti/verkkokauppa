@@ -48,13 +48,19 @@ app.get('/products', async (req, res) => {
         let result;        
 
         if(category){
-            result = await connection.execute("SELECT id, product_name productName, product_description description, price, image_url imageUrl, category  FROM product WHERE category=?", [category]);
+            result = await connection.execute
+            ("SELECT id, product_name productName, product_description description, price, price_usd, image_url imageUrl, category  FROM product WHERE category=?",
+                 [category]);
         } else if (search) {
-            result = await connection.execute("SELECT id, product_name productName,product_description description, price, image_url imageUrl, category FROM product WHERE product_name LIKE ?", [`%${search}%`])
+            result = await connection.execute
+            ("SELECT id, product_name productName,product_description description, price, price_usd, image_url imageUrl, category FROM product WHERE product_name LIKE ?", 
+                [`%${search}%`]);
         }
         
         else{
-            result = await connection.execute("SELECT id, product_name productName,product_description description, price, image_url imageUrl, category  FROM product");
+            result = await connection.execute(
+                "SELECT id, product_name productName,product_description description, price, price_usd, image_url imageUrl, category  FROM product"
+                );
         }
         
         //First index in the result contains the rows in an array
@@ -363,4 +369,19 @@ app.post('/image', upload2.single('pic'), async (req, res) => {
     //res.send('images/'+req.file.filename);
 });
 
-/**/
+
+/**
+app.get('/products', async (req, res) => {
+    try {
+      const connection = await mysql.createConnection(conf);
+  
+      const [rows] = await connection.execute('SELECT price_usd FROM product');
+  
+      const currencies = rows.map((row) => row.price_usd);
+  
+      res.json({ currencies });
+    } catch (err) {
+      res.status(500).json({ error: err.message });
+    }
+  });
+  */

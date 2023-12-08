@@ -1,8 +1,20 @@
 import React from "react";
 import { Card, Button } from "react-bootstrap";
 import { AddCart } from "./AddCart";
+import { useCurrency } from "./CurrencyContext";
 
 const ProductCard = ({ product, openModal }) => {
+  const { selectedCurrency } = useCurrency();
+
+  const formatPrice = (price) => {
+    if (selectedCurrency === "usd") {
+      return product.price_usd + "$" || "No price";
+    } else if (selectedCurrency === "eur") {
+      return product.price + "€" || "No price";
+    }
+    return "No price";
+  };
+
   return (
     <Card
       key={product.id}
@@ -26,7 +38,7 @@ const ProductCard = ({ product, openModal }) => {
         <Card.Title>{product.productName}</Card.Title>
         <Card.Text></Card.Text>
         <Card.Text style={{ fontSize: "25px" }}>
-          {product.price + "€" || "ei hintaa"}
+          {formatPrice(product.price)}
         </Card.Text>
         <AddCart product={product} key={product.id} />
         <Button className="btn btn-primary btn-md"
