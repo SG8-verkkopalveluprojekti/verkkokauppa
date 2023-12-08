@@ -52,10 +52,11 @@ export const Cart = () => {
   }
 
   const removeItemFromCart = (item) => {
-    let updatedCart = shoppingCart;
+    let updatedCart = [...shoppingCart];
     setShoppingCart(updatedCart.filter((element) => element.id !== item.id));
   };
-
+  console.log('shoppingCart in Parent:', shoppingCart)
+  
   return (
     <>
       <h3>Shopping Cart</h3>
@@ -76,7 +77,7 @@ export const Cart = () => {
                 <button onClick={() => updateCount(item, -1)}>-</button>
               </div>
               <div>
-                <span>${item.price * item.count}</span>
+                <span>{item.price * item.count}€</span>
                 <button onClick={() => removeItemFromCart(item)}>Remove</button>
               </div>
             </div>
@@ -87,7 +88,7 @@ export const Cart = () => {
           </div>
         )}
       </article>
-
+          
       {/* Display total price */}
       <div>Hinta Yhteensä: {totalPrice}€</div>
     </>

@@ -1,12 +1,15 @@
-import React, { useState } from "react";
+import React, { useState,  } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./Search.css";
 import axios from "axios";
 
-export const Search = ({ shoppingCart = [] }) => {
+export const Search = ({ shoppingCart }) => {
   const [searchTerm, setSearchTerm] = useState("");
   const [products, setProducts] = useState([]);
   const navigate = useNavigate();
+
+  
+
 
   const handleSearchClick = async () => {
     try {
@@ -38,7 +41,7 @@ export const Search = ({ shoppingCart = [] }) => {
     }
   };
 
-  
+ 
 
   return (
     <>
@@ -65,7 +68,7 @@ export const Search = ({ shoppingCart = [] }) => {
             <div className="cart">
               <Link to="/cart" >
                 <i className="fa fa-shopping-bag icon-circle"></i>
-                <span>{shoppingCart.length}</span>
+                <span>{shoppingCart?.length || 0}</span>
               </Link>
             </div>
           </div>
