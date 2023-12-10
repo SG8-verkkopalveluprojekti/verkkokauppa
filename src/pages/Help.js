@@ -15,6 +15,10 @@ export const Help = () => {
           Kysymys: Miksi tuotteeni ei toimi?
           <br />
           Vastaus: Tarkista, että olet kytkenyt sen oikein päälle ja muita vianetsintävinkkejä.
+          <br />
+          Kysymys: Kuinka kauan tuotteella kestää saapua tilauksen jälkeen?
+          <br />
+          Vastaus: Toimitus-aika on 5-7 työpäivää tilauksesta.
         </Accordion.Body>
       </Accordion.Item>
 
@@ -24,43 +28,58 @@ export const Help = () => {
           {/* Asiakaspalautussisältö tähän */}
           Kysymys: Miten voin palauttaa tuotteeni?
           <br />
-          Vastaus: . Palautettavan tuotteen tulee olla käyttämätön ja alkuperäispakkauksessa.
+          Vastaus: Voit tuoda tuotteen myymälämme huoltopisteelle. Palautettavan tuotteen tulee olla käyttämätön ja alkuperäispakkauksessa. Tuotteilla on 30 päivän palautusoikeus.
         </Accordion.Body>
       </Accordion.Item>
 
       <Accordion.Item eventKey="2">
-        <Accordion.Header>Tietosuojaseloste</Accordion.Header>
+        <Accordion.Header>Maksutavat</Accordion.Header>
         <Accordion.Body>
-          {/* Tietosuojaselostesivu tähän */}
-          **Tietosuojaseloste - Nettikaubba**<br/>
-
-          Päivitetty viimeksi: 3.12.2023<br/>
-
-          Tervetuloa Nettikaubban tietosuojaselosteeseen. Tämä seloste kuvaa, miten keräämme, käytämme ja suojelemme henkilötietojasi.<br/>
-
-          {/* Lisää tietosuojaselosteen sisältöä */}
-
+          {/* Maksutapa info tähän */}
+          Kysymys: Mitkä maksutavat ovat käytettävissä?
+          <br />
+          Vastaus: Hyväksymme luottokortit ja verkkopankkimaksut
+          <br />
+          Kysymys: Millä valuutalla voin maksaa?
+          <br />
+          Vastaus: Hyväksymme eurot ja dollarit(USD).
         </Accordion.Body>
       </Accordion.Item>
 
       {/* Lisää UKK-osioita tarvittaessa */}
       <Accordion.Item eventKey="3">
-        <Accordion.Header>Maksutavat</Accordion.Header>
+        <Accordion.Header>Tietosuojaseloste</Accordion.Header>
         <Accordion.Body>
-          {/* Maksutapojen UKK-sisältö tähän */}
-          Kysymys: Mitkä maksutavat ovat käytettävissä?
-          <br />
-          Vastaus: Hyväksymme luottokortit ja verkkopankkimaksut
+        **Tietosuojaseloste - Nettikaubba**<br/>
+
+Päivitetty viimeksi: 3.12.2023<br/>
+
+Tervetuloa Nettikaubban tietosuojaselosteeseen. Tämä seloste kuvaa, miten keräämme, käytämme ja suojelemme henkilötietojasi.<br/>
+
+**Kerätyt tiedot**<br/>
+Keräämme tilauksen käsittelyyn ja toimitukseen tarvittavat tiedot, kuten nimesi, osoitteesi ja maksutiedot.<br/>
+
+**Evästeet**<br/>
+Käytämme evästeitä parantaaksemme sivuston käyttökokemusta. Voit hallita evästeasetuksiasi selaimessasi.<br/>
+
+**Miten käytämme tietojasi**<br/>
+Käytämme kerättyjä tietoja tilaustesi käsittelyyn ja toimitukseen. Emme jaa tietojasi kolmansille osapuolille markkinointitarkoituksiin.<br/>
+
+**Tietoturva**<br/>
+Tietojasi suojataan turvallisilla tietokannoilla ja suojaustoimenpiteillä. Maksukorttitietoja ei tallenneta.<br/>
+
+**Oikeutesi**<br/>
+Sinulla on oikeus pyytää tietojesi kopiota, oikaista virheelliset tiedot ja pyytää tietojesi poistamista. Ota yhteyttä +044 000 0000 kysyäksesi lisätietoja.<br/>
+
+**Muutokset tietosuojaselosteeseen**<br/>
+Pidätämme oikeuden päivittää tätä tietosuojaselostetta tarvittaessa. Päivitetyt versiot julkaistaan sivustollamme.<br/>
+
+**Yhteydenotto**<br/>
+Jos sinulla on kysyttävää tietosuojaselosteestamme, ota meihin yhteyttä osoitteeseen example@example.com.<br/>
+Kiitos, että valitsit Nettikaubban!
         </Accordion.Body>
       </Accordion.Item>
     </Accordion>
   );
 };
-
-//
-//            </Accordion.Body>
-//          </Accordion.Item>
-//        </Accordion>
-//      );
-//    }
 
