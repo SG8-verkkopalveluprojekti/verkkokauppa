@@ -27,6 +27,8 @@ export const Virtalähteet = () => {
   }, []);
 
   return (
+    <>
+    <h3 className="text-center" style={{marginTop:"10px"}}>Virtalähteet</h3>
     <div className="row justify-content-center">
       {products &&
         products.map((product) => (
@@ -44,5 +46,6 @@ export const Virtalähteet = () => {
         selectedProduct={selectedProduct}
       />
     </div>
+    </>
   );
 };

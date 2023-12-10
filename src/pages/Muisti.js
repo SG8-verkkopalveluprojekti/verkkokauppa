@@ -28,6 +28,8 @@ export const Muistit = () => {
   }, []);
 
   return (
+    <>
+    <h3 className="text-center" style={{marginTop:"10px"}}>Muistit</h3>
     <div className="row justify-content-center">
       {products &&
         products.map((product) => (
@@ -45,6 +47,7 @@ export const Muistit = () => {
         selectedProduct={selectedProduct}
       />
     </div>
+  </>
   );
 };
 // {/* Tähän voit lisätä tuotteen kuvaus */}
