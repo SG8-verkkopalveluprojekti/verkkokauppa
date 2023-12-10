@@ -49,17 +49,17 @@ app.get('/products', async (req, res) => {
 
         if(category){
             result = await connection.execute
-            ("SELECT id, product_name productName, product_description description, price, price_usd, image_url imageUrl, category  FROM product WHERE category=?",
+            ("SELECT id, product_name productName, product_description description,product_description1 description1,product_description2 description2,product_description3 description3, price, price_usd, image_url imageUrl, category  FROM product WHERE category=?",
                  [category]);
         } else if (search) {
             result = await connection.execute
-            ("SELECT id, product_name productName,product_description description, price, price_usd, image_url imageUrl, category FROM product WHERE product_name LIKE ?", 
+            ("SELECT id, product_name productName,product_description description,product_description1 description1, product_description2 description2,product_description3 description3, price, price_usd, image_url imageUrl, category FROM product WHERE product_name LIKE ?", 
                 [`%${search}%`]);
         }
         
         else{
             result = await connection.execute(
-                "SELECT id, product_name productName,product_description description, price, price_usd, image_url imageUrl, category  FROM product"
+                "SELECT id, product_name productName,product_description description,product_description1 description1,product_description2 description2,product_description3 description3, price, price_usd, image_url imageUrl, category  FROM product"
                 );
         }
         
