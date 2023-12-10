@@ -3,69 +3,64 @@ import React from 'react';
 
 export const Help = () => {
   return (
-           
-        <Accordion defaultActiveKey={['0']} alwaysOpen>
-          <Accordion.Item eventKey="0">
-            <Accordion.Header>Usein kysytyt kysymykset</Accordion.Header>
-            <Accordion.Body>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-              minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-              aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-              pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-              culpa qui officia deserunt mollit anim id est laborum.
-            </Accordion.Body>
-          </Accordion.Item>
+    <Accordion defaultActiveKey={['0']} alwaysOpen>
+      <Accordion.Item eventKey="0">
+        <Accordion.Header>Usein kysytyt kysymykset</Accordion.Header>
+        <Accordion.Body>
+          {/* UKK-sisältö tähän */}
+          Kysymys: Miten teen tilauksen?
+          <br />
+          Vastaus: Voit tehdä tilauksen lisäämällä haluamasi tuotteet ostoskoriin ja seuraamalla maksuprosessia.
+          <br />
+          Kysymys: Miksi tuotteeni ei toimi?
+          <br />
+          Vastaus: Tarkista, että olet kytkenyt sen oikein päälle ja muita vianetsintävinkkejä.
+        </Accordion.Body>
+      </Accordion.Item>
 
-          <Accordion.Item eventKey="1">
-            <Accordion.Header>Asiakaspalautukset</Accordion.Header>
-            <Accordion.Body>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-              minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-              aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-              pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-              culpa qui officia deserunt mollit anim id est laborum.
-            </Accordion.Body>
-          </Accordion.Item>
-        
-        
-        <Accordion.Item eventKey="2">
-            <Accordion.Header>Tietosuojaseloste</Accordion.Header>
-            <Accordion.Body>
-            **Tietosuojaseloste - Kuvitteellinen Nettikauppa**<br/>
+      <Accordion.Item eventKey="1">
+        <Accordion.Header>Asiakaspalautukset</Accordion.Header>
+        <Accordion.Body>
+          {/* Asiakaspalautussisältö tähän */}
+          Kysymys: Miten voin palauttaa tuotteeni?
+          <br />
+          Vastaus: . Palautettavan tuotteen tulee olla käyttämätön ja alkuperäispakkauksessa.
+        </Accordion.Body>
+      </Accordion.Item>
 
-Päivitetty viimeksi: 17.11.2023<br/>
+      <Accordion.Item eventKey="2">
+        <Accordion.Header>Tietosuojaseloste</Accordion.Header>
+        <Accordion.Body>
+          {/* Tietosuojaselostesivu tähän */}
+          **Tietosuojaseloste - Nettikaubba**<br/>
 
-Tervetuloa Kuvitteellisen Nettikaupan tietosuojaselosteeseen. Tämä seloste kuvaa, miten keräämme, käytämme ja suojelemme henkilötietojasi.<br/>
+          Päivitetty viimeksi: 3.12.2023<br/>
 
-**Kerätyt tiedot**<br/>
-Keräämme tietoja, joita tarvitsemme tilaustesi käsittelyyn ja toimitukseen. Tämä saattaa sisältää nimesi, osoitteesi, sähköpostiosoitteesi ja maksutiedot.<br/>
+          Tervetuloa Nettikaubban tietosuojaselosteeseen. Tämä seloste kuvaa, miten keräämme, käytämme ja suojelemme henkilötietojasi.<br/>
 
-**Evästeet**<br/>
-Käytämme evästeitä parantaaksemme sivustomme käyttäjäkokemusta. Evästeet ovat pieniä tekstitiedostoja, jotka tallentuvat laitteellesi. Voit hallita evästeasetuksiasi selaimessasi.<br/>
+          {/* Lisää tietosuojaselosteen sisältöä */}
 
-**Miten käytämme tietojasi**<br/>
-Käytämme kerättyjä tietoja tilaustesi käsittelyyn, toimitukseen ja asiakaspalveluun. Emme jaa tietojasi kolmansille osapuolille markkinointitarkoituksiin.<br/>
+        </Accordion.Body>
+      </Accordion.Item>
 
-**Tietoturva**<br/>
-Suojellaksemme tietojasi käytämme turvallisia tietokantoja ja suojaustoimenpiteitä. Emme tallenna maksukorttitietojasi.<br/>
+      {/* Lisää UKK-osioita tarvittaessa */}
+      <Accordion.Item eventKey="3">
+        <Accordion.Header>Maksutavat</Accordion.Header>
+        <Accordion.Body>
+          {/* Maksutapojen UKK-sisältö tähän */}
+          Kysymys: Mitkä maksutavat ovat käytettävissä?
+          <br />
+          Vastaus: Hyväksymme luottokortit ja verkkopankkimaksut
+        </Accordion.Body>
+      </Accordion.Item>
+    </Accordion>
+  );
+};
 
-**Oikeutesi**<br/>
-Sinulla on oikeus pyytää kopio tietoistasi, oikaista virheelliset tiedot ja pyytää tietojesi poistamista. Ota meihin yhteyttä +044 000 0000 kysyäksesi lisätietoja.<br/>
-
-**Muutokset tietosuojaselosteeseen**<br/>
-Pidätämme oikeuden päivittää tätä tietosuojaselostetta tarvittaessa. Päivitetyt versiot julkaistaan sivustollamme.<br/>
-
-**Yhteydenotto**<br/>
-Jos sinulla on kysyttävää tietosuojaselosteestamme, ota meihin yhteyttä osoitteeseen example@example.com.<br/>
-Kiitos, että valitsit Kuvitteellisen Nettikaupan!
-
-            </Accordion.Body>
-          </Accordion.Item>
-        </Accordion>
-      );
-    }
+//
+//            </Accordion.Body>
+//          </Accordion.Item>
+//        </Accordion>
+//      );
+//    }
 
