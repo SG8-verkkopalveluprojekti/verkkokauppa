@@ -37,17 +37,17 @@ export const Register = () => {
 
           return (
             <>
-            <Container style={{border:"3px solid grey",maxWidth:'80%',height:'80%', marginTop:"100px", borderRadius:"5px", background:"#d3d3d3" }}>
+            <Container xs={12} sm={10} md={8} className="px-0" style={{border:"3px solid grey", marginTop:"100px", borderRadius:"5px", background:"#d3d3d3", fontSize:"small" }}>
               <Row className="justify-content-md-center">
-                <Col md={12}>
-                  <Form style={{margin:"25px",height:'80%'}}>
+                <Col xs={12} sm={10} md={8}  >
+                  <Form style={{marginTop:"25px", margin:"5px" }}>
                   <Row>
                       <Col>
                         <Form.Group controlId="email">
-                          <Form.Label>Sähköposti</Form.Label><Form.Label style={{ color: 'red' }}> *</Form.Label>
+                          <Form.Label >Sähköposti <span style={{ color: 'red'}}> *</span></Form.Label>
                           <Form.Control
                             type="email"
-                            placeholder="Syötä sähköpostiosoite"
+                            placeholder="Sähköpostiosoite"
                             value={email}
                             onChange={e => setEmail(e.target.value)}
                             required
@@ -56,10 +56,10 @@ export const Register = () => {
                       </Col>
                       <Col>
                         <Form.Group controlId="uname">
-                          <Form.Label>Käyttäjänimi</Form.Label><Form.Label style={{ color: 'red' }}> *</Form.Label>
+                          <Form.Label>Käyttäjänimi<span style={{ color: 'red'}}> *</span></Form.Label>
                           <Form.Control
                             type="text"
-                            placeholder="Syötä käyttäjänimesi"
+                            placeholder="Käyttäjänimesi"
                             name="uname"
                             value={username}
                             onChange={e => setUsername(e.target.value)}
@@ -67,9 +67,11 @@ export const Register = () => {
                           />
                         </Form.Group>
                       </Col>
+                      </Row>
+                      <Row>
                       <Col>
                         <Form.Group controlId="pw">
-                          <Form.Label>Salasana</Form.Label><Form.Label style={{ color: 'red' }}> *</Form.Label>
+                          <Form.Label>Salasana<span style={{ color: 'red'}}> *</span></Form.Label>
                           <Form.Control
                             type={
                               showPassword ? "text" : "password"
@@ -82,7 +84,7 @@ export const Register = () => {
                           />
                             <label htmlFor="check">Show Password</label>
                             <input
-                                style={{marginLeft:"7px"}}
+                                style={{marginLeft:"7px",marginTop:"10px"}}
                                 id="check"
                                 type="checkbox"
                                 value={showPassword}
@@ -94,7 +96,7 @@ export const Register = () => {
                       </Col>
                       <Col>
                         <Form.Group controlId="cpw">
-                          <Form.Label>Vahvista salasana</Form.Label><Form.Label style={{ color: 'red' }}> *</Form.Label>
+                          <Form.Label>Vahvista salasanasi <span style={{ color: 'red'}}> *</span></Form.Label>
                           <Form.Control
                              type={
                               showPassword ? "text" : "password"
@@ -111,7 +113,7 @@ export const Register = () => {
                     <Row>
                       <Col>
                         <Form.Group controlId="fname">
-                          <Form.Label>Etunimi</Form.Label><Form.Label style={{ color: 'red' }}> *</Form.Label>
+                          <Form.Label>Etunimi<span style={{ color: 'red'}}> *</span></Form.Label>
                           <Form.Control
                             type="text"
                             placeholder="Syötä etunimesi"
@@ -124,7 +126,7 @@ export const Register = () => {
                       </Col>
                       <Col>
                         <Form.Group controlId="lname">
-                          <Form.Label>Sukunimi</Form.Label><Form.Label style={{ color: 'red' }}> *</Form.Label>
+                          <Form.Label>Sukunimi <span style={{ color: 'red'}}> *</span></Form.Label>
                           <Form.Control
                             type="text"
                             placeholder="Syötä sukunimesi"
@@ -190,7 +192,7 @@ export const Register = () => {
                       //onChange={() => setCheck(!check)}
                     />
                     <div>
-                      <span>Pakolliset kentät on merkitty tähdellä:</span><span> </span><span style={{ color: 'red' }}>*</span>
+                      <span style={{fontStyle:"oblique"}}>Pakolliset kentät on merkitty tähdellä:</span><span> </span><span style={{ color: 'red' }}>*</span>
                     </div>
                     <Button onClick={registerPost} variant="success" type="submit" style={{ marginTop: '10px', marginBottom:"10px"}}>
                       Rekisteröidy
