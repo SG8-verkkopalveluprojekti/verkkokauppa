@@ -216,6 +216,37 @@ app.post('/register', upload.none(), async (req,res) => {
 
 });
 
+/** Tähän tulee Joni Neuvosen palaute-osion post/get tietokantaohjelmoinnin tehtävä.
+ */
+
+app.post('/palaute', upload.none(), async (req, res) => {
+    const feedback = req.body.feedback;
+
+    try {
+        const connection = await mysql.createConnection(conf);
+
+        const [rows] = await connection.execute('INSERT INTO palaute(feedback) VALUES(?)', [feedback]);
+
+        res.status(200).end();
+    } catch (err) {
+        res.status(500).json({ error: err.message });
+    }
+});
+
+app.get('/palaute', async (req, res) => {
+    try {
+        const connection = await mysql.createConnection(conf);
+
+        const [rows] = await connection.execute('SELECT * FROM palaute');
+
+        res.json(rows);
+
+    } catch (err) {
+        res.status(500).json({ error: err.message });
+    }
+});
+
+
 //päivittää käyttäjän salasanan 
 app.post('/changepassword', upload.none(), async (req, res) => {
     const username = req.body.username;

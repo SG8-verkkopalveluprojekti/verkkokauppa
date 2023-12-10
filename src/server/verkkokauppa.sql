@@ -8,6 +8,10 @@ DROP TABLE IF EXISTS product;
 
 DROP TABLE IF EXISTS product_category;
 
+DROP TABLE IF EXISTS palaute;
+
+
+
 CREATE TABLE
     product_category(
         category_name VARCHAR(255) NOT NULL PRIMARY KEY,
@@ -28,6 +32,13 @@ CREATE TABLE
         category VARCHAR(255),
         FOREIGN KEY (category) REFERENCES product_category(category_name)
     );
+
+   CREATE TABLE palaute (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    tuote TEXT,
+    feedback TEXT,
+    submitted_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
 
 CREATE TABLE
     customer(
