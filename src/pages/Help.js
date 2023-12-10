@@ -3,69 +3,69 @@ import React from 'react';
 
 export const Help = () => {
   return (
-           
-        <Accordion defaultActiveKey={['0']} alwaysOpen>
-          <Accordion.Item eventKey="0">
-            <Accordion.Header>Usein kysytyt kysymykset</Accordion.Header>
-            <Accordion.Body>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-              minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-              aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-              pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-              culpa qui officia deserunt mollit anim id est laborum.
-            </Accordion.Body>
-          </Accordion.Item>
+    <Accordion defaultActiveKey={['0']} alwaysOpen>
+      <Accordion.Item eventKey="0">
+        <Accordion.Header><strong>Usein kysytyt kysymykset</strong></Accordion.Header>
+        <Accordion.Body>
+          <strong>Miten teen tilauksen?</strong><br />
+          Voit tehdä tilauksen lisäämällä haluamasi tuotteet ostoskoriin ja seuraamalla maksuprosessia.<br />
+          <strong>Miksi tuotteeni ei toimi?</strong><br />
+          Tarkista, että olet kytkenyt sen oikein päälle ja muita vianetsintävinkkejä.<br />
+          <strong>Kuinka kauan tuotteella kestää saapua tilauksen jälkeen?</strong><br />
+          Toimitusaika on 5-7 työpäivää tilauksesta.<br />
+        </Accordion.Body>
+      </Accordion.Item>
 
-          <Accordion.Item eventKey="1">
-            <Accordion.Header>Asiakaspalautukset</Accordion.Header>
-            <Accordion.Body>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-              minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-              aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-              pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-              culpa qui officia deserunt mollit anim id est laborum.
-            </Accordion.Body>
-          </Accordion.Item>
-        
-        
-        <Accordion.Item eventKey="2">
-            <Accordion.Header>Tietosuojaseloste</Accordion.Header>
-            <Accordion.Body>
-            **Tietosuojaseloste - Kuvitteellinen Nettikauppa**<br/>
+      <Accordion.Item eventKey="1">
+        <Accordion.Header><strong>Asiakaspalautukset</strong></Accordion.Header>
+        <Accordion.Body>
+          <strong>Miten voin palauttaa tuotteeni?</strong><br />
+          Voit tuoda tuotteen myymälämme huoltopisteelle. Palautettavan tuotteen tulee olla käyttämätön ja alkuperäispakkauksessa. Tuotteilla on 30 päivän palautusoikeus.
+        </Accordion.Body>
+      </Accordion.Item>
 
-Päivitetty viimeksi: 17.11.2023<br/>
+      <Accordion.Item eventKey="2">
+        <Accordion.Header><strong>Maksutavat</strong></Accordion.Header>
+        <Accordion.Body>
+          <strong>Mitkä maksutavat ovat käytettävissä?</strong><br />
+          Hyväksymme luottokortit ja verkkopankkimaksut<br />
+          <strong>Millä valuutalla voin maksaa?</strong><br />
+          Hyväksymme eurot ja dollarit (USD).<br />
+        </Accordion.Body>
+      </Accordion.Item>
 
-Tervetuloa Kuvitteellisen Nettikaupan tietosuojaselosteeseen. Tämä seloste kuvaa, miten keräämme, käytämme ja suojelemme henkilötietojasi.<br/>
+      <Accordion.Item eventKey="3">
+        <Accordion.Header><strong>Tietosuojaseloste</strong></Accordion.Header>
+        <Accordion.Body>
+          <strong>Tietosuojaseloste - Nettikaubba</strong><br/>
 
-**Kerätyt tiedot**<br/>
-Keräämme tietoja, joita tarvitsemme tilaustesi käsittelyyn ja toimitukseen. Tämä saattaa sisältää nimesi, osoitteesi, sähköpostiosoitteesi ja maksutiedot.<br/>
+          Päivitetty viimeksi: 10.12.2023<br/>
 
-**Evästeet**<br/>
-Käytämme evästeitä parantaaksemme sivustomme käyttäjäkokemusta. Evästeet ovat pieniä tekstitiedostoja, jotka tallentuvat laitteellesi. Voit hallita evästeasetuksiasi selaimessasi.<br/>
+          Tervetuloa Nettikaubban tietosuojaselosteeseen. Tämä seloste kuvaa, miten keräämme, käytämme ja suojelemme henkilötietojasi.<br/>
 
-**Miten käytämme tietojasi**<br/>
-Käytämme kerättyjä tietoja tilaustesi käsittelyyn, toimitukseen ja asiakaspalveluun. Emme jaa tietojasi kolmansille osapuolille markkinointitarkoituksiin.<br/>
+          <strong>Kerätyt tiedot</strong><br/>
+          Keräämme tilauksen käsittelyyn ja toimitukseen tarvittavat tiedot, kuten nimesi, osoitteesi ja maksutiedot.<br/>
 
-**Tietoturva**<br/>
-Suojellaksemme tietojasi käytämme turvallisia tietokantoja ja suojaustoimenpiteitä. Emme tallenna maksukorttitietojasi.<br/>
+          <strong>Evästeet</strong><br/>
+          Käytämme evästeitä parantaaksemme sivuston käyttökokemusta. Voit hallita evästeasetuksiasi selaimessasi.<br/>
 
-**Oikeutesi**<br/>
-Sinulla on oikeus pyytää kopio tietoistasi, oikaista virheelliset tiedot ja pyytää tietojesi poistamista. Ota meihin yhteyttä +044 000 0000 kysyäksesi lisätietoja.<br/>
+          <strong>Miten käytämme tietojasi</strong><br/>
+          Käytämme kerättyjä tietoja tilaustesi käsittelyyn ja toimitukseen. Emme jaa tietojasi kolmansille osapuolille markkinointitarkoituksiin.<br/>
 
-**Muutokset tietosuojaselosteeseen**<br/>
-Pidätämme oikeuden päivittää tätä tietosuojaselostetta tarvittaessa. Päivitetyt versiot julkaistaan sivustollamme.<br/>
+          <strong>Tietoturva</strong><br/>
+          Tietojasi suojataan turvallisilla tietokannoilla ja suojaustoimenpiteillä. Maksukorttitietoja ei tallenneta.<br/>
 
-**Yhteydenotto**<br/>
-Jos sinulla on kysyttävää tietosuojaselosteestamme, ota meihin yhteyttä osoitteeseen example@example.com.<br/>
-Kiitos, että valitsit Kuvitteellisen Nettikaupan!
+          <strong>Oikeutesi</strong><br/>
+          Sinulla on oikeus pyytää tietojesi kopiota, oikaista virheelliset tiedot ja pyytää tietojesi poistamista. Ota yhteyttä +044 000 0000 kysyäksesi lisätietoja.<br/>
 
-            </Accordion.Body>
-          </Accordion.Item>
-        </Accordion>
-      );
-    }
+          <strong>Muutokset tietosuojaselosteeseen</strong><br/>
+          Pidätämme oikeuden päivittää tätä tietosuojaselostetta tarvittaessa. Päivitetyt versiot julkaistaan sivustollamme.<br/>
 
+          <strong>Yhteydenotto</strong><br/>
+          Jos sinulla on kysyttävää tietosuojaselosteestamme, ota meihin yhteyttä osoitteeseen example@example.com.<br/>
+          Kiitos, että valitsit Nettikaubban!
+        </Accordion.Body>
+      </Accordion.Item>
+    </Accordion>
+  );
+};
