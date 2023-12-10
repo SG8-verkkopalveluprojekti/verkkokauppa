@@ -32,37 +32,38 @@ export const Feedback = () => {
     <div className="feedback">
       <h2>Jätä meille asiakaspalautetta:</h2>
 
-      <h3>Jätä sähköpostisi. Tämä ei näy muille.</h3>
+      <h3>Sähköpostiosoite:</h3>
       <input
         type="email"
-        placeholder="sähköposti"
+        placeholder="email"
         style={{ width: "400px" }}
         value={email}
         onChange={(e) => setEmail(e.target.value)}
       />
       <br></br>
 
-      <h3>Lisää nimimerkki.</h3>
+      <h3>Lisää nimimerkki:</h3>
       <input
-        placeholder="nimimerkki"
+        placeholder="nickname"
         style={{ width: "400px" }}
         value={nickname}
         onChange={(e) => setNickname(e.target.value)}
       />
       <br></br>
-
+      <h3>Palaute:</h3>
       <textarea
         type="text"
-        placeholder="kirjoita tähän..."
+        placeholder="write here..."
         style={{ height: "120px", width: "400px" }}
         value={feedback}
         onChange={(e) => setFeedback(e.target.value)}
       />
       <br></br>
 
-      {[...Array(5)].map((star, index) => {
-        const currentRating = index + 1;
-        return (
+      <div className="stars-container">
+        {[...Array(5)].map((star, index) => {
+          const currentRating = index + 1;
+          return (
           <label key={index}>
             <input
               type="radio"
@@ -70,16 +71,17 @@ export const Feedback = () => {
               value={currentRating}
               onClick={() => setRating(currentRating)}
             />
-            <FaRegStar
-              className='star'
-              size={25}
-              color={currentRating <= (hover || rating) ? "#ffc107" : "#e4e5e9"}
-              onMouseEnter={() => setHover(currentRating)}
-              onMouseLeave={() => setHover(null)}
-            />
+          <FaRegStar
+            className='star'
+            size={25}
+            color={currentRating <= (hover || rating) ? "#33b868" : "#e4e5e9"}
+            onMouseEnter={() => setHover(currentRating)}
+            onMouseLeave={() => setHover(null)}
+          />
           </label>
-        );
-      })}
+          );
+        })}
+      </div>
 
       <button onClick={handleSubmit}>Lähetä palautetta</button>
       
