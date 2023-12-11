@@ -8,6 +8,10 @@ function getToken(){
     return t===null || t==='null' ? '' : t;
 }
 
+export function updateToken(value) {
+    jwtToken(value);
+    sessionStorage.setItem('token', value);
+  }
 //It the token changes the new values is saved to session storage
 //Also the personal customer info is fetched
 effect(()=>{

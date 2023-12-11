@@ -311,6 +311,49 @@ app.post('/login', upload.none(), async (req, res) => {
         res.status(500).json({ error: err.message });
     }
 });
+//tilauksen tekeminen
+app.post('/submit-order', async (req, res) => {
+    try {
+      const token = req.headers.authorization?.split(' ')[1];
+  
+      if (!token) {
+        return res.status(401).send('Unauthorized');
+      }
+  
+      const username = jwt.verify(token, 'mysecretkey').username;
+      const customerId = await getCustomerId(username);
+  
+      const connection = await mysql.createConnection(conf);
+      const [result] = await connection.execute(
+        'INSERT INTO customer_order (order_date, customer_id) VALUES (NOW(), ?)',
+        [customerId]
+      );
+  
+      const orderId = result.insertId;
+  
+      // Process the orderData and store it in your database
+      // ...
+  
+      res.status(200).json({ orderId, message: 'Order submitted successfully' });
+    } catch (error) {
+      console.error('Error submitting order:', error);
+      res.status(500).send('Internal Server Error');
+    }
+  });
+  
+  async function getCustomerId(username) {
+    const connection = await mysql.createConnection(conf);
+    const [rows] = await connection.execute(
+      'SELECT id FROM customer WHERE username = ?',
+      [username]
+    );
+  
+    if (rows.length > 0) {
+      return rows[0].id;
+    }
+  
+    throw new Error('Customer not found');
+  }
 
 
 /**

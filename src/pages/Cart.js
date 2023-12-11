@@ -70,6 +70,13 @@ export const Cart = () => {
     }
   };
 
+    const handleOrderSubmit = () => {
+    // Define the logic for handling the order submission here
+    // For example, you can display a confirmation message or redirect the user
+    console.log('Order submitted successfully!');
+  };
+
+
   return (
     <>
       <h3>Shopping Cart</h3>
@@ -104,7 +111,7 @@ export const Cart = () => {
       {/* Display total price */}
       <div className='total-price'>
         Hinta Yhteensä: {totalPrice.toFixed(2)}€
-        <Order />
+        <Order cart={shoppingCart} onSubmitOrder={handleOrderSubmit} />
       </div>
     </>
   );
