@@ -7,9 +7,19 @@ export const Order = ({ cart, onSubmitOrder }) => {
   const token = jwtToken;
 
   const makeOrder = async () => {
+    console.log('Token:', token);
+    if(cart.length === 0){
+        alert('Ostoskori on tyhjä! Lisää tuotteita ostoskoriin ennen tilauksen tekemistä.');
+      return;
+    }
+    if (!token) {
+        alert('Kirjaudu sisään tehdäksesi tilauksen!')
+        return console.log('heippa');
+      }
+   
     try {
       // Make the order request with the Authorization header
-      await axios.post('http://localhost:3001/submit-order', { cart }, {
+      await axios.post('http://localhost:3001/submit-order', { products: cart, customerId: null }, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
