@@ -136,7 +136,7 @@ app.post('/categories', async (req, res) => {
 
 /**
  * Adds new products */
-app.post('/products', async (req, res) => {
+app.post('/addproducts', async (req, res) => {
 
     const connection = await mysql.createConnection(conf);
 
@@ -147,7 +147,7 @@ app.post('/products', async (req, res) => {
         
 
         for (const product of products) {
-            await connection.execute("INSERT INTO product (product_name, price, image_url,category) VALUES (?,?,?,?)",[product.productName, product.price, product.imageUrl, product.category]);
+            await connection.execute("INSERT INTO product (product_name, product_description, product_description1, product_description2, product_description3, price, price_usd, image_url,category) VALUES (?,?,?,?,?,?,?,?,?)",[product.productName, product.productDescription,product.productDescription1,product.productDescription2,product.productDescription3, product.price,product.priceUsd, product.imageUrl, product.category]);
         }
     
         connection.commit();

@@ -11,11 +11,11 @@ export const Admin = () => {
   const [price, setPrice] = useState('');
   const [priceUsd, setPriceUsd] = useState('');
   const [imageUrl, setImageUrl] = useState('');
-  const [category, setCategory] = useState('');
+  const [category, setCategory] = useState('Naytonohjaimet');
 
   const handleAddProduct = async () => {
     try {
-      const response = await axios.post('http://localhost:3001/products', [
+      const response = await axios.post('http://localhost:3001/addproducts', [
         {
           productName,
           productDescription,
@@ -31,7 +31,6 @@ export const Admin = () => {
       alert("Tuote lisätty onnistuneesti!")
       console.log(response.data);
     } catch (error) {
-      console.error('Error adding product', error.message);
       alert("Tuotteen lisääminen epäonnistui!")
     }
   };
