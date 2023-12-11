@@ -71,16 +71,17 @@ export const SignIn = () => {
       <Row className="justify-content-md-center">
         <Col xs={12} md={6}>
         {jwtToken.value.length !== 0 ? (
-            <div>
+            <div className='text-center'>
               <h3>Kirjautuminen onnistui!</h3>
               {userInfo && (
                 <div>
                   <p>Tervetuloa, {userInfo.fname} {userInfo.lname}  /  {userInfo.username}!</p>
-                  {/* Additional content for logged-in user */}
+                  <img style={{width:"100%", borderRadius:"5px"}}src='https://www.students.oamk.fi/~n2tyto00/Kevat23/img/logo3.png'></img>
+                  <Button href='/' style={{marginRight:"10px"}}>Siirry etusivulle</Button>
                   <Button
                     onClick={logout}
-                    style={{ marginTop: '10px', backgroundColor: 'red' }}
-                    variant="danger"
+                    style={{ marginTop: '10px'}}
+                    
                   >
                     Kirjaudu ulos
                   </Button>
