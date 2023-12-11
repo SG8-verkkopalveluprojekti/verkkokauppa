@@ -98,7 +98,7 @@ app.get('/customer', async(req,res) => {
     try{
         const username = jwt.verify(token, 'mysecretkey').username;
         const connection = await mysql.createConnection(conf);
-        const [rows] = await connection.execute('SELECT first_name fname, last_name lname, username FROM customer WHERE username=?',[username]);
+        const [rows] = await connection.execute('SELECT first_name fname, last_name lname, username, is_admin FROM customer WHERE username=?',[username]);
         res.status(200).json(rows[0]);
     }catch(err){
         console.log(err.message);
