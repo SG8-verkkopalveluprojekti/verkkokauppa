@@ -32,7 +32,7 @@ export const SignIn = () => {
 
       fetchUserInfo();
     }
-  }, [jwtToken.value]);
+  }, []);
 
   function login() {
     if (isButtonDisabled) {
@@ -76,7 +76,7 @@ export const SignIn = () => {
               {userInfo && (
                 <div>
                   <p>Tervetuloa, {userInfo.fname} {userInfo.lname}  /  {userInfo.username}!</p>
-                  <img style={{width:"100%", borderRadius:"5px"}}src='https://www.students.oamk.fi/~n2tyto00/Kevat23/img/logo3.png'></img>
+                  <img alt='/' style={{width:"100%", borderRadius:"5px"}}src='https://www.students.oamk.fi/~n2tyto00/Kevat23/img/logo3.png'></img>
                   <Button href='/' style={{marginRight:"10px"}}>Siirry etusivulle</Button>
                   <Button
                     onClick={logout}
