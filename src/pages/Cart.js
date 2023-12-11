@@ -23,6 +23,8 @@ export const Cart = () => {
     });
   };
 
+ 
+
   useEffect(() => {
     localStorage.setItem('shopping-cart', JSON.stringify(shoppingCart));
 

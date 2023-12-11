@@ -28,14 +28,15 @@ import { Feedback } from "./pages/Feedback";
 
 
 
-function App({ products, searchTerm, shoppingCart  }) {
+function App({ products, searchTerm,   }) {
   
-
+ 
+  
 
   return (
     <>
     <Header />
-    <Search shoppingCart={shoppingCart} />
+    <Search  />
     
     <div className="App">
       <Routes>
