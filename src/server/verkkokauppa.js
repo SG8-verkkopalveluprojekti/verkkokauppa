@@ -330,7 +330,8 @@ app.post('/submit-order', async (req, res) => {
       );
   
       const orderId = result.insertId;
-  
+        
+      
       // Process the orderData and store it in your database
       // ...
   

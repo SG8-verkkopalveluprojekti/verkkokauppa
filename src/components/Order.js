@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button } from 'react-bootstrap';
 import axios from 'axios';
-import { jwtToken, updateToken } from './signals/TokenSignal';
+import { jwtToken,  } from './signals/TokenSignal';
 
 export const Order = ({ cart, onSubmitOrder }) => {
   const token = jwtToken;
