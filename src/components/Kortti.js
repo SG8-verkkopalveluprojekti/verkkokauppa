@@ -14,8 +14,8 @@ function Kortti() {
         <Card.Img  variant="top" src="https://www.io-tech.fi/wp-content/uploads/2022/10/rtx4090-00.jpg" className='img-fluid'  style={{height:'15rem', marginTop:'5px', padding:'15px'}}/>
         <Card.Body>
           <Card.Title>Näytönohjaimet</Card.Title>
-          <Card.Text>
-            Pitää tähän joku myyntipuhe keksiä
+          <Card.Text style={{height:"200px"}}>
+          Tehokkaat grafiikkakortit tarjoavat silmiähivelevän pelikokemuksen ja nopean suorituskyvyn vaativissa graafisissa sovelluksissa. Valitse huippumerkkien laatutuotteet ja nosta pelisi uudelle tasolle.
           </Card.Text>
           <Button className="btn btn-primary btn-md" style={{width:"100%"}} variant="primary" href="/Naytonohjaimet">Näytönohjaimet</Button>
         </Card.Body>
@@ -25,8 +25,8 @@ function Kortti() {
         <Card.Img variant="top" src="https://www.pctekreviews.com/Reviews/STRIX_B550E/01.jpg" style={{height:'15rem', marginTop:'5px', padding:'15px'}}/>
         <Card.Body>
           <Card.Title>Emolevyt</Card.Title>
-          <Card.Text>
-          Pitää tähän joku myyntipuhe keksiä
+          <Card.Text style={{height:"200px"}}>
+          Laadukkaat emolevyt ovat tietokoneesi sydän. Valitse meiltä laaja valikoima emolevyjä, jotka tarjoavat luotettavan suorituskyvyn, laajennusmahdollisuudet ja huippuluokan teknologian.
           </Card.Text>
           <Button className="btn btn-primary btn-md" style={{width:"100%"}} variant="primary" href="/Emolevyt">Emolevyt</Button>
         </Card.Body>
@@ -35,8 +35,8 @@ function Kortti() {
         <Card.Img variant="top" src="https://hh2.pigugroup.eu/colours/241/450/8/2414508/memory-d4-4266-32gb-c17-gskill-tz-d9af0_reference.jpg" style={{height:'15rem', marginTop:'5px', padding:'15px'}}/>
         <Card.Body>
           <Card.Title>Muistit</Card.Title>
-          <Card.Text>
-          Pitää tähän joku myyntipuhe keksiä
+          <Card.Text style={{height:"200px"}}>
+          Nopea ja tehokas muisti on avain sujuvaan tietokoneen toimintaan. Tutustu laajaan muistivalikoimaamme, joka kattaa kaikki tarpeesi pelaamisesta ammattimaiseen kuvankäsittelyyn.
           </Card.Text>
           <Button className="btn btn-primary btn-md" style={{width:"100%"}} variant="primary" href="/Muistit">Muistit</Button>
         </Card.Body>
@@ -45,8 +45,8 @@ function Kortti() {
         <Card.Img variant="top" src="https://www.io-tech.fi/wp-content/uploads/2022/02/12400f-00.jpg" style={{height:'15rem', marginTop:'5px', padding:'15px'}}/>
         <Card.Body>
           <Card.Title>Prosessorit</Card.Title>
-          <Card.Text>
-          Pitää tähän joku myyntipuhe keksiä
+          <Card.Text style={{height:"200px"}}>
+          Suoritin on tietokoneesi moottori, ja meiltä löydät vain parhaat moottorit. Valitse tehokas prosessori, joka vastaa vaativiinkin tehtäviin, olipa kyse sitten pelaamisesta, suunnittelusta tai multitaskingista.
           </Card.Text>
           <Button className="btn btn-primary btn-md" style={{width:"100%"}} variant="primary" href="/Prosessorit">Prosessorit</Button>
         </Card.Body>
@@ -55,8 +55,8 @@ function Kortti() {
         <Card.Img variant="top" src="https://ic.jimms.fi/product/5/7/331652-ig800gg.jpg" style={{height:'15rem', marginTop:'5px', padding:'15px'}}/>
         <Card.Body>
           <Card.Title>Kotelot</Card.Title>
-          <Card.Text>
-          Pitää tähän joku myyntipuhe keksiä
+          <Card.Text style={{height:"200px"}}>
+          Tyylikkäät ja tehokkaat kotelot suojaavat komponenttejasi ja tarjoavat viimeistellyn ulkoasun. Valitse meidän laajasta valikoimasta koteloita, jotka sopivat jokaiseen tarpeeseen.
           </Card.Text>
           <Button className="btn btn-primary btn-md" style={{width:"100%"}} variant="primary" href="/Kotelot">Kotelot ja oheistuotteet</Button>
         </Card.Body>
@@ -65,8 +65,8 @@ function Kortti() {
         <Card.Img variant="top" src="https://ic.jimms.fi/product/4/0/251749-ig800gg.jpg" style={{height:'15rem', marginTop:'5px', padding:'15px'}}/>
         <Card.Body>
           <Card.Title>Virtalähteet</Card.Title>
-          <Card.Text>
-          Pitää tähän joku myyntipuhe keksiä
+          <Card.Text style={{height:"200px"}}>
+          Luotettava virtalähde on välttämätön tehokkaan tietokoneen rakentamiseen. Tutustu virtalähdevalikoimaamme, joka tarjoaa riittävästi tehoa ja turvallisuutta kaikkiin tarpeisiisi.
           </Card.Text>
           <Button className="btn btn-primary btn-md" style={{width:"100%"}} variant="primary" href="/Virtalahteet">Virtalähteet</Button>
         </Card.Body>
