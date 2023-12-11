@@ -32,7 +32,7 @@ export const SignIn = () => {
 
       fetchUserInfo();
     }
-  }, []);
+  }, [jwtToken.value]); //antaa tästä virhettä mutta toimii oikein kun tämä on tuossa
 
   function login() {
     if (isButtonDisabled) {
