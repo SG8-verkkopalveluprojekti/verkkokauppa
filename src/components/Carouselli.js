@@ -38,7 +38,7 @@ export const Carouselli = () => {
           className="mx-auto"
         />
         <Carousel.Caption>
-          <h3>Intel-suorittime</h3>
+          <h3>Intel-suorittimet</h3>
           <p>Intel-prosessorit tarjoavat huippuluokan suorituskyvyn ja energiatehokkuuden monipuolisiin käyttötarkoituksiin.</p>
         </Carousel.Caption>
       </Carousel.Item>
