@@ -14,7 +14,7 @@ export const Search = ({ shoppingCart }) => {
   const handleSearchClick = async () => {
     try {
       if (searchTerm.trim() === "") {
-        // Display an error message or prevent the search action
+        // Display an error message and prevent the search action
         alert("Hakukenttä ei voi olla tyhjä!");
         return;
       }
