@@ -39,15 +39,16 @@ CREATE TABLE
         submitted_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
     );
 
-CREATE TABLE
-    customer(
-        id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
-        first_name VARCHAR(255),
-        last_name VARCHAR(255),
-        username VARCHAR(255) UNIQUE,
-        pw VARCHAR(255),
-        is_admin BOOLEAN DEFAULT false
-    );
+CREATE TABLE customer (
+    id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    first_name VARCHAR(255),
+    last_name VARCHAR(255),
+    username VARCHAR(255) UNIQUE,
+    email VARCHAR(255) UNIQUE, -- Add the email field
+    pw VARCHAR(255),
+    is_admin BOOLEAN DEFAULT false
+);
+
 
 INSERT INTO
     customer (
