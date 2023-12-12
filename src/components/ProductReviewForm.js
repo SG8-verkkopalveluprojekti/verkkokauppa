@@ -4,7 +4,8 @@ import axios from "axios";
 
 const ProductReviewForm = () => {
   const [review, setReview] = useState({
-    feedback: "", // Assuming you only want to send feedback
+    feedback: "",
+    tuote: "",
   });
 
   const handleInputChange = (e) => {
@@ -15,15 +16,17 @@ const ProductReviewForm = () => {
     });
   };
 
+  
+
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .post('http://localhost:3001/palaute', { feedback: review.feedback })
+      .post('http://localhost:3001/palaute', { tuote: review.tuote, feedback: review.feedback })
       .then((resp) => {
         alert('Palaute lisätty onnistuneesti');
       })
       .catch((err) => alert('Jotain meni pieleen'));
-    console.log("Review submitted:", review);
+    console.log("Review submitted - Tuote:", review.tuote, "Feedback:", review.feedback);
   };
 
   return (
@@ -40,10 +43,20 @@ const ProductReviewForm = () => {
           required
         />
       </Form.Group>
-
+      <Form.Group controlId="tuote">
+        <Form.Label style={{marginTop:"10px"}}><h4>Tuotenimi</h4></Form.Label>
+        <Form.Control
+          type="text"
+          name="tuote"
+          value={review.tuote}
+          onChange={handleInputChange}
+          placeholder="Kirjoita tuotenimi"
+          required
+        />
+      </Form.Group>
       <Button variant="primary" type="submit">
         Lisää palaute
-      </Button>
+      </Button> 
     </Form>
   );
 };
