@@ -250,7 +250,7 @@ app.get('/palaute', async (req, res) => {
 });
 
 
-//päivittää käyttäjän salasanan 
+//Tämä on osa Topias Tynin tietokantaohjelmoinnin tehtävää 
 app.post('/changepassword', upload.none(), async (req, res) => {
     const username = req.body.username;
     const oldPassword = req.body.pw;  
@@ -283,6 +283,21 @@ app.post('/changepassword', upload.none(), async (req, res) => {
         res.status(500).json({ error: err.message });
     }
 });
+//Tähän tulee toinen osa Topias Tynin tietokantaohjelmoinnin tehtävästä
+app.get('/users', async (req, res) => {
+    try {
+        const connection = await mysql.createConnection(conf);
+
+        const [rows] = await connection.execute('SELECT first_name, last_name, username FROM customer');
+
+        res.json(rows);
+
+    } catch (err) {
+        res.status(500).json({ error: err.message });
+    }
+});
+
+
 /**
  * Checks the username and password and returns jwt authentication token if authorized. 
  * Supports urlencoded or multipart

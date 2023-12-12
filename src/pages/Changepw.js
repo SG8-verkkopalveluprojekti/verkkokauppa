@@ -1,6 +1,3 @@
-//tämä lisätään sitten sinne asiakastilin hallintaan
-//EI TOIMI VIELÄ OIKEIN
-
 import React from 'react';
 import axios from 'axios'
 import { useState } from 'react';

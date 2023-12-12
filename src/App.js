@@ -22,6 +22,7 @@ import { NotFound } from "./pages/NotFound";
 import {BottomNavbar} from "./pages/phonenavbar"
 import { SearchResultPage } from "./pages/SearchResultPage";
 import { Feedback } from "./pages/Feedback";
+import { Users } from "./pages/Users"
 
 
 
@@ -58,6 +59,7 @@ function App({ products, searchTerm,   }) {
       <Route path="*" element={<NotFound />} />
       <Route path="/search-results" element={<SearchResultPage products={products} searchTerm={searchTerm}/>} /> 
       <Route path="/feedback" element={<Feedback />} />
+      <Route path="/users" element={<Users />} />
      
 
       

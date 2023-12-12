@@ -36,7 +36,8 @@ export const Admin = () => {
   };
 
   return (
-    <div>
+    <div style={{margin:"10px"}}>
+      <Button href="/users">Näytä nettikauban käyttäjät</Button>
       <h2>Tuotteiden lisäys</h2>
       <Form>
         <Form.Group controlId="productName">
