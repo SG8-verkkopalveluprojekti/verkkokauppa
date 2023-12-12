@@ -329,7 +329,7 @@ app.post('/login', upload.none(), async (req, res) => {
         res.status(500).json({ error: err.message });
     }
 });
-
+/**Tilauksen tekeminen tällä hetkellä */
 app.post('/submit-order', async (req, res) => {
 
     let connection;
