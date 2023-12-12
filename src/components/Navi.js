@@ -6,10 +6,12 @@ import Navbar from 'react-bootstrap/Navbar';
 import { jwtToken } from '../components/signals/TokenSignal'; // Tuodaan mukanaan JWT-tokenin tila
 import axios from 'axios'
 import './navi.css';
+import { useNavigate } from 'react-router-dom';
 
 export const Navi = () => {
   const [userInfo, setUserInfo] = useState(null);
-
+  const navigate = useNavigate();
+  
   useEffect(() => {
     if (jwtToken.value) {
       const fetchUserInfo = async () => {
@@ -30,12 +32,13 @@ export const Navi = () => {
 
   const isLoggedIn = jwtToken.value.length !== 0;
   const isAdmin = userInfo?.is_admin === 1;
+  
 
   const handleLogout = () => {
-    // Kirjaudu ulos -toiminnallisuus, voit lisätä sen tarpeidesi mukaan
     jwtToken.value = '';
     setUserInfo(null);
     alert("Kiitos käynnistä!")
+    navigate('/signin');
   };
 
   return (
