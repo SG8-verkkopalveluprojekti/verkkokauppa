@@ -37,7 +37,7 @@ export const Admin = () => {
 
   return (
     <div style={{margin:"10px"}}>
-      <Button href="/users">Näytä nettikauban käyttäjät</Button>
+      <Button variant='dark' size='sm' href="/users">Näytä nettikauban käyttäjät</Button>
       <h2>Tuotteiden lisäys</h2>
       <Form>
         <Form.Group controlId="productName">
@@ -128,7 +128,7 @@ export const Admin = () => {
   </Form.Select>
 </Form.Group>
 
-        <Button variant="primary" onClick={handleAddProduct}>
+        <Button variant="dark" size='lg' onClick={handleAddProduct}>
           Lisää tuote
         </Button>
       </Form>

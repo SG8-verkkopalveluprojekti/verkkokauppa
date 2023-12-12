@@ -14,8 +14,8 @@ export const Users = () => {
   }, []); 
 
   return (
-    <div className='text-center'>
-      <h2 style={{marginTop:"10px",marginBottom:"10px"}}>Käyttäjälista</h2>
+    <div className='text-center' style={{border:"2px solid grey", margin:"10px", borderRadius:"10px"}}>
+      <h2 style={{marginTop:"10px", marginBottom:"10px"}}>Käyttäjälista</h2><hr></hr>
       <ul>
         {users.map(user => (
           <li key={user.username}>
@@ -23,7 +23,7 @@ export const Users = () => {
           </li>
         ))}
       </ul>
-      <Button href="/Admin">Takaisin tuotteiden lisäykseen</Button>
+      <Button variant='dark' size='sm' href="/Admin" style={{margin:"10px",marginBottom:"20px"}}>Takaisin tuotteiden lisäykseen</Button>
     </div>
   );
 };

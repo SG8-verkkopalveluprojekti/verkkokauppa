@@ -194,7 +194,7 @@ export const Register = () => {
                     <div>
                       <span style={{fontStyle:"oblique"}}>Pakolliset kentät on merkitty tähdellä:</span><span> </span><span style={{ color: 'red' }}>*</span>
                     </div>
-                    <Button onClick={registerPost} variant="success" type="submit" style={{ marginTop: '10px', marginBottom:"10px"}}>
+                    <Button onClick={registerPost} variant="dark" type="submit" style={{ marginTop: '10px', marginBottom:"10px"}}>
                       Rekisteröidy
                     </Button>
                     

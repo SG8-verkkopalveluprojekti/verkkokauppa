@@ -75,7 +75,7 @@ export const Changepw = () => {
               </Form.Group>
   
               
-              <Button onClick={Changepassword} style={{ marginTop: '20px' , backgroundColor: 'green' }} variant="primary" type="submit">
+              <Button  onClick={Changepassword} style={{ marginTop: '20px' }} variant="danger" type="submit">
                 Vaihda salasanasi
               </Button>
               
