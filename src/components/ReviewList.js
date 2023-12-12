@@ -8,7 +8,9 @@ const ReviewList = () => {
   useEffect(() => {
     axios.get('http://localhost:3001/palaute')
       .then((response) => {
-        setReviews(response.data);
+        
+        const sortedReviews = response.data.sort((a, b) => new Date(b.submitted_at) - new Date(a.submitted_at));
+        setReviews(sortedReviews);
       })
       .catch((error) => {
         console.error('Error fetching reviews:', error);
@@ -21,7 +23,7 @@ const ReviewList = () => {
       <ul style={styles.reviewList}>
         {reviews.map((review) => (
           <li key={review.id} style={styles.reviewItem}>
-            {review.feedback}
+             <strong>{review.tuote}</strong>: {review.feedback} - <br></br> {review.submitted_at}
           </li>
         ))}
       </ul>
@@ -35,7 +37,6 @@ const styles = {
     padding: '20px',
     border: '1px solid #ccc',
     borderRadius: '8px',
-    
   },
   heading: {
     fontSize: '24px',

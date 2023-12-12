@@ -223,11 +223,12 @@ app.post('/register', upload.none(), async (req,res) => {
 
 app.post('/palaute', upload.none(), async (req, res) => {
     const feedback = req.body.feedback;
+    const tuote = req.body.tuote;
 
     try {
         const connection = await mysql.createConnection(conf);
 
-        const [rows] = await connection.execute('INSERT INTO palaute(feedback) VALUES(?)', [feedback]);
+        const [rows] = await connection.execute('INSERT INTO palaute(feedback, tuote) VALUES(?,?)', [feedback, tuote]);
 
         res.status(200).end();
     } catch (err) {
