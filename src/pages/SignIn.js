@@ -55,12 +55,9 @@ export const SignIn = () => {
   }
 
   function logout() {
-    // Tässä voit toteuttaa kirjaudu ulos -toiminnallisuuden
-    // Esimerkiksi poistamalla JWT-tokenin, nollaamalla käyttäjätiedot ja ohjaamalla käyttäjän kirjautumissivulle.
     jwtToken.value = ''; // Poista JWT-token
     setUserInfo(null); // Nollaa käyttäjätiedot
     setLoading(false);
-    // Voit ohjata käyttäjän esimerkiksi kirjautumissivulle tai etusivulle
     navigate('/signin'); 
   }
   

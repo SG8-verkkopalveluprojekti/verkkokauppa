@@ -3,25 +3,30 @@ import axios from 'axios'
 import { useState } from 'react';
 import { Container, Row, Col, Form, Button } from 'react-bootstrap';
 
+
+
 export const Changepw = () => {
   const [username, setUsername] = useState('');
   const [pw, setPw] = useState('');
   const [npw, setNpw] = useState('');
   const [cpw, setCpw] = useState('');
+  
 
-
-  function Changepassword(){
-    
-    if(npw === cpw){
-    axios.post('http://localhost:3001/changepassword', { username, pw, npw })
-    .then(resp => {
-      alert("Salasana vaihdettu onnistuneesti");
-    })
-    .catch(err => {
-      alert("Väärä salasana tai käyttäjätunnus");
-    })
-  }else{alert("Uudet salasanat eivät täsmää")}
-  }
+    function Changepassword(e) {
+      e.preventDefault();
+      if (npw === cpw) {
+        console.log('Passwords match');
+        axios.post('http://localhost:3001/changepassword', { username, pw, npw })
+          .then(resp => {
+            alert('Salasana vaihdettu onnistuneesti');
+          })
+          .catch(err => {
+            alert('Väärä salasana tai käyttäjätunnus');
+          });
+      } else {
+        alert('Uudet salasanat eivät täsmää');
+      }
+    }
   
     return (
       <Container style={{ marginTop: '60px', maxWidth: '100%' }}>
