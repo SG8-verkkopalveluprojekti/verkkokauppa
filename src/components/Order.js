@@ -1,25 +1,27 @@
 import React from 'react';
 import { Button } from 'react-bootstrap';
 import axios from 'axios';
-import { jwtToken,  } from './signals/TokenSignal';
+import { jwtToken } from './signals/TokenSignal';
 
 export const Order = ({ cart, onSubmitOrder }) => {
   const token = jwtToken;
 
   const makeOrder = async () => {
     console.log('Token:', token);
-    if(cart.length === 0){
-        alert('Ostoskori on tyhjä! Lisää tuotteita ostoskoriin ennen tilauksen tekemistä.');
+
+    if (cart.length === 0) {
+      alert('Ostoskori on tyhjä! Lisää tuotteita ostoskoriin ennen tilauksen tekemistä.');
       return;
     }
+
     if (!token) {
-        alert('Kirjaudu sisään tehdäksesi tilauksen!')
-        return console.log('heippa');
-      }
-   
+      alert('Kirjaudu sisään tehdäksesi tilauksen!');
+      return;
+    }
+
     try {
       // Make the order request with the Authorization header
-      await axios.post('http://localhost:3001/submit-order', { products: cart, customerId: null }, {
+      const response = await axios.post('http://localhost:3001/submit-order', { products: cart }, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -27,6 +29,9 @@ export const Order = ({ cart, onSubmitOrder }) => {
 
       // Notify the parent component about the order submission
       onSubmitOrder();
+
+      // Log the response from the server
+      console.log('Order submission response:', response.data);
     } catch (error) {
       console.error('Error making order:', error);
     }

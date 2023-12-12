@@ -315,6 +315,9 @@ app.post('/login', upload.none(), async (req, res) => {
 });
 
 app.post('/submit-order', async (req, res) => {
+
+    let connection;
+
     try {
       const token = req.headers.authorization?.split(' ')[1];
   
@@ -325,7 +328,7 @@ app.post('/submit-order', async (req, res) => {
       const username = jwt.verify(token, 'mysecretkey').username;
       const customerId = await getCustomerId(username);
       
-      const connection = await mysql.createConnection(conf);
+      connection = await mysql.createConnection(conf);
       
       const [result] = await connection.execute(
         'INSERT INTO customer_order (order_date, customer_id) VALUES (NOW(), ?)',
@@ -338,8 +341,7 @@ app.post('/submit-order', async (req, res) => {
       const orderId = result.insertId;
       
       
-      // Process the orderData and store it in your database
-      // ...
+    
   
       res.status(200).json({ orderId, message: 'Order submitted successfully' });
       
