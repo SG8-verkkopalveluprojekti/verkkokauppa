@@ -73,7 +73,7 @@ export const SignIn = () => {
                 <div>
                   <p>Tervetuloa, {userInfo.fname} {userInfo.lname}  /  {userInfo.username}!</p>
                   <img alt="logo" style={{width:"100%", borderRadius:"5px"}} src='https://www.students.oamk.fi/~n2tyto00/Kevat23/img/logo3.png'></img>
-                  <Button variant="dark" href='/' style={{marginRight:"10px"}}>Siirry etusivulle</Button>
+                  <Button variant="dark" href='/' style={{marginRight:"10px",marginTop:"10px"}}>Siirry etusivulle</Button>
                   <Button
                     variant='dark'
                     onClick={logout}
@@ -127,7 +127,7 @@ export const SignIn = () => {
 
               <Button
                 onClick={login}
-                style={{ marginTop: '10px' }}
+                style={{ marginTop: '10px',marginRight:"10px" }}
                 variant="dark"
                 type="submit"
                 disabled={isButtonDisabled}
@@ -149,7 +149,7 @@ export const SignIn = () => {
               </Button>
               <Button
                 href="/register"
-                style={{ marginTop: '10px', marginLeft: '30px' }}
+                style={{ marginTop: '10px' }}
                 variant="dark"
                 type="submit"
               >
