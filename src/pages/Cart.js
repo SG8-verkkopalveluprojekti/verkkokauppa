@@ -90,7 +90,7 @@ export const Cart = () => {
                   <p>{item.productName}</p>
                 </div>
               </div>
-              <div>
+              <div className='tuotelisa'>
                 <button onClick={() => updateCount(item, -1)}>-</button>
                 <button>{item.count}</button>
                 <button onClick={() => updateCount(item, 1)}>+</button>
@@ -107,13 +107,13 @@ export const Cart = () => {
           </div>
         )}
       </article>
-          
+        
       {/* Display total price */}
-      <div className='total-price'>
-        Hinta Yhteensä: {totalPrice.toFixed(2)}€
+      <div>
+        Hinta Yhteensä: {totalPrice.toFixed(2)}€ 
         <Order cart={shoppingCart} onSubmitOrder={handleOrderSubmit} />
       </div>
-    </div>
+    </div>  
   );
 };
 
