@@ -50,8 +50,8 @@ export const Navi = () => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="/" className="text-light">Home</Nav.Link>
-            <Nav.Link href="/help" className="text-light">Apua?</Nav.Link>
+            <Nav.Link href="/" className="text-light">Etusivu</Nav.Link>
+            <Nav.Link href="/help" className="text-light">Info</Nav.Link>
             <Nav.Link href="/feedback" className="text-light">Asiakaspalaute</Nav.Link>
           </Nav>
 
