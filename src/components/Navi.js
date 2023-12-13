@@ -74,7 +74,7 @@ export const Navi = () => {
                 <Nav.Link href="/register" className="text-light">Rekisteröidy</Nav.Link>
               </>
             )}
-            <Button style={{width:"60px", height:"40px", marginTop:"0px", marginLeft:"5px"}} variant="outline-light" size="sm" onClick={toggleCurrency}>({selectedCurrency.toUpperCase()})</Button>
+            <Button style={{width:"60px", height:"40px", marginTop:"0px", marginLeft:"5px"}} variant="outline-light" size="sm" onClick={toggleCurrency}>{selectedCurrency.toUpperCase()}</Button>
           </Nav>
          
         </Navbar.Collapse>
