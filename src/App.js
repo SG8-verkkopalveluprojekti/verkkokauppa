@@ -32,8 +32,6 @@ import { Users } from "./pages/Users"
 function App({ products, searchTerm,   }) {
   
  
-  
-
   return (
     <>
     <Header />

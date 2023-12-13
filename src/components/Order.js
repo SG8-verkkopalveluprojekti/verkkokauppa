@@ -4,10 +4,12 @@ import axios from 'axios';
 import { jwtToken } from './signals/TokenSignal';
 
 export const Order = ({ cart, onSubmitOrder }) => {
+
+  console.log(JSON.stringify(cart));
   const token = jwtToken;
 
   const makeOrder = async () => {
-    console.log('Token:', token);
+    
 
     if (cart.length === 0) {
       alert('Ostoskori on tyhjä! Lisää tuotteita ostoskoriin ennen tilauksen tekemistä.');
@@ -21,12 +23,12 @@ export const Order = ({ cart, onSubmitOrder }) => {
 
     try {
       // Make the order request with the Authorization header
-      const response = await axios.post('http://localhost:3001/submit-order', { products: cart }, {
+      const response = await axios.post('http://localhost:3001/order', { products: cart }, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
       });
-
+      
       // Notify the parent component about the order submission
       onSubmitOrder();
 
