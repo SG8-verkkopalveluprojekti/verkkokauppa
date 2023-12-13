@@ -71,11 +71,13 @@ export const Cart = () => {
   };
 
   const handleOrderSubmit = () => {
-    // Define the logic for handling the order submission here
+    // Alert after succesful order
     alert("Tilauksesi onnistui!");
     console.log("Order submitted successfully!");
+	// Clears localstorage and sets shoppingCart state to be empty
 	localStorage.clear()
     setShoppingCart([]);
+	// Navigates back to homepage
 	navigate('/')
     console.log(shoppingCart);
     console.log(localStorage);

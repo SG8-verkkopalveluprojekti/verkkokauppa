@@ -23,6 +23,7 @@ import {BottomNavbar} from "./pages/phonenavbar"
 import { SearchResultPage } from "./pages/SearchResultPage";
 import { Feedback } from "./pages/Feedback";
 import { Users } from "./pages/Users"
+import { OrderHistory } from "./pages/OrderHistory";
 
 
 
@@ -58,6 +59,7 @@ function App({ products, searchTerm,   }) {
       <Route path="/search-results" element={<SearchResultPage products={products} searchTerm={searchTerm}/>} /> 
       <Route path="/feedback" element={<Feedback />} />
       <Route path="/users" element={<Users />} />
+      <Route path="/order-history" element={<OrderHistory />} />
      
 
       
