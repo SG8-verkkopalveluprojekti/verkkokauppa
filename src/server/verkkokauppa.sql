@@ -1,3 +1,4 @@
+-- Active: 1698938290511@@127.0.0.1@3306@verkkokauppa
 DROP TABLE IF EXISTS order_line;
 
 DROP TABLE IF EXISTS customer_order;
