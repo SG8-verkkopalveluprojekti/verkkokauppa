@@ -91,9 +91,9 @@ export const Cart = () => {
                 </div>
               </div>
               <div>
-                <button onClick={() => updateCount(item, 1)}>+</button>
-                <button>{item.count}</button>
                 <button onClick={() => updateCount(item, -1)}>-</button>
+                <button>{item.count}</button>
+                <button onClick={() => updateCount(item, 1)}>+</button>
               </div>
               <div>
                 <span>{(item.price * item.count).toFixed(2)}€</span>
