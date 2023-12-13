@@ -64,8 +64,7 @@ export const Cart = () => {
     if (updatedCart.length === 0) {
       setShoppingCart([]);
 	  localStorage.clear()
-	  console.log(localStorage);
-    } else {
+	  } else {
       setShoppingCart(updatedCart);
     }
   };
@@ -79,13 +78,11 @@ export const Cart = () => {
     setShoppingCart([]);
 	// Navigates back to homepage
 	navigate('/')
-    console.log(shoppingCart);
-    console.log(localStorage);
   };
 
   return (
     <div className="cart-container">
-      <h3>Shopping Cart</h3>
+      <h3>Ostoskori</h3>
       <article>
         {shoppingCart.length > 0 ? (
           shoppingCart.map((item) => (
@@ -111,7 +108,7 @@ export const Cart = () => {
           ))
         ) : (
           <div>
-            <h2>Cart is empty</h2>
+            <h2>Ostoskorisi on tyhjä</h2>
           </div>
         )}
       </article>
