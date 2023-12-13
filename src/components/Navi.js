@@ -66,14 +66,15 @@ export const Navi = () => {
                   <Nav.Link href="/Admin" className="text-light">Ylläpito</Nav.Link>
                 )}
               <Nav.Link onClick={handleLogout} className="text-light">Kirjaudu ulos</Nav.Link>
+              
               </>
             ) : (
               <>
                 <Nav.Link href="/signin" className="text-light">Kirjaudu</Nav.Link>
                 <Nav.Link href="/register" className="text-light">Rekisteröidy</Nav.Link>
-                <Button style={{ marginTop:"0px"}} variant="outline-light" size="sm" onClick={toggleCurrency}>({selectedCurrency.toUpperCase()})</Button>
               </>
             )}
+            <Button style={{width:"60px", height:"40px", marginTop:"0px", marginLeft:"5px"}} variant="outline-light" size="sm" onClick={toggleCurrency}>({selectedCurrency.toUpperCase()})</Button>
           </Nav>
          
         </Navbar.Collapse>
