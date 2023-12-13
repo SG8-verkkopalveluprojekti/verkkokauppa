@@ -28,6 +28,8 @@ export const Emolevyt = () => {
   }, []);
 
   return (
+    <>
+    <h3 className="text-center" style={{marginTop:"10px"}}>Emolevyt</h3>
     <div className="row justify-content-center">
       {products &&
         products.map((product) => (
@@ -45,5 +47,6 @@ export const Emolevyt = () => {
         selectedProduct={selectedProduct}
       />
     </div>
+    </>
   );
 };

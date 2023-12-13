@@ -33,6 +33,8 @@ const conf = {
     timezone: '+00:00'
 }
 
+  
+
 
 /**
  * Gets the products
@@ -49,17 +51,17 @@ app.get('/products', async (req, res) => {
 
         if(category){
             result = await connection.execute
-            ("SELECT id, product_name productName, product_description description, price, price_usd, image_url imageUrl, category  FROM product WHERE category=?",
+            ("SELECT id, product_name productName, product_description description,product_description1 description1,product_description2 description2,product_description3 description3, price, price_usd, image_url imageUrl, category  FROM product WHERE category=?",
                  [category]);
         } else if (search) {
             result = await connection.execute
-            ("SELECT id, product_name productName,product_description description, price, price_usd, image_url imageUrl, category FROM product WHERE product_name LIKE ?", 
+            ("SELECT id, product_name productName,product_description description,product_description1 description1, product_description2 description2,product_description3 description3, price, price_usd, image_url imageUrl, category FROM product WHERE product_name LIKE ?", 
                 [`%${search}%`]);
         }
         
         else{
             result = await connection.execute(
-                "SELECT id, product_name productName,product_description description, price, price_usd, image_url imageUrl, category  FROM product"
+                "SELECT id, product_name productName,product_description description,product_description1 description1,product_description2 description2,product_description3 description3, price, price_usd, image_url imageUrl, category  FROM product"
                 );
         }
         
@@ -98,7 +100,7 @@ app.get('/customer', async(req,res) => {
     try{
         const username = jwt.verify(token, 'mysecretkey').username;
         const connection = await mysql.createConnection(conf);
-        const [rows] = await connection.execute('SELECT first_name fname, last_name lname, username FROM customer WHERE username=?',[username]);
+        const [rows] = await connection.execute('SELECT first_name fname, last_name lname, username, is_admin FROM customer WHERE username=?',[username]);
         res.status(200).json(rows[0]);
     }catch(err){
         console.log(err.message);
@@ -134,7 +136,7 @@ app.post('/categories', async (req, res) => {
 
 /**
  * Adds new products */
-app.post('/products', async (req, res) => {
+app.post('/addproducts', async (req, res) => {
 
     const connection = await mysql.createConnection(conf);
 
@@ -145,7 +147,7 @@ app.post('/products', async (req, res) => {
         
 
         for (const product of products) {
-            await connection.execute("INSERT INTO product (product_name, price, image_url,category) VALUES (?,?,?,?)",[product.productName, product.price, product.imageUrl, product.category]);
+            await connection.execute("INSERT INTO product (product_name, product_description, product_description1, product_description2, product_description3, price, price_usd, image_url,category) VALUES (?,?,?,?,?,?,?,?,?)",[product.productName, product.productDescription,product.productDescription1,product.productDescription2,product.productDescription3, product.price,product.priceUsd, product.imageUrl, product.category]);
         }
     
         connection.commit();
@@ -163,20 +165,32 @@ app.post('/products', async (req, res) => {
  */
 app.post('/order', async (req, res) => {
 
+    
+
     let connection;
 
     try {
+
+        const token = req.headers.authorization?.split(' ')[1];
+  
+      if (!token) {
+        return res.status(401).send('Unauthorized');
+      }
+    
+        const username = jwt.verify(token, 'mysecretkey').username;
+        const customerId = await getCustomerId(username);
+
         connection = await mysql.createConnection(conf);
         connection.beginTransaction();
 
         const order = req.body;
         
-        const [info] = await connection.execute("INSERT INTO customer_order (order_date, customer_id) VALUES (NOW(),?)",[order.customerId]);
+        const [info] = await connection.execute("INSERT INTO customer_order (order_date, customer_id) VALUES (NOW(),?)",[customerId]);
         
         const orderId = info.insertId;
 
         for (const product of order.products) {
-            await connection.execute("INSERT INTO order_line (order_id, product_id, quantity) VALUES (?,?,?)",[orderId, product.id, product.quantity]);            
+            await connection.execute("INSERT INTO order_line (order_id, product_id, quantity) VALUES (?,?,?)",[orderId, product.id, product.count]);            
         }
 
         connection.commit();
@@ -185,7 +199,22 @@ app.post('/order', async (req, res) => {
     } catch (err) {
         connection.rollback();
         res.status(500).json({ error: err.message });
+    
     }
+    
+    async function getCustomerId(username) {
+        const connection = await mysql.createConnection(conf);
+        const [rows] = await connection.execute(
+          'SELECT id FROM customer WHERE username = ?',
+          [username]
+        );
+      
+        if (rows.length > 0) {
+          return rows[0].id;
+        }
+      
+        throw new Error('Customer not found');
+      }
 });
 
 
@@ -216,7 +245,39 @@ app.post('/register', upload.none(), async (req,res) => {
 
 });
 
-//päivittää käyttäjän salasanan 
+/** Tähän tulee Joni Neuvosen palaute-osion post/get tietokantaohjelmoinnin tehtävä.
+ */
+
+app.post('/palaute', upload.none(), async (req, res) => {
+    const feedback = req.body.feedback;
+    const tuote = req.body.tuote;
+
+    try {
+        const connection = await mysql.createConnection(conf);
+
+        const [rows] = await connection.execute('INSERT INTO palaute(feedback, tuote) VALUES(?,?)', [feedback, tuote]);
+
+        res.status(200).end();
+    } catch (err) {
+        res.status(500).json({ error: err.message });
+    }
+});
+
+app.get('/palaute', async (req, res) => {
+    try {
+        const connection = await mysql.createConnection(conf);
+
+        const [rows] = await connection.execute('SELECT * FROM palaute');
+
+        res.json(rows);
+
+    } catch (err) {
+        res.status(500).json({ error: err.message });
+    }
+});
+
+
+//Tämä on osa Topias Tynin tietokantaohjelmoinnin tehtävää 
 app.post('/changepassword', upload.none(), async (req, res) => {
     const username = req.body.username;
     const oldPassword = req.body.pw;  
@@ -249,6 +310,21 @@ app.post('/changepassword', upload.none(), async (req, res) => {
         res.status(500).json({ error: err.message });
     }
 });
+//Tähän tulee toinen osa Topias Tynin tietokantaohjelmoinnin tehtävästä
+app.get('/users', async (req, res) => {
+    try {
+        const connection = await mysql.createConnection(conf);
+
+        const [rows] = await connection.execute('SELECT first_name, last_name, username FROM customer');
+
+        res.json(rows);
+
+    } catch (err) {
+        res.status(500).json({ error: err.message });
+    }
+});
+
+
 /**
  * Checks the username and password and returns jwt authentication token if authorized. 
  * Supports urlencoded or multipart
@@ -280,6 +356,7 @@ app.post('/login', upload.none(), async (req, res) => {
         res.status(500).json({ error: err.message });
     }
 });
+
 
 
 /**

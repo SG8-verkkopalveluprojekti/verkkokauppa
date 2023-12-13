@@ -26,8 +26,8 @@ export const Carouselli = () => {
           className="mx-auto"
         />
         <Carousel.Caption>
-          <h3>First slide label</h3>
-          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+          <h3>Huippuluokan näytönohjaimet</h3>
+          <p>Tehokkaat näytönohjaimet tarjoavat upean pelikokemuksen ja nopean suorituskyvyn videoeditoinnissa.</p>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item style={carouselItemStyle}>
@@ -38,8 +38,8 @@ export const Carouselli = () => {
           className="mx-auto"
         />
         <Carousel.Caption>
-          <h3>Second slide label</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <h3>Intel-suorittimet</h3>
+          <p>Intel-prosessorit tarjoavat huippuluokan suorituskyvyn ja energiatehokkuuden monipuolisiin käyttötarkoituksiin.</p>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item style={carouselItemStyle}>
@@ -50,8 +50,8 @@ export const Carouselli = () => {
           className="mx-auto"
         />
         <Carousel.Caption>
-          <h3>Third slide label</h3>
-          <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+          <h3>AMD Ryzen -prosessorit</h3>
+          <p>AMD Ryzen -sarjan prosessorit tarjoavat monipuolisen suorituskyvyn pelaamiseen ja multitaskingiin.</p>
         </Carousel.Caption>
       </Carousel.Item>
     </Carousel>

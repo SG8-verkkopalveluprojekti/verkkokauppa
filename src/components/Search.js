@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import "./Search.css";
 import axios from "axios";
 
-export const Search = ({ shoppingCart }) => {
+export const Search = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [products, setProducts] = useState([]);
   const navigate = useNavigate();
@@ -14,7 +14,7 @@ export const Search = ({ shoppingCart }) => {
   const handleSearchClick = async () => {
     try {
       if (searchTerm.trim() === "") {
-        // Display an error message or prevent the search action
+        // Display an error message and prevent the search action
         alert("Hakukenttä ei voi olla tyhjä!");
         return;
       }
@@ -68,7 +68,7 @@ export const Search = ({ shoppingCart }) => {
             <div className="cart">
               <Link to="/cart" >
                 <i className="fa fa-shopping-bag icon-circle"></i>
-                <span>{shoppingCart?.length || 0}</span>
+                <span>0</span>
               </Link>
             </div>
           </div>
