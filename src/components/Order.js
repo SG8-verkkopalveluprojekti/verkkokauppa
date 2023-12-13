@@ -5,7 +5,7 @@ import { jwtToken } from './signals/TokenSignal';
 
 export const Order = ({ cart, onSubmitOrder }) => {
 
-  console.log(JSON.stringify(cart));
+  console.log('Tilaus'+JSON.stringify(cart));
   const token = jwtToken;
 
   const makeOrder = async () => {
@@ -13,11 +13,6 @@ export const Order = ({ cart, onSubmitOrder }) => {
 
     if (cart.length === 0) {
       alert('Ostoskori on tyhjä! Lisää tuotteita ostoskoriin ennen tilauksen tekemistä.');
-      return;
-    }
-
-    if (!token) {
-      alert('Kirjaudu sisään tehdäksesi tilauksen!');
       return;
     }
 
@@ -36,6 +31,7 @@ export const Order = ({ cart, onSubmitOrder }) => {
       console.log('Order submission response:', response.data);
     } catch (error) {
       console.error('Error making order:', error);
+      alert('Tilausta ei voitu tehdä. Tarkista, että olet kirjautunut sisään ja yritä uudelleen.');
     }
   };
 

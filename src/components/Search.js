@@ -1,4 +1,4 @@
-import React, { useState,  } from "react";
+import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./Search.css";
 import axios from "axios";
@@ -8,13 +8,10 @@ export const Search = () => {
   const [products, setProducts] = useState([]);
   const navigate = useNavigate();
 
-  
-
-
   const handleSearchClick = async () => {
     try {
+      // Display an error message and prevent the search action
       if (searchTerm.trim() === "") {
-        // Display an error message and prevent the search action
         alert("Hakukenttä ei voi olla tyhjä!");
         return;
       }
@@ -23,25 +20,20 @@ export const Search = () => {
         `http://localhost:3001/products?search=${searchTerm}`
       );
 
-      console.log("API Response:", response.data)
       setProducts(response.data);
-      console.log("set products", products);
 
       // Navigate to the search results page
       navigate(`/search-results?searchTerm=${searchTerm}`);
-
     } catch (error) {
       console.error("Error fetching products", error);
     }
   };
-
+  //If enter is used in search field, invoke handleSearchClick(); function
   const handleKeyDown = (e) => {
     if (e.key === "Enter") {
       handleSearchClick();
     }
   };
-
- 
 
   return (
     <>
@@ -66,14 +58,14 @@ export const Search = () => {
 
           <div className="cart-icon f_flex width">
             <div className="cart">
-              <Link to="/cart" >
+              <Link to="/cart">
                 <i className="fa fa-shopping-bag icon-circle"></i>
                 <span>0</span>
               </Link>
             </div>
           </div>
         </div>
-       </section>
+      </section>
     </>
   );
 };
