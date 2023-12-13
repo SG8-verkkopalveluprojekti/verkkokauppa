@@ -1,14 +1,15 @@
-import React, { useEffect, useState } from 'react';
-import { Order } from '../components/Order';
-import { useLocation } from 'react-router-dom';
-import './Cart.css';
+import React, { useEffect, useState } from "react";
+import { Order } from "../components/Order";
+import { useLocation, useNavigate } from "react-router-dom";
+import "./Cart.css";
 
 export const Cart = () => {
   const [shoppingCart, setShoppingCart] = useState(
-    JSON.parse(localStorage.getItem('shopping-cart')) || []
+    JSON.parse(localStorage.getItem("shopping-cart")) || []
   );
   const [totalPrice, setTotalPrice] = useState(0);
   const params = useLocation();
+  const navigate = useNavigate();
 
   const updateCount = (item, n) => {
     setShoppingCart((prevCart) => {
@@ -17,18 +18,15 @@ export const Cart = () => {
           ? { ...element, count: Math.max(0, element.count + n) }
           : element
       );
-  
+
       // Remove item if count is 0
       return updatedCart.filter((element) => element.count > 0);
     });
   };
 
- 
-
   useEffect(() => {
-    localStorage.setItem('shopping-cart', JSON.stringify(shoppingCart));
-
-    const newTotalPrice = shoppingCart.reduce(
+    localStorage.setItem("shopping-cart", JSON.stringify(shoppingCart));
+	const newTotalPrice = shoppingCart.reduce(
       (acc, item) => acc + item.count * item.price,
       0
     );
@@ -41,7 +39,7 @@ export const Cart = () => {
       addItemToCart(item);
     }
   }, [params.state]);
-
+  
   const addItemToCart = (item) => {
     setShoppingCart((prevCart) => {
       const isPresent = prevCart.some((element) => element.id === item.id);
@@ -65,17 +63,23 @@ export const Cart = () => {
 
     if (updatedCart.length === 0) {
       setShoppingCart([]);
+	  localStorage.clear()
+	  console.log(localStorage);
     } else {
       setShoppingCart(updatedCart);
     }
   };
 
-    const handleOrderSubmit = () => {
+  const handleOrderSubmit = () => {
     // Define the logic for handling the order submission here
-    // For example, you can display a confirmation message or redirect the user
-    console.log('Order submitted successfully!');
+    alert("Tilauksesi onnistui!");
+    console.log("Order submitted successfully!");
+	localStorage.clear()
+    setShoppingCart([]);
+	navigate('/')
+    console.log(shoppingCart);
+    console.log(localStorage);
   };
-
 
   return (
     <div className="cart-container">
@@ -83,10 +87,10 @@ export const Cart = () => {
       <article>
         {shoppingCart.length > 0 ? (
           shoppingCart.map((item) => (
-            <div className='cart_box' key={item.id}>
-              <div className='cart_img'>
-                <img src={item.imageUrl} alt='' />
-                <div className='details'>
+            <div className="cart_box" key={item.id}>
+              <div className="cart_img">
+                <img src={item.imageUrl} alt="" />
+                <div className="details">
                   <p>{item.productName}</p>
                 </div>
               </div>
@@ -97,7 +101,9 @@ export const Cart = () => {
               </div>
               <div>
                 <span>{(item.price * item.count).toFixed(2)}€</span>
-                <button onClick={() => removeItemFromCart(item)}>Remove</button>
+                <button onClick={() => removeItemFromCart(item)}>
+                  Poista tuote
+                </button>
               </div>
             </div>
           ))
