@@ -78,7 +78,7 @@ export const Cart = () => {
 
 
   return (
-    <>
+    <div className="cart-container">
       <h3>Shopping Cart</h3>
       <article>
         {shoppingCart.length > 0 ? (
@@ -113,7 +113,7 @@ export const Cart = () => {
         Hinta Yhteensä: {totalPrice.toFixed(2)}€
         <Order cart={shoppingCart} onSubmitOrder={handleOrderSubmit} />
       </div>
-    </>
+    </div>
   );
 };
 
