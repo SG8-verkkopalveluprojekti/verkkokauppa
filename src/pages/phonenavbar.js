@@ -6,8 +6,8 @@ const BottomNavbar = () => {
   return (
     <Navbar className="bottom-navbar" fixed="bottom" bg="dark" variant="dark">
       <Nav className="mx-auto">
-        <Nav.Link href="./">Home</Nav.Link>
-        <Nav.Link href="/help">help</Nav.Link>
+        <Nav.Link href="./">Etusivu</Nav.Link>
+        <Nav.Link href="/help">Info</Nav.Link>
       </Nav>
     </Navbar>
   );
