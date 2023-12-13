@@ -3,8 +3,6 @@ import Card from 'react-bootstrap/Card';
 import { ListGroup } from 'react-bootstrap';
 import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
-//import axios from 'axios';
-
 
 function Kortti() {
   return (
@@ -88,43 +86,7 @@ function Kortti() {
     </div>
     </div>
    
-   
   );
 }
 
 export default Kortti;
-
-
-//TEHDÄÄN TÄMÄ OSIO EHKÄ TÄHÄN TYYLIIN ETTÄ HELPOMMIN YLLÄPIDETTÄVISSÄ (HAKEE TIEDOT TIETOKANNASTA)
-
-/*export const Kortti = () => {
-
-  const [categories, setCategories] = useState(null);
-
-  useEffect(() => {
-    axios.get('http://localhost:3001/categories')
-      .then(resp => setCategories(resp.data))
-      .catch(error => console.log(error.message));
-  }, []);
-
-  return (
-    <div className="row justify-content-center">
-      {categories && categories.map(category => (
-        <div key={category.id} className='col-md-3 mb-3 d-none d-sm-block'>
-          <Card style={{ width: '250px', backgroundColor: 'grey', marginTop: '30px', margin: '10px' }}>
-            <Card.Img variant="top" src={'https://www.io-tech.fi/wp-content/uploads/2022/02/12400f-00.jpg'} style={{ height: '15rem', marginTop: '5px', padding: '15px' }} />
-            <Card.Body>
-              <Card.Title>{category.categoryName}</Card.Title>
-              <Card.Text>
-                {category.description || 'Tuotteen kuvaus puuttuu'}
-              </Card.Text>
-              <Button className="btn btn-primary btn-md" style={{ width: "100%" }} variant="primary">
-                Siirry tuotesivulle
-              </Button>
-            </Card.Body>
-          </Card>
-        </div>
-      ))}
-    </div>
-  );
-}*/

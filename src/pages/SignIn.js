@@ -16,7 +16,6 @@ export const SignIn = () => {
   const [userInfo, setUserInfo] = useState(null);
 
   useEffect(() => {
-    // Fetch user information when the component mounts (assuming user is already logged in)
     if (jwtToken.value) {
       const fetchUserInfo = async () => {
         try {

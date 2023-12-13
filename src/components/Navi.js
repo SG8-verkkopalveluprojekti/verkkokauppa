@@ -7,6 +7,8 @@ import { jwtToken } from '../components/signals/TokenSignal'; // Tuodaan mukanaa
 import axios from 'axios'
 import './navi.css';
 import { useNavigate } from 'react-router-dom';
+import { useCurrency } from './CurrencyContext';
+import Button from 'react-bootstrap/Button';
 
 export const Navi = () => {
   const [userInfo, setUserInfo] = useState(null);
@@ -32,6 +34,7 @@ export const Navi = () => {
 
   const isLoggedIn = jwtToken.value.length !== 0;
   const isAdmin = userInfo?.is_admin === 1;
+  const { selectedCurrency, toggleCurrency } = useCurrency();
   
 
   const handleLogout = () => {
@@ -68,6 +71,7 @@ export const Navi = () => {
               <>
                 <Nav.Link href="/signin" className="text-light">Kirjaudu</Nav.Link>
                 <Nav.Link href="/register" className="text-light">Rekisteröidy</Nav.Link>
+                <Button style={{ marginTop:"0px"}} variant="outline-light" size="sm" onClick={toggleCurrency}>({selectedCurrency.toUpperCase()})</Button>
               </>
             )}
           </Nav>

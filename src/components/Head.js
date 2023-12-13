@@ -1,10 +1,8 @@
 import React from "react";
-import { useCurrency } from './CurrencyContext';
-import Button from 'react-bootstrap/Button';
 
 
 export const Head = () => {
-  const { selectedCurrency, toggleCurrency } = useCurrency();
+  
 
   return (
     <div>
@@ -14,10 +12,9 @@ export const Head = () => {
             <i className="fa fa-phone"></i>
             <label>+358 44 000 000</label>
             <i className="fa fa-envelope"></i>
-            <label>myynti@nettikaubba.com</label>
+            <label><a href="mailto:myynti@nettikaubba.com">myynti@nettikaubba.com</a></label>
           </div>         
           <div>
-          <Button style={{ marginTop:"0px"}} variant="outline-light" size="sm" onClick={toggleCurrency}>({selectedCurrency.toUpperCase()})</Button>
           </div>
         </div>
       </section>
