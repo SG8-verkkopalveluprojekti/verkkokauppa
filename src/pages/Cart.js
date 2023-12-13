@@ -71,9 +71,11 @@ export const Cart = () => {
   };
 
     const handleOrderSubmit = () => {
+		alert('Tilauksesi onnistui!')
     // Define the logic for handling the order submission here
     // For example, you can display a confirmation message or redirect the user
     console.log('Order submitted successfully!');
+	setShoppingCart([]);
   };
 
 
