@@ -35,17 +35,21 @@ const ProductCard = ({ product, openModal }) => {
         style={{ height: "15rem", marginTop: "5px", padding: "15px" }}
       />
       <Card.Body>
-        <Card.Title style={{height:"105px"}}>{product.productName}</Card.Title>
+        <Card.Title style={{ height: "105px" }}>
+          {product.productName}
+        </Card.Title>
         <Card.Text></Card.Text>
-        <Card.Text style={{ fontSize: "25px"}}>
+        <Card.Text style={{ fontSize: "25px" }}>
           {formatPrice(product.price)}
         </Card.Text>
         <AddCart product={product} key={product.id} />
-        <Button className="btn btn-primary btn-md"
-                style={{ width: "100%" }}
-                variant="primary"
-                onClick={() => openModal(product)}
-        >Lisätietoa
+        <Button
+          className="btn btn-primary btn-md"
+          style={{ width: "100%" }}
+          variant="primary"
+          onClick={() => openModal(product)}
+        >
+          Lisätietoa
         </Button>
       </Card.Body>
     </Card>

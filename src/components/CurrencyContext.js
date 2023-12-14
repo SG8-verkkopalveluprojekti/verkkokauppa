@@ -1,12 +1,14 @@
-import React, { createContext, useContext, useState } from 'react';
+import React, { createContext, useContext, useState } from "react";
 
 const CurrencyContext = createContext();
 
 export const CurrencySelection = ({ children }) => {
-  const [selectedCurrency, setSelectedCurrency] = useState('eur');
+  const [selectedCurrency, setSelectedCurrency] = useState("eur");
 
   const toggleCurrency = () => {
-    setSelectedCurrency((prevCurrency) => (prevCurrency === 'usd' ? 'eur' : 'usd'));
+    setSelectedCurrency((prevCurrency) =>
+      prevCurrency === "usd" ? "eur" : "usd"
+    );
   };
 
   return (
@@ -19,7 +21,7 @@ export const CurrencySelection = ({ children }) => {
 export const useCurrency = () => {
   const context = useContext(CurrencyContext);
   if (!context) {
-    throw new Error('useCurrency must be used within a CurrencyProvider');
+    throw new Error("useCurrency must be used within a CurrencyProvider");
   }
   return context;
 };

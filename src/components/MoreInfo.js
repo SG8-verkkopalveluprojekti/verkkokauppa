@@ -27,7 +27,11 @@ const MoreInfo = ({ showModal, closeModal, selectedProduct }) => {
           {selectedProduct ? (
             <>
               <ProductDetails product={selectedProduct} />
-              <AddCart product={selectedProduct} key={selectedProduct.id} /> <br></br>
+              <AddCart
+                product={selectedProduct}
+                key={selectedProduct.id}
+              />{" "}
+              <br></br>
               <ProductReviewForm />
               <ReviewList />
             </>

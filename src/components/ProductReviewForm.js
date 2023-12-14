@@ -16,23 +16,31 @@ const ProductReviewForm = () => {
     });
   };
 
-  
-
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .post('http://localhost:3001/palaute', { tuote: review.tuote, feedback: review.feedback })
-      .then((resp) => {
-        alert('Palaute lisätty onnistuneesti');
+      .post("http://localhost:3001/palaute", {
+        tuote: review.tuote,
+        feedback: review.feedback,
       })
-      .catch((err) => alert('Jotain meni pieleen'));
-    console.log("Review submitted - Tuote:", review.tuote, "Feedback:", review.feedback);
+      .then((resp) => {
+        alert("Palaute lisätty onnistuneesti");
+      })
+      .catch((err) => alert("Jotain meni pieleen"));
+    console.log(
+      "Review submitted - Tuote:",
+      review.tuote,
+      "Feedback:",
+      review.feedback
+    );
   };
 
   return (
     <Form onSubmit={handleSubmit}>
       <Form.Group controlId="feedback">
-        <Form.Label><h4>Tuote palaute</h4></Form.Label>
+        <Form.Label>
+          <h4>Tuote palaute</h4>
+        </Form.Label>
         <Form.Control
           as="textarea"
           rows={3}
@@ -44,7 +52,9 @@ const ProductReviewForm = () => {
         />
       </Form.Group>
       <Form.Group controlId="tuote">
-        <Form.Label style={{marginTop:"10px"}}><h4>Tuotenimi</h4></Form.Label>
+        <Form.Label style={{ marginTop: "10px" }}>
+          <h4>Tuotenimi</h4>
+        </Form.Label>
         <Form.Control
           type="text"
           name="tuote"
@@ -56,7 +66,7 @@ const ProductReviewForm = () => {
       </Form.Group>
       <Button variant="primary" type="submit">
         Lisää palaute
-      </Button> 
+      </Button>
     </Form>
   );
 };
