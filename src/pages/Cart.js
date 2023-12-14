@@ -100,7 +100,7 @@ export const Cart = () => {
               </div>
               <div>
                 <span>{(item.price * item.count).toFixed(2)}€</span>
-                <button onClick={() => removeItemFromCart(item)}>
+                <button style={{marginTop:"5px"}} onClick={() => removeItemFromCart(item)}>
                   Poista tuote
                 </button>
               </div>
