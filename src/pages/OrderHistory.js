@@ -34,16 +34,17 @@ export const OrderHistory = () => {
       }, [token]);
     
 
-      
-
+      const calculateTotalPrice = (products) => {
+        return products.reduce((total, product) => total + product.quantity * product.price, 0);
+      }
 
   return (
     <div>
       <h2>Tilaushistoria</h2>
       {orders.map((order) => (
         <div className='orderlist' key={order.orderId}>
-          <p>Tilaus päivä: {order.orderDate}</p>
-          <p>TIlausnumero: {order.orderId}</p>
+          <p>Tilauksen päivämäärä: {order.orderDate}</p>
+          <p>Tilausnumero: {order.orderId}</p>
           <ul>
             {order.products.map((product) => (
               <li key={product.id}>
@@ -52,7 +53,7 @@ export const OrderHistory = () => {
               
             ))}
           </ul>
-          
+          <p>Yhteensä: {calculateTotalPrice(order.products).toFixed(2)}€</p>
         </div>
       ))}
     </div>
