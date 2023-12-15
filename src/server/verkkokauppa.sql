@@ -132,7 +132,7 @@ VALUES (
         'Muisti: 4 x DDR4 maks 128GB',
         'Audio: Realtek 7.1 Surround Sound High Definition Audio CODEC',
         139.90,
-        150.72,
+        150.99,
         'https://ic.jimms.fi/product/6/0/369769-ig800gg.jpg',
         'Emolevyt'
     ), (
@@ -152,7 +152,7 @@ VALUES (
         'Audio: Realtek® ALC1200 codec',
         'Piirisarja: AMD B550',
         149.99,
-        161.59,
+        161.99,
         'https://ic.jimms.fi/product/7/5/336174-ig800gg.jpg',
         'Emolevyt'
     ), (
@@ -162,7 +162,7 @@ VALUES (
         'Muisti: 4 x DDR5 DIMM, maks. 128GB ',
         'Audio: Realtek Audio CODEC ',
         189.90,
-        204.59,
+        204.99,
         'https://ic.jimms.fi/product/1/1/413018-ig800gg.jpg',
         'Emolevyt'
     ), (
@@ -196,7 +196,7 @@ VALUES (
         'https://ic.jimms.fi/product/2/2/393827-ig800gg.jpg',
         'Kotelot'
     ), (
-        'Kingston 32GB (2 x 16GB) Fury Beast DDR5 6000MHz Muistikampa',
+        'Kingston 32GB (2 x 16GB) Fury Beast DDR5 6000MHz',
         'Kapasiteetti: 32GB (2 x 16GB)',
         'Nopeus: 6000 MT/s',
         'Latenssi: CL40',
@@ -256,7 +256,7 @@ VALUES (
         'https://ic.jimms.fi/product/9/5/374094-ig800gg.jpg',
         'Kotelot'
     ), (
-        'Corsair 32GB (2 x 16GB) Vengeance RGB, DDR5 6000MHz Muistikampa',
+        'Corsair 32GB (2 x 16GB) Vengeance RGB, DDR5 6000MHz',
         'Muistisarja: Vengeance RGB DDR5',
         'Muistityyppi: DDR5 DIMM, 288-pin',
         'Kapasiteetti: 32GB (2 x 16GB)',
@@ -316,37 +316,37 @@ VALUES (
         'https://ic.jimms.fi/product/5/7/331652-ig800gg.jpg',
         'Kotelot'
     ), (
-        'Corsair 32GB (2 x 16GB) Vengeance, DDR5 5200MHz, CL40, 1.25V, musta/harma Muistikampa',
+        'Corsair 32GB (2 x 16GB) Vengeance, DDR5 5200MHz, CL40, 1.25V',
         'Kapasiteetti: 32GB (2 x 16GB)',
         'Nopeus: DDR5-5200',
         'Latenssi: 40-40-40-77',
         'Jännite: 1.25V',
         114.90,
-        123.79,
+        123.99,
         'https://ic.jimms.fi/product/3/8/366531-ig800gg.jpg',
         'Muistit'
     ), (
-        'Corsair 32GB (2 x 16GB) Vengeance RGB Pro, DDR4 3600MHz, CL18, 1.35V, musta Muistikampa',
+        'Corsair 32GB (2 x 16GB) Vengeance RGB Pro, DDR4 3600MHz, CL18, 1.35V',
         'Kapasiteetti: 32GB (2 x 16GB)',
         'Muistityyppi: DDR4 DIMM 288-pin',
         'Nopeus: 3600 MHz (PC4-28800)',
         'Jännite: 1.35 V',
         92.90,
-        100.09,
+        100.99,
         'https://ic.jimms.fi/product/7/7/274072-ig800gg.jpg',
         'Muistit'
     ), (
-        'G.Skill 32GB 2 x 16GB Ripjaws V, DDR4 3200MHz, CL16, 1.35V, musta Muistikampa',
+        'G.Skill 32GB 2 x 16GB Ripjaws V, DDR4 3200MHz, CL16, 1.35V, musta',
         'Sarja: Ripjaws V',
         'Muistityyppi: DDR4',
         'Nopeus: 3200 MHz',
         'Latenssi: 16-18-18-38',
         85.90,
-        100.09,
+        100.99,
         'https://ic.jimms.fi/product/8/5/182784-ig800gg.jpg',
         'Muistit'
     ), (
-        'Kingston 16GB (2 x 8GB) FURY Beast, DDR4 3200MHz Muistikampa',
+        'Kingston 16GB (2 x 8GB) FURY Beast, DDR4 3200MHz',
         'Kapasiteetti: 16GB (2 x 8GB)',
         'Nopeus: 3200MHz',
         'Latenssi: CL16 (16-18-18) ',
@@ -382,7 +382,7 @@ VALUES (
         'Kellotaajuus: 3.2 GHz (Base, P-core) / 2.4 GHz (Base, E-core) ',
         'Maks turbotaajuus: Intel Thermal Velocity Boost: Enintään 6.0 GHz ',
         679.90,
-        732.52,
+        732.99,
         'https://ic.jimms.fi/product/5/0/466759-ig800gg.jpg',
         'Prosessorit'
     ), (
@@ -392,7 +392,7 @@ VALUES (
         ' Kellotaajuus: 3.70 GHz (Base) ',
         ' Maks turbotaajuus: 4.90 GHz',
         247.90,
-        267.09,
+        267.99,
         'https://ic.jimms.fi/product/2/3/356326-ig800gg.jpg',
         'Prosessorit'
     ), (
@@ -402,7 +402,7 @@ VALUES (
         'Paino: n. 5.9 kg',
         'Emolevytuki: ATX, Micro-ATX, Mini-ITX',
         61.90,
-        66.69,
+        66.99,
         'https://ic.jimms.fi/product/2/1/319528-ig800gg.jpg',
         'Kotelot'
     ), (
@@ -412,7 +412,7 @@ VALUES (
         'Kokonaistuuletintuki: 8 x 120 mm tai 6 x 140 mm ',
         'Virtalähteen pituus: 1 HDD Tray: 255 mm, 2 HDD Tray: 155 mm ',
         159.90,
-        172.28,
+        172.99,
         'https://ic.jimms.fi/product/2/1/418028-ig800gg.jpg ',
         'Kotelot'
     ), (
@@ -422,7 +422,7 @@ VALUES (
         'Paino: 5,3 kg',
         'Yhteensopivuus: M-ATX / ITX',
         66.90,
-        72.89,
+        72.99,
         'https://ic.jimms.fi/product/4/4/320245-ig800gg.jpg',
         'Kotelot'
     ), (
@@ -432,7 +432,7 @@ VALUES (
         'S2FC - Älykäs ja hiljainen tuulettimen hallinta',
         'Mitat (PxLxK): 140 x 150 x 86 mm ',
         99.90,
-        107.59,
+        107.99,
         'https://ic.jimms.fi/product/8/4/329285-ig800gg.jpg',
         'Virtalahteet'
     ), (
@@ -442,7 +442,7 @@ VALUES (
         'Mitat: 180 x 150 x 86 mm ',
         'Hyötysuhde: 80 Plus Gold ',
         254.90,
-        274.69,
+        274.99,
         'https://ic.jimms.fi/product/3/7/436632-ig800gg.jpg',
         'Virtalahteet'
     ), (
@@ -452,7 +452,7 @@ VALUES (
         'Hyötysuhde: 80 Plus Platinum',
         'AC-sisääntulon alue: 100-240 Vac',
         264.90,
-        285.17,
+        285.99,
         ' https://ic.jimms.fi/product/5/5/403754-ig800gg.jpg',
         'Virtalahteet'
     ), (

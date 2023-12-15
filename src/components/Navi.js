@@ -8,7 +8,7 @@ import axios from 'axios'
 import './navi.css';
 import { useNavigate } from 'react-router-dom';
 import { useCurrency } from './CurrencyContext';
-import Button from 'react-bootstrap/Button';
+import Dropdown from 'react-bootstrap/Dropdown';
 
 export const Navi = () => {
   const [userInfo, setUserInfo] = useState(null);
@@ -35,7 +35,10 @@ export const Navi = () => {
   const isLoggedIn = jwtToken.value.length !== 0;
   const isAdmin = userInfo?.is_admin === 1;
   const { selectedCurrency, toggleCurrency } = useCurrency();
-  
+  const setCurrency = (currency) => {
+    if (currency !== selectedCurrency) {toggleCurrency(currency);}
+  };
+
 
   const handleLogout = () => {
     jwtToken.value = '';
@@ -74,7 +77,15 @@ export const Navi = () => {
                 <Nav.Link href="/register" className="text-light">Rekisteröidy</Nav.Link>
               </>
             )}
-            <Button style={{width:"60px", height:"40px", marginTop:"0px", marginLeft:"5px"}} variant="outline-light" size="sm" onClick={toggleCurrency}>{selectedCurrency.toUpperCase()}</Button>
+          <Dropdown>
+              <Dropdown.Toggle variant="gray"  id="dropdown-basic" style={{color:"white", width:"60px", height:"40px", marginTop:"0px", marginLeft:"5px"}} size="sm">
+                {selectedCurrency.toUpperCase()}
+              </Dropdown.Toggle>
+              <Dropdown.Menu>
+                <Dropdown.Item onClick={() => setCurrency("eur")}>EUR€</Dropdown.Item>
+                <Dropdown.Item onClick={() => setCurrency("usd")}>USD$</Dropdown.Item>
+              </Dropdown.Menu>
+          </Dropdown>
           </Nav>
          
         </Navbar.Collapse>
