@@ -33,7 +33,7 @@ export const OrderHistory = () => {
         fetchOrders();
       }, [token]);
     
-
+      // Calculates the total price of the order
       const calculateTotalPrice = (products) => {
         return products.reduce((total, product) => total + product.quantity * product.price, 0);
       }
@@ -52,7 +52,7 @@ export const OrderHistory = () => {
               </li>
               
             ))}
-          </ul>
+          </ul> 
           <p>Yhteensä: {calculateTotalPrice(order.products).toFixed(2)}€</p>
         </div>
       ))}

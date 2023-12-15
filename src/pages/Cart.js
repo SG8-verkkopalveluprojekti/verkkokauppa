@@ -26,7 +26,7 @@ export const Cart = () => {
 
   useEffect(() => {
     localStorage.setItem("shopping-cart", JSON.stringify(shoppingCart));
-	const newTotalPrice = shoppingCart.reduce(
+    const newTotalPrice = shoppingCart.reduce(
       (acc, item) => acc + item.count * item.price,
       0
     );
@@ -39,7 +39,7 @@ export const Cart = () => {
       addItemToCart(item);
     }
   }, [params.state]);
-  
+
   const addItemToCart = (item) => {
     setShoppingCart((prevCart) => {
       const isPresent = prevCart.some((element) => element.id === item.id);
@@ -63,21 +63,21 @@ export const Cart = () => {
 
     if (updatedCart.length === 0) {
       setShoppingCart([]);
-	  localStorage.clear()
-	  } else {
+      localStorage.clear();
+    } else {
       setShoppingCart(updatedCart);
     }
   };
 
   const handleOrderSubmit = () => {
     // Alert after succesful order
-    alert("Tilauksesi onnistui!");
+    alert("Kiitos tilauksesta! Tilauksesi onnistui!");
     console.log("Order submitted successfully!");
-	// Clears localstorage and sets shoppingCart state to be empty
-	localStorage.clear()
+    // Clears localstorage and sets shoppingCart state to be empty
+    localStorage.clear();
     setShoppingCart([]);
-	// Navigates back to homepage
-	navigate('/')
+    // Navigates back to homepage
+    navigate("/");
   };
 
   return (
@@ -93,14 +93,17 @@ export const Cart = () => {
                   <p>{item.productName}</p>
                 </div>
               </div>
-              <div className='tuotelisa'>
+              <div className="tuotelisa">
                 <button onClick={() => updateCount(item, -1)}>-</button>
                 <button>{item.count}</button>
                 <button onClick={() => updateCount(item, 1)}>+</button>
               </div>
               <div>
                 <span>{(item.price * item.count).toFixed(2)}€</span>
-                <button style={{marginTop:"5px"}} onClick={() => removeItemFromCart(item)}>
+                <button
+                  style={{ marginTop: "5px" }}
+                  onClick={() => removeItemFromCart(item)}
+                >
                   Poista tuote
                 </button>
               </div>
@@ -112,13 +115,13 @@ export const Cart = () => {
           </div>
         )}
       </article>
-        
+
       {/* Display total price */}
       <div>
-        Hinta Yhteensä: {totalPrice.toFixed(2)}€ 
+        Hinta Yhteensä: {totalPrice.toFixed(2)}€
         <Order cart={shoppingCart} onSubmitOrder={handleOrderSubmit} />
       </div>
-    </div>  
+    </div>
   );
 };
 

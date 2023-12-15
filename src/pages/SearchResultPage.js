@@ -5,6 +5,7 @@ import { Button } from "react-bootstrap";
 import { useLocation } from "react-router-dom";
 import { AddCart } from "../components/AddCart";
 import MoreInfo from "../components/MoreInfo";
+import { useNavigate } from "react-router-dom";
 
 export const SearchResultPage = () => {
   const [showModal, setShowModal] = useState(false);
@@ -12,6 +13,7 @@ export const SearchResultPage = () => {
   const location = useLocation();
   const searchTerm = new URLSearchParams(location.search).get("searchTerm");
   const [products, setProducts] = useState([]);
+  const navigate = useNavigate();
 
   const openModal = (product) => {
     setSelectedProduct(product);
@@ -29,16 +31,17 @@ export const SearchResultPage = () => {
         const response = await axios.get(
           `http://localhost:3001/products?search=${searchTerm}`
         );
-        setProducts(response.data);
+        if (response.data.length === 0) {
+          alert("Antamallasi hakuehdolla ei löytynyt hakutuloksia");
+          navigate("/*");
+        } else setProducts(response.data);
       } catch (error) {
         console.error("Error fetching products", error);
       }
     };
 
     fetchData();
-  }, [searchTerm]); // Include searchTerm in the dependency array to re-fetch when it changes
-
-  console.log("SearchResultPage - Products:", products);
+  }, [searchTerm, navigate]);
 
   return (
     <div>
@@ -48,12 +51,14 @@ export const SearchResultPage = () => {
             <h3 className="product-name">{product.productName}</h3>
             <p className="product-price">Hinta: {product.price}€</p>
             <AddCart product={product} key={product.id} />
-            <Button className="btn btn-primary btn-md"
-                style={{ width: "100%" }}
-                variant="primary"
-                onClick={() => openModal(product)}
-        >Lisätietoa
-        </Button>
+            <Button
+              className="btn btn-primary btn-md"
+              style={{ width: "100%" }}
+              variant="primary"
+              onClick={() => openModal(product)}
+            >
+              Lisätietoa
+            </Button>
           </div>
         ))}
       </section>

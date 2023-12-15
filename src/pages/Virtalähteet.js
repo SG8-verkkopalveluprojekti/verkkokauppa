@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import MoreInfo from "../components/MoreInfo";
-import ProductCard from "../components/ProductCard"; // Adjust the path accordingly
+import ProductCard from "../components/ProductCard"; 
 
 export const Virtalähteet = () => {
   const [showModal, setShowModal] = useState(false);

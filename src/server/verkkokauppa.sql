@@ -1,4 +1,4 @@
--- Active: 1698938290511@@127.0.0.1@3306@verkkokauppa
+-- Active: 1698738860496@@127.0.0.1@3306@verkkokauppa
 DROP TABLE IF EXISTS order_line;
 
 DROP TABLE IF EXISTS customer_order;
@@ -106,7 +106,7 @@ INSERT INTO
         category
     )
 VALUES (
-        'Asus GeForce RTX 4070',
+        'Asus GeForce RTX 4070 Näytönohjain',
         'Kellotaajuus: 2520 MHz(Boost Clock)',
         'Muistia: 12 GB GDDR6X',
         'plaaplaa',
@@ -116,7 +116,7 @@ VALUES (
         'https://ic.jimms.fi/product/3/2/438137-ig800gg.jpg',
         'Naytonohjaimet'
     ), (
-        'Asus ROG STRIX B550-F',
+        'Asus ROG STRIX B550-F Emolevy',
         '3. sukupolven AMD Ryzen -prosessorit',
         'AMD B550 piirisarja',
         '4 x DDR4 DIMM, maks. 128GB',
@@ -136,7 +136,7 @@ VALUES (
         'https://ic.jimms.fi/product/6/0/369769-ig800gg.jpg',
         'Emolevyt'
     ), (
-        'Asus 1000W TUF Gaming Gold',
+        'Asus 1000W TUF Gaming Gold Virtalähde',
         'Teho: 1000W',
         'Mitat: 150x 150x 86 mm',
         'Hyötysuhde: 80 Plus Gold',
@@ -166,7 +166,7 @@ VALUES (
         'https://ic.jimms.fi/product/1/1/413018-ig800gg.jpg',
         'Emolevyt'
     ), (
-        'Asus Geforce RTX 3060 DUAL',
+        'Asus Geforce RTX 3060 DUAL Näytönohjain',
         'Määrä: 12GB GDDR6',
         'CUDA coret: 3584',
         'Kellotaajuus: 1867 MHz (Boost Clock)',
@@ -176,7 +176,7 @@ VALUES (
         'https://ic.jimms.fi/product/0/6/338803-ig800gg.jpg',
         'Naytonohjaimet'
     ), (
-        'Intel Core i7-14700K, LGA1700, 3.40 GHz, 33MB, Boxed ',
+        'Intel Core i7-14700K, LGA1700, 3.40 GHz, 33MB, Boxed Prosessori',
         'Ydinten määrä: 20 (8P + 12E)',
         'Threadien määrä: 28',
         'Kellotaajuus: 3.4 GHz (Base, P-core) / 2.5 GHz (Base, E-core)',
@@ -196,7 +196,7 @@ VALUES (
         'https://ic.jimms.fi/product/2/2/393827-ig800gg.jpg',
         'Kotelot'
     ), (
-        'Kingston 32GB (2 x 16GB) Fury Beast DDR5 6000MHz',
+        'Kingston 32GB (2 x 16GB) Fury Beast DDR5 6000MHz Muistikampa',
         'Kapasiteetti: 32GB (2 x 16GB)',
         'Nopeus: 6000 MT/s',
         'Latenssi: CL40',
@@ -206,7 +206,7 @@ VALUES (
         'https://ic.jimms.fi/product/8/9/402880-ig800gg.jpg',
         'Muistit'
     ), (
-        'MSI GeForce RTX 4070',
+        'MSI GeForce RTX 4070 Näytönohjain',
         'CUDA coret: 5888',
         'Kellotaajuus: Extreme Performance: 2520 MHz (MSI Center)',
         'Muisti: 12GB GDDR6X ',
@@ -216,7 +216,7 @@ VALUES (
         'https://ic.jimms.fi/product/5/8/459951-ig800gg.jpg',
         'Naytonohjaimet'
     ), (
-        'Gigabyte Z790 GAMING X AX',
+        'Gigabyte Z790 GAMING X AX Emolevy',
         'Prosessorituki: 13. ja 12. sukupolven Intel Core, Pentium Gold ja Celeron -prosessoreja',
         'Muisti: 4 x DDR5, maks. 128GB',
         'Audio: Realtek® Audio CODEC ',
@@ -226,7 +226,7 @@ VALUES (
         'https://ic.jimms.fi/product/9/7/406192-ig800gg.jpg',
         'Emolevyt'
     ), (
-        'SilverStone 500W Strider SFX',
+        'SilverStone 500W Strider SFX Virtalähde',
         'Teho: 500W',
         'Hyötysuhde: 87%~90%',
         'Mitat: 125 x 63,5 x 130mm',
@@ -236,7 +236,7 @@ VALUES (
         'https://ic.jimms.fi/product/1/3/321416-ig800gg.jpg',
         'Virtalahteet'
     ), (
-        'Intel Core i5-13600K, LGA1700, 3.50 GHz, 24MB, Boxed ',
+        'Intel Core i5-13600K, LGA1700, 3.50 GHz, 24MB, Boxed Prosessori ',
         'Ydinten määrä: 14 (6P + 8E)',
         'Threadien määrä: 20',
         'Kellotaajuus: 3.50 GHz (Base, P-core)',
@@ -256,7 +256,7 @@ VALUES (
         'https://ic.jimms.fi/product/9/5/374094-ig800gg.jpg',
         'Kotelot'
     ), (
-        'Corsair 32GB (2 x 16GB) Vengeance RGB, DDR5 6000MHz',
+        'Corsair 32GB (2 x 16GB) Vengeance RGB, DDR5 6000MHz Muistikampa',
         'Muistisarja: Vengeance RGB DDR5',
         'Muistityyppi: DDR5 DIMM, 288-pin',
         'Kapasiteetti: 32GB (2 x 16GB)',
@@ -266,7 +266,7 @@ VALUES (
         'https://ic.jimms.fi/product/5/8/408651-ig800gg.jpg',
         'Muistit'
     ), (
-        'Gigabyte Radeon RX 7800 XT',
+        'Gigabyte Radeon RX 7800 XT Näytönohjain',
         'Stream-prosessorit: 3840',
         'Kellotaajuus: Boost Clock: 2254 MHz',
         'Muisti: 16GB GDDR6',
@@ -276,7 +276,7 @@ VALUES (
         'https://ic.jimms.fi/product/8/1/457388-ig800gg.jpg',
         'Naytonohjaimet'
     ), (
-        'Asus TUF GAMING Z790-PLUS',
+        'Asus TUF GAMING Z790-PLUS Emolevy',
         'Intel LGA1700 -kanta',
         'Tukee 13. sukupolven Intel Core -prosessoreja ja 12. sukupolven Intel Core, Pentium Gold ja Celeron -prosessoreja',
         'Muisti: 4 x DDR5 DIMM, maks. 128GB',
@@ -286,7 +286,7 @@ VALUES (
         'https://ic.jimms.fi/product/4/8/418341-ig800gg.jpg',
         'Emolevyt'
     ), (
-        'Corsair 850W RM850e',
+        'Corsair 850W RM850e Virtalähde',
         'Teho: 850 W',
         'Mitat: 150 x 140 x 86 mm',
         '80 PLUS Gold -sertifioitu',
@@ -296,7 +296,7 @@ VALUES (
         'https://ic.jimms.fi/product/4/1/434348-ig800gg.jpg',
         'Virtalahteet'
     ), (
-        'AMD Ryzen 7 7800X3D, AM5, 4.2 GHz, 8-Core',
+        'AMD Ryzen 7 7800X3D, AM5, 4.2 GHz, 8-Core Prosessori',
         'Ydinten määrä: 8',
         'Threadien määrä: 16',
         'Kellotaajuus: Base Clock: 4.2 GHz',
@@ -316,7 +316,7 @@ VALUES (
         'https://ic.jimms.fi/product/5/7/331652-ig800gg.jpg',
         'Kotelot'
     ), (
-        'Corsair 32GB (2 x 16GB) Vengeance, DDR5 5200MHz, CL40, 1.25V, musta/harma',
+        'Corsair 32GB (2 x 16GB) Vengeance, DDR5 5200MHz, CL40, 1.25V, musta/harma Muistikampa',
         'Kapasiteetti: 32GB (2 x 16GB)',
         'Nopeus: DDR5-5200',
         'Latenssi: 40-40-40-77',
@@ -326,7 +326,7 @@ VALUES (
         'https://ic.jimms.fi/product/3/8/366531-ig800gg.jpg',
         'Muistit'
     ), (
-        'Corsair 32GB (2 x 16GB) Vengeance RGB Pro, DDR4 3600MHz, CL18, 1.35V, musta ',
+        'Corsair 32GB (2 x 16GB) Vengeance RGB Pro, DDR4 3600MHz, CL18, 1.35V, musta Muistikampa',
         'Kapasiteetti: 32GB (2 x 16GB)',
         'Muistityyppi: DDR4 DIMM 288-pin',
         'Nopeus: 3600 MHz (PC4-28800)',
@@ -336,7 +336,7 @@ VALUES (
         'https://ic.jimms.fi/product/7/7/274072-ig800gg.jpg',
         'Muistit'
     ), (
-        'G.Skill 32GB 2 x 16GB Ripjaws V, DDR4 3200MHz, CL16, 1.35V, musta',
+        'G.Skill 32GB 2 x 16GB Ripjaws V, DDR4 3200MHz, CL16, 1.35V, musta Muistikampa',
         'Sarja: Ripjaws V',
         'Muistityyppi: DDR4',
         'Nopeus: 3200 MHz',
@@ -346,7 +346,7 @@ VALUES (
         'https://ic.jimms.fi/product/8/5/182784-ig800gg.jpg',
         'Muistit'
     ), (
-        'Kingston 16GB (2 x 8GB) FURY Beast, DDR4 3200MHz',
+        'Kingston 16GB (2 x 8GB) FURY Beast, DDR4 3200MHz Muistikampa',
         'Kapasiteetti: 16GB (2 x 8GB)',
         'Nopeus: 3200MHz',
         'Latenssi: CL16 (16-18-18) ',
@@ -356,7 +356,7 @@ VALUES (
         'https://ic.jimms.fi/product/5/3/343856-ig800gg.jpg',
         'Muistit'
     ), (
-        'Asus GeForce RTX 4070 Ti',
+        'Asus GeForce RTX 4070 Ti Näytönohjain',
         'Kellotaajuus: 2730 MHz(Boost Clock)',
         'Muistia: 12 GB GDDR6X',
         'CUDA coret: 7680',
@@ -366,7 +366,7 @@ VALUES (
         'https://ic.jimms.fi/product/1/7/422012-ig800gg.jpg',
         'Naytonohjaimet'
     ), (
-        'Asus GeForce RTX 4060 DUAL',
+        'Asus GeForce RTX 4060 DUAL Näytönohjain',
         'Muisti: 8GB GDDR6',
         'Kellotaajuus: 2535 MHz (Boost Clock)',
         'CUDA coret: 3072',
@@ -376,7 +376,7 @@ VALUES (
         'https://ic.jimms.fi/product/3/6/447633-ig800gg.jpg',
         'Naytonohjaimet'
     ), (
-        'Intel Core i9-14900K, LGA1700, 3.20 GHz, 36MB, Boxed ',
+        'Intel Core i9-14900K, LGA1700, 3.20 GHz, 36MB, Boxed Prosessori',
         'Ydinten määrä: 24 (8P + 16E) ',
         'Threadien määrä: 32',
         'Kellotaajuus: 3.2 GHz (Base, P-core) / 2.4 GHz (Base, E-core) ',
@@ -386,7 +386,7 @@ VALUES (
         'https://ic.jimms.fi/product/5/0/466759-ig800gg.jpg',
         'Prosessorit'
     ), (
-        ' Intel Core i5-12600K, LGA1700, 3.70 GHz, 20MB, Boxed ',
+        ' Intel Core i5-12600K, LGA1700, 3.70 GHz, 20MB, Boxed Prosessori',
         ' Ydinten määrä: 10 (6P + 4E) ',
         ' Threadien määrä: 16',
         ' Kellotaajuus: 3.70 GHz (Base) ',
@@ -456,7 +456,7 @@ VALUES (
         ' https://ic.jimms.fi/product/5/5/403754-ig800gg.jpg',
         'Virtalahteet'
     ), (
-        'AMD Ryzen 7 7700X, AM5, 4.5 GHz, 8-Core, WOF',
+        'AMD Ryzen 7 7700X, AM5, 4.5 GHz, 8-Core, WOF Prosessori',
         'Ydinten määrä: 8',
         'Muistia: 12 GB GDDR6X',
         'Threadien määrä: 16',
