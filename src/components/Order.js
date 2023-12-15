@@ -4,7 +4,6 @@ import axios from "axios";
 import { jwtToken } from "./signals/TokenSignal";
 
 export const Order = ({ cart, onSubmitOrder }) => {
-  console.log("Tilaus" + JSON.stringify(cart));
   const token = jwtToken;
 
   const makeOrder = async () => {

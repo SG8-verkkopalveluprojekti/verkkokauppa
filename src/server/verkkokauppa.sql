@@ -51,7 +51,7 @@ CREATE TABLE customer (
 );
 
 
-INSERT INTO
+/* INSERT INTO
     customer (
         first_name,
         last_name,
@@ -65,7 +65,7 @@ VALUES (
         'admin_user',
         'admin_password',
         true
-    );
+    ); */
 
 CREATE TABLE
     customer_order(
