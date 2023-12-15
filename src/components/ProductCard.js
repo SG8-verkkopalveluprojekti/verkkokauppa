@@ -6,7 +6,7 @@ import { useCurrency } from "./CurrencyContext";
 const ProductCard = ({ product, openModal }) => {
   const { selectedCurrency } = useCurrency();
 
-  const formatPrice = (price) => {
+  const formatPrice = () => {
     if (selectedCurrency === "usd") {
       return product.price_usd + "$" || "No price";
     } else if (selectedCurrency === "eur") {
