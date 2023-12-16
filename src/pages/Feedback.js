@@ -12,13 +12,15 @@ export const Feedback = () => {
   const [successMessage, setSuccessMessage] = useState("");
 
   const handleSubmit = async () => {
+  //Nimi ja nimimerkki on pakollisia / Name and nickname is necessary 
     try {
       if (!email || !nickname) {
         setErrorMessage("Sähköposti ja nimimerkki ovat pakollisia!");
         setSuccessMessage("");
         return;
       }
-  
+
+  //POST pyyntö asiakaspalautteelle / POST request to submit customer feedback
       const response = await fetch('http://localhost:3001/customerfeedback', {
         method: 'POST',
         headers: {
@@ -31,7 +33,7 @@ export const Feedback = () => {
           rating,
         }),
       });
-  
+  //Mahdollisen errorin käsittely / Possible error handling
       if (response.ok) {
         setSuccessMessage("Palautteesi on lähetetty onnistuneesti!");
         setEmail("");
@@ -52,9 +54,10 @@ export const Feedback = () => {
     }
   };
   
-  
 
   return (
+
+  //Lomakekoodi / code for the form
     <div className="feedback">
       <h2>Jätä meille asiakaspalautetta:</h2>
 
@@ -85,7 +88,8 @@ export const Feedback = () => {
         onChange={(e) => setFeedback(e.target.value)}
       />
       <br></br>
-
+      
+  { /*Pisteytys / Star rating */}
       <div className="stars-container">
         {[...Array(5)].map((star, index) => {
           const currentRating = index + 1;
