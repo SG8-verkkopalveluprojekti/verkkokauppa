@@ -1,9 +1,17 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { Order } from "../components/Order";
 import { useLocation, useNavigate } from "react-router-dom";
+import { useCurrency } from '../components/CurrencyContext';
 import "./Cart.css";
 
 export const Cart = () => {
+  const { selectedCurrency } = useCurrency();
+
+  const getPrice = useCallback((item) => {
+    return selectedCurrency === 'usd' ? item.price_usd : item.price;
+  }, [selectedCurrency]);
+
+
   const [shoppingCart, setShoppingCart] = useState(
     JSON.parse(localStorage.getItem("shopping-cart")) || []
   );
@@ -25,13 +33,17 @@ export const Cart = () => {
   };
 
   useEffect(() => {
+    const calculateTotalPrice = () => {
+      const newTotalPrice = shoppingCart.reduce(
+        (acc, item) => acc + item.count * getPrice(item),
+        0
+      );
+      setTotalPrice(newTotalPrice);
+    };
+
     localStorage.setItem("shopping-cart", JSON.stringify(shoppingCart));
-    const newTotalPrice = shoppingCart.reduce(
-      (acc, item) => acc + item.count * item.price,
-      0
-    );
-    setTotalPrice(newTotalPrice);
-  }, [shoppingCart]);
+    calculateTotalPrice();
+  }, [shoppingCart, getPrice]);
 
   useEffect(() => {
     if (params.state && params.state.product !== null) {
@@ -99,7 +111,10 @@ export const Cart = () => {
                 <button onClick={() => updateCount(item, 1)}>+</button>
               </div>
               <div>
-                <span>{(item.price * item.count).toFixed(2)}€</span>
+                <span>
+                  {(getPrice(item) * item.count).toFixed(2)}
+                  {selectedCurrency === 'eur' ? ' €' : ' $'}
+                </span>
                 <button
                   style={{ marginTop: "5px" }}
                   onClick={() => removeItemFromCart(item)}
@@ -118,7 +133,7 @@ export const Cart = () => {
 
       {/* Display total price */}
       <div>
-        Hinta Yhteensä: {totalPrice.toFixed(2)}€
+        Hinta Yhteensä: {totalPrice.toFixed(2)}{selectedCurrency === 'eur' ? ' €' : ' $'}
         <Order cart={shoppingCart} onSubmitOrder={handleOrderSubmit} />
       </div>
     </div>
