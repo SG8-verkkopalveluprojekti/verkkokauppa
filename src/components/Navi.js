@@ -82,12 +82,11 @@ export const Navi = () => {
                 {selectedCurrency.toUpperCase()} {selectedCurrency === 'eur' ? ' €' : ' $'}
               </Dropdown.Toggle>
               <Dropdown.Menu>
-                <Dropdown.Item onClick={() => setCurrency("eur")}>EUR€</Dropdown.Item>
-                <Dropdown.Item onClick={() => setCurrency("usd")}>USD$</Dropdown.Item>
+                <Dropdown.Item onClick={() => setCurrency("eur")}>EUR €</Dropdown.Item>
+                <Dropdown.Item onClick={() => setCurrency("usd")}>USD $</Dropdown.Item>
               </Dropdown.Menu>
           </Dropdown>
           </Nav>
-         
         </Navbar.Collapse>
       </Container>
     </Navbar>

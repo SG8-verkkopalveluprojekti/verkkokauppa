@@ -19,8 +19,7 @@ const ProductDetails = ({ product }) => {
       <p>{product.description1}</p>
       <p>{product.description2}</p>
       <p>{product.description3}</p>
-      <p>Price: {formatPrice(product.price)}</p>      
-      {/* Add more details as needed */}
+      <p>Price: {formatPrice(product.price)}</p>
     </div>
   );
 };

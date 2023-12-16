@@ -2,6 +2,8 @@ import React, { createContext, useContext, useState } from "react";
 
 const CurrencyContext = createContext();
 
+/**Component makes a context provider for the currency app*/
+
 export const CurrencySelection = ({ children }) => {
   const [selectedCurrency, setSelectedCurrency] = useState("eur");
 
@@ -18,6 +20,7 @@ export const CurrencySelection = ({ children }) => {
   );
 };
 
+/**React hook so the code can be imported*/
 export const useCurrency = () => {
   const context = useContext(CurrencyContext);
   if (!context) {

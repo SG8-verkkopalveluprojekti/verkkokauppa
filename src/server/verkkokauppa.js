@@ -420,44 +420,4 @@ app.post('/customerfeedback', async (req, res) => {
     }
   });
 
-/**----FEEDBACK OSIO----- */  
-
-
-/** Valuuttavalinta yritykset 
-app.get('/price', async (req, res) => {
-    try {
-      const connection = await mysql.createConnection(conf);
-  
-      const [rows] = await connection.execute('SELECT price_usd FROM product');
-  
-      const currencies = rows.map((row) => row.price_usd);
-  
-      res.json({ currencies });
-    } catch (err) {
-      res.status(500).json({ error: err.message });
-    }
-  });
-
-app.get('/price', async (req, res) => {
-    try {
-        const connection = await mysql.createConnection(conf);
-        const category = req.query.category;
-        const search = req.query.search;
-
-        let result;        
-
-        if(category){
-            result = await connection.execute
-            ("SELECT price, price_usd FROM product WHERE category=?", [category]);
-        } else if (search) {
-            result = await connection.execute
-            ("SELECT price, price_usd FROM product WHERE product_name LIKE ?", [`%${search}%`]);
-        } else {
-            result = await connection.execute("SELECT price, price_usd FROM product");
-        }
-        res.json(result[0]);
-    } catch (err) {
-        res.status(500).json({ error: err.message });
-    }
-});
-  */
+/**----FEEDBACK OSIO----- */
