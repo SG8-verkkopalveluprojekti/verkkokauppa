@@ -11,6 +11,8 @@ DROP TABLE IF EXISTS product_category;
 
 DROP TABLE IF EXISTS palaute;
 
+DROP TABLE IF EXISTS customerfeedback;
+
 CREATE TABLE
     product_category(
         category_name VARCHAR(255) NOT NULL PRIMARY KEY,
@@ -85,7 +87,18 @@ CREATE TABLE
         FOREIGN KEY (product_id) REFERENCES product(id)
     );
 
-/*testing*/
+/*FEEDBACK SQL*/
+
+CREATE TABLE 
+    customerfeedback (
+        id INT AUTO_INCREMENT PRIMARY KEY,
+        email VARCHAR(255) NOT NULL,
+        nickname VARCHAR(255) NOT NULL,
+        feedback TEXT NOT NULL,
+        rating INT NOT NULL
+    );
+
+/*FEEDBACK SQL*/
 
 INSERT INTO product_category
 VALUES (

@@ -405,8 +405,25 @@ async function getOrders(username){
     }
 }
 
-/**--------- */
+/**----FEEDBACK OSIO----- */
 
+app.post('/customerfeedback', async (req, res) => {
+    const { email, nickname, feedback, rating } = req.body;
+  
+    try {
+      const connection = await mysql.createConnection(conf);
+      await connection.execute('INSERT INTO customerfeedback (email, nickname, feedback, rating) VALUES (?, ?, ?, ?)', [email, nickname, feedback, rating]);
+      connection.end();
+      res.status(201).json({ message: 'Feedback submitted successfully' });
+    } catch (err) {
+      res.status(500).json({ error: err.message });
+    }
+  });
+
+/**----FEEDBACK OSIO----- */  
+
+
+/**TÄMÄ KOODI TURHA(?) vv */
 const storage = multer.diskStorage({
     destination: ( req, file, cb)=>{
         cb(null, './public/images');
@@ -445,6 +462,7 @@ app.post('/image', upload2.single('pic'), async (req, res) => {
 
     //res.send('images/'+req.file.filename);
 });
+/**TÄMÄ KOODI TURHA(?) ^^ */
 
 
 /** Valuuttavalinta yritykset 

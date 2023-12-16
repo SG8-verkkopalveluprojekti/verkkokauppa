@@ -11,22 +11,48 @@ export const Feedback = () => {
   const [errorMessage, setErrorMessage] = useState("");
   const [successMessage, setSuccessMessage] = useState("");
 
-  const handleSubmit = () => {
-    if (!email || !nickname) {
-      setErrorMessage("Sähköposti ja nimimerkki ovat pakollisia!");
+  const handleSubmit = async () => {
+    try {
+      if (!email || !nickname) {
+        setErrorMessage("Sähköposti ja nimimerkki ovat pakollisia!");
+        setSuccessMessage("");
+        return;
+      }
+  
+      const response = await fetch('http://localhost:3001/customerfeedback', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          email,
+          nickname,
+          feedback,
+          rating,
+        }),
+      });
+  
+      if (response.ok) {
+        setSuccessMessage("Palautteesi on lähetetty onnistuneesti!");
+        setEmail("");
+        setNickname("");
+        setFeedback("");
+        setRating(null);
+        setHover(null);
+        setErrorMessage("");
+      } else {
+        const responseData = await response.json();
+        setErrorMessage(responseData.error || "Palautteen lähettäminen epäonnistui.");
+        setSuccessMessage("");
+      }
+    } catch (error) {
+      console.error('Error submitting feedback:', error);
+      setErrorMessage("Palautteen lähettäminen epäonnistui.");
       setSuccessMessage("");
-      return;
     }
-
-    setSuccessMessage("Palautteesi on lähetetty onnistuneesti!");
-
-    setEmail("");
-    setNickname("");
-    setFeedback("");
-    setRating(null);
-    setHover(null);
-    setErrorMessage("");
   };
+  
+  
 
   return (
     <div className="feedback">
