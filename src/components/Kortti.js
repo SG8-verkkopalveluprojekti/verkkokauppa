@@ -21,7 +21,7 @@ function Kortti() {
             variant="top"
             src="https://www.io-tech.fi/wp-content/uploads/2022/10/rtx4090-00.jpg"
             className="img-fluid"
-            style={{ height: "15rem", marginTop: "5px", padding: "15px" }}
+            style={{ height: "15rem", marginTop: "5px", padding: "15px", objectFit:"cover" }}
           />
           <Card.Body>
             <Card.Title>Näytönohjaimet</Card.Title>
@@ -54,7 +54,7 @@ function Kortti() {
           <Card.Img
             variant="top"
             src="https://www.pctekreviews.com/Reviews/STRIX_B550E/01.jpg"
-            style={{ height: "15rem", marginTop: "5px", padding: "15px" }}
+            style={{ height: "15rem", marginTop: "5px", padding: "15px", objectFit:"cover" }}
           />
           <Card.Body>
             <Card.Title>Emolevyt</Card.Title>
@@ -84,8 +84,8 @@ function Kortti() {
         >
           <Card.Img
             variant="top"
-            src="https://hh2.pigugroup.eu/colours/241/450/8/2414508/memory-d4-4266-32gb-c17-gskill-tz-d9af0_reference.jpg"
-            style={{ height: "15rem", marginTop: "5px", padding: "15px" }}
+            src="https://ic.jimms.fi/product/5/8/408651-ig800gg.jpg"
+            style={{ height: "15rem", marginTop: "5px", padding: "15px", objectFit:"cover" }}
           />
           <Card.Body>
             <Card.Title>Muistit</Card.Title>
@@ -116,7 +116,7 @@ function Kortti() {
           <Card.Img
             variant="top"
             src="https://www.io-tech.fi/wp-content/uploads/2022/02/12400f-00.jpg"
-            style={{ height: "15rem", marginTop: "5px", padding: "15px" }}
+            style={{ height: "15rem", marginTop: "5px", padding: "15px", objectFit:"cover" }}
           />
           <Card.Body>
             <Card.Title>Prosessorit</Card.Title>
@@ -148,7 +148,7 @@ function Kortti() {
           <Card.Img
             variant="top"
             src="https://ic.jimms.fi/product/5/7/331652-ig800gg.jpg"
-            style={{ height: "15rem", marginTop: "5px", padding: "15px" }}
+            style={{ height: "15rem", marginTop: "5px", padding: "15px", objectFit:"cover" }}
           />
           <Card.Body>
             <Card.Title>Kotelot</Card.Title>
@@ -179,7 +179,7 @@ function Kortti() {
           <Card.Img
             variant="top"
             src="https://ic.jimms.fi/product/4/0/251749-ig800gg.jpg"
-            style={{ height: "15rem", marginTop: "5px", padding: "15px" }}
+            style={{ height: "15rem", marginTop: "5px", padding: "15px", objectFit:"cover" }}
           />
           <Card.Body>
             <Card.Title>Virtalähteet</Card.Title>
