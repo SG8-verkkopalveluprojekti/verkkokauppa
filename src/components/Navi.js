@@ -79,7 +79,7 @@ export const Navi = () => {
             )}
           <Dropdown>
               <Dropdown.Toggle variant="gray"  id="dropdown-basic" style={{color:"white", width:"60px", height:"40px", marginTop:"0px", marginLeft:"5px"}} size="sm">
-                {selectedCurrency.toUpperCase()}
+                {selectedCurrency.toUpperCase()} {selectedCurrency === 'eur' ? ' €' : ' $'}
               </Dropdown.Toggle>
               <Dropdown.Menu>
                 <Dropdown.Item onClick={() => setCurrency("eur")}>EUR€</Dropdown.Item>
