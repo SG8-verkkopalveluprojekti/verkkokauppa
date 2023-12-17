@@ -253,8 +253,9 @@ app.post('/palaute', upload.none(), async (req, res) => {
     const tuote = req.body.tuote;
 
     try {
+        //tässä luodaan yhteys tietokantaan
         const connection = await mysql.createConnection(conf);
-
+        // lisätään tuotteen arvostelu tietokantaan
         const [rows] = await connection.execute('INSERT INTO palaute(feedback, tuote) VALUES(?,?)', [feedback, tuote]);
 
         res.status(200).end();
@@ -265,8 +266,9 @@ app.post('/palaute', upload.none(), async (req, res) => {
 
 app.get('/palaute', async (req, res) => {
     try {
+        //luodaan yhteys tietokantaan
         const connection = await mysql.createConnection(conf);
-
+        //haetaan palautteet tietokannasta
         const [rows] = await connection.execute('SELECT * FROM palaute');
 
         res.json(rows);

@@ -2,7 +2,7 @@ import React from "react";
 import { AddCart } from "./AddCart";
 import { Modal, Image } from "react-bootstrap";
 import ProductDetails from "./ProductDetails";
-import ProductReviewForm from "./ProductReviewForm"; // Import the ProductReviewForm component
+import ProductReviewForm from "./ProductReviewForm"; 
 import ReviewList from "./ReviewList";
 
 const MoreInfo = ({ showModal, closeModal, selectedProduct }) => {

@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { Button, Form } from "react-bootstrap";
 import axios from "axios";
 
+
+//tämä osio on kuuluu Joni Neuvosen REST-tehtävään.
 const ProductReviewForm = () => {
   const [review, setReview] = useState({
     feedback: "",
