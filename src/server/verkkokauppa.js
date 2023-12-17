@@ -284,39 +284,44 @@ app.post('/changepassword', upload.none(), async (req, res) => {
     const newPassword = req.body.npw;  
 
     try {
+        //luodaan tietokantayhteys
         const connection = await mysql.createConnection(conf);
-
+        //haetaan salasana tietokannasta
         const [rows] = await connection.execute('SELECT pw FROM customer WHERE username=?', [username]);
-
+        //tarkistetaan löytyykö käyttäjää
         if (rows.length === 0) {
             res.status(404).json({ error: 'Käyttäjää ei löydy' });
         }
 
         const currentPasswordHash = rows[0].pw;
-
+        //tarkistetaan onko annettu salasana sama kuin tietokannassa oleva
         const isPasswordValid = await bcrypt.compare(oldPassword, currentPasswordHash);
-
+        //tarkistetaan onko vanhasalasana oikea
         if (!isPasswordValid) {
         res.status(401).json({ error: 'Virheellinen vanha salasana' });
         }
-
+        //hashataan uusi salasana
         const newPasswordHash = await bcrypt.hash(newPassword, 10);
-
+        //päivitetään tietokantaan uusi hashatty salasana
         await connection.execute('UPDATE customer SET pw=? WHERE username=?', [newPasswordHash, username]);
-
+        //ilmoitus jos onnistuu
         res.status(200).json({ message: 'Salasana vaihdettu onnistuneesti' });
 
     } catch (err) {
+        //erroria jos ei onnistunut
         res.status(500).json({ error: err.message });
     }
 });
 //Tähän tulee toinen osa Topias Tynin tietokantaohjelmoinnin tehtävästä
 app.get('/users', async (req, res) => {
     try {
+        //luodaan tietokantayhteys
         const connection = await mysql.createConnection(conf);
 
+        //haetaan tietokannasta halutut tiedot
         const [rows] = await connection.execute('SELECT first_name, last_name, username FROM customer');
 
+        //palautettaan tiedot jsonina
         res.json(rows);
 
     } catch (err) {
