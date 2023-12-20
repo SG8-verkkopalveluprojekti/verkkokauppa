@@ -9,3 +9,7 @@
 .basic-navbar-nav {
     color: white;
 }
+
+.text-light:hover{
+    transform: scale(0.9);
+}

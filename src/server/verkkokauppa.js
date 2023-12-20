@@ -33,6 +33,8 @@ const conf = {
     timezone: '+00:00'
 }
 
+  
+
 
 /**
  * Gets the products
@@ -48,13 +50,19 @@ app.get('/products', async (req, res) => {
         let result;        
 
         if(category){
-            result = await connection.execute("SELECT id, product_name productName, product_description description, price, image_url imageUrl, category  FROM product WHERE category=?", [category]);
+            result = await connection.execute
+            ("SELECT id, product_name productName, product_description description,product_description1 description1,product_description2 description2,product_description3 description3, price, price_usd, image_url imageUrl, category  FROM product WHERE category=?",
+                 [category]);
         } else if (search) {
-            result = await connection.execute("SELECT id, product_name productName,product_description description, price, image_url imageUrl, category FROM product WHERE product_name LIKE ?", [`%${search}%`])
+            result = await connection.execute
+            ("SELECT id, product_name productName,product_description description,product_description1 description1, product_description2 description2,product_description3 description3, price, price_usd, image_url imageUrl, category FROM product WHERE product_name LIKE ?", 
+                [`%${search}%`]);
         }
         
         else{
-            result = await connection.execute("SELECT id, product_name productName,product_description description, price, image_url imageUrl, category  FROM product");
+            result = await connection.execute(
+                "SELECT id, product_name productName,product_description description,product_description1 description1,product_description2 description2,product_description3 description3, price, price_usd, image_url imageUrl, category  FROM product"
+                );
         }
         
         //First index in the result contains the rows in an array
@@ -86,13 +94,13 @@ app.get('/categories', async (req, res) => {
 app.get('/customer', async(req,res) => {
 
     //Get the bearer token from authorization header
-    const token = req.headers.authorization.split(' ')[1];
+    const token = req.headers.authorization?.split(' ')[1];
 
     //Verify the token. Verified token contains username
     try{
         const username = jwt.verify(token, 'mysecretkey').username;
         const connection = await mysql.createConnection(conf);
-        const [rows] = await connection.execute('SELECT first_name fname, last_name lname, username FROM customer WHERE username=?',[username]);
+        const [rows] = await connection.execute('SELECT first_name fname, last_name lname, username, is_admin FROM customer WHERE username=?',[username]);
         res.status(200).json(rows[0]);
     }catch(err){
         console.log(err.message);
@@ -128,7 +136,7 @@ app.post('/categories', async (req, res) => {
 
 /**
  * Adds new products */
-app.post('/products', async (req, res) => {
+app.post('/addproducts', async (req, res) => {
 
     const connection = await mysql.createConnection(conf);
 
@@ -139,7 +147,7 @@ app.post('/products', async (req, res) => {
         
 
         for (const product of products) {
-            await connection.execute("INSERT INTO product (product_name, price, image_url,category) VALUES (?,?,?,?)",[product.productName, product.price, product.imageUrl, product.category]);
+            await connection.execute("INSERT INTO product (product_name, product_description, product_description1, product_description2, product_description3, price, price_usd, image_url,category) VALUES (?,?,?,?,?,?,?,?,?)",[product.productName, product.productDescription,product.productDescription1,product.productDescription2,product.productDescription3, product.price,product.priceUsd, product.imageUrl, product.category]);
         }
     
         connection.commit();
@@ -157,20 +165,32 @@ app.post('/products', async (req, res) => {
  */
 app.post('/order', async (req, res) => {
 
+    
+
     let connection;
 
     try {
+
+        const token = req.headers.authorization?.split(' ')[1];
+  
+      if (!token) {
+        return res.status(401).send('Unauthorized');
+      }
+    
+        const username = jwt.verify(token, 'mysecretkey').username;
+        const customerId = await getCustomerId(username);
+
         connection = await mysql.createConnection(conf);
         connection.beginTransaction();
 
         const order = req.body;
         
-        const [info] = await connection.execute("INSERT INTO customer_order (order_date, customer_id) VALUES (NOW(),?)",[order.customerId]);
+        const [info] = await connection.execute("INSERT INTO customer_order (order_date, customer_id) VALUES (NOW(),?)",[customerId]);
         
         const orderId = info.insertId;
 
         for (const product of order.products) {
-            await connection.execute("INSERT INTO order_line (order_id, product_id, quantity) VALUES (?,?,?)",[orderId, product.id, product.quantity]);            
+            await connection.execute("INSERT INTO order_line (order_id, product_id, quantity) VALUES (?,?,?)",[orderId, product.id, product.count]);            
         }
 
         connection.commit();
@@ -179,7 +199,22 @@ app.post('/order', async (req, res) => {
     } catch (err) {
         connection.rollback();
         res.status(500).json({ error: err.message });
+    
     }
+    
+    async function getCustomerId(username) {
+        const connection = await mysql.createConnection(conf);
+        const [rows] = await connection.execute(
+          'SELECT id FROM customer WHERE username = ?',
+          [username]
+        );
+      
+        if (rows.length > 0) {
+          return rows[0].id;
+        }
+      
+        throw new Error('Customer not found');
+      }
 });
 
 
@@ -210,42 +245,93 @@ app.post('/register', upload.none(), async (req,res) => {
 
 });
 
-//päivittää käyttäjän salasanan 
+/** Tähän tulee Joni Neuvosen palaute-osion post/get tietokantaohjelmoinnin tehtävä.
+ */
+
+app.post('/palaute', upload.none(), async (req, res) => {
+    const feedback = req.body.feedback;
+    const tuote = req.body.tuote;
+
+    try {
+        //tässä luodaan yhteys tietokantaan
+        const connection = await mysql.createConnection(conf);
+        // lisätään tuotteen arvostelu tietokantaan
+        const [rows] = await connection.execute('INSERT INTO palaute(feedback, tuote) VALUES(?,?)', [feedback, tuote]);
+
+        res.status(200).end();
+    } catch (err) {
+        res.status(500).json({ error: err.message });
+    }
+});
+
+app.get('/palaute', async (req, res) => {
+    try {
+        //luodaan yhteys tietokantaan
+        const connection = await mysql.createConnection(conf);
+        //haetaan palautteet tietokannasta
+        const [rows] = await connection.execute('SELECT * FROM palaute');
+
+        res.json(rows);
+
+    } catch (err) {
+        res.status(500).json({ error: err.message });
+    }
+});
+
+
+//Tämä on osa Topias Tynin tietokantaohjelmoinnin tehtävää 
 app.post('/changepassword', upload.none(), async (req, res) => {
     const username = req.body.username;
     const oldPassword = req.body.pw;  
     const newPassword = req.body.npw;  
 
     try {
+        //luodaan tietokantayhteys
+        const connection = await mysql.createConnection(conf);
+        //haetaan salasana tietokannasta
+        const [rows] = await connection.execute('SELECT pw FROM customer WHERE username=?', [username]);
+        //tarkistetaan löytyykö käyttäjää
+        if (rows.length === 0) {
+            res.status(404).json({ error: 'Käyttäjää ei löydy' });
+        }
+
+        const currentPasswordHash = rows[0].pw;
+        //tarkistetaan onko annettu salasana sama kuin tietokannassa oleva
+        const isPasswordValid = await bcrypt.compare(oldPassword, currentPasswordHash);
+        //tarkistetaan onko vanhasalasana oikea
+        if (!isPasswordValid) {
+        res.status(401).json({ error: 'Virheellinen vanha salasana' });
+        }
+        //hashataan uusi salasana
+        const newPasswordHash = await bcrypt.hash(newPassword, 10);
+        //päivitetään tietokantaan uusi hashatty salasana
+        await connection.execute('UPDATE customer SET pw=? WHERE username=?', [newPasswordHash, username]);
+        //ilmoitus jos onnistuu
+        res.status(200).json({ message: 'Salasana vaihdettu onnistuneesti' });
+
+    } catch (err) {
+        //erroria jos ei onnistunut
+        res.status(500).json({ error: err.message });
+    }
+});
+//Tähän tulee toinen osa Topias Tynin tietokantaohjelmoinnin tehtävästä
+app.get('/users', async (req, res) => {
+    try {
+        //luodaan tietokantayhteys
         const connection = await mysql.createConnection(conf);
 
-        const [rows] = await connection.execute('SELECT id, pw FROM customer WHERE username=?', [username]);
+        //haetaan tietokannasta halutut tiedot
+        const [rows] = await connection.execute('SELECT first_name, last_name, username FROM customer');
 
-        if (rows.length === 0) {
-            return res.status(404).json({ error: 'Käyttäjää ei löydy' });
-        }
-
-        const userId = rows[0].id;
-        const currentPasswordHash = rows[0].pw;
-
-        const isPasswordValid = await bcrypt.compare(oldPassword, currentPasswordHash);
-
-        if (!isPasswordValid) {
-            return res.status(401).json({ error: 'Virheellinen vanha salasana' });
-        }
-
-
-        const newPasswordHash = await bcrypt.hash(newPassword, 10);
-
-
-        await connection.execute('UPDATE customer SET pw=? WHERE id=?', [newPasswordHash, userId]);
-
-        res.status(200).json({ message: 'Salasana vaihdettu onnistuneesti' });
+        //palautettaan tiedot jsonina
+        res.json(rows);
 
     } catch (err) {
         res.status(500).json({ error: err.message });
     }
 });
+
+
 /**
  * Checks the username and password and returns jwt authentication token if authorized. 
  * Supports urlencoded or multipart
@@ -262,6 +348,7 @@ app.post('/login', upload.none(), async (req, res) => {
 
         if(rows.length > 0){
             const isAuth = await bcrypt.compare(pw, rows[0].pw);
+            
             if(isAuth){
                 const token = jwt.sign({username: uname}, 'mysecretkey');
                 res.status(200).json({jwtToken: token});
@@ -278,13 +365,14 @@ app.post('/login', upload.none(), async (req, res) => {
 });
 
 
+
 /**
  * Gets orders of the customer
  */
 app.get('/orders', async (req,res) => {
     
     //Get the bearer token from authorization header
-    const token = req.headers.authorization.split(' ')[1];
+    const token = req.headers.authorization?.split(' ')[1];
 
     //Verify the token. Verified token contains username
     try{
@@ -324,45 +412,19 @@ async function getOrders(username){
     }
 }
 
-/**--------- */
+/**----FEEDBACK OSIO----- */
 
-const storage = multer.diskStorage({
-    destination: ( req, file, cb)=>{
-        cb(null, './public/images');
-    },
-    filename: (req, file, cb) => {
-        cb(null, Date.now() + file.originalname);
+app.post('/customerfeedback', async (req, res) => {
+    const { email, nickname, feedback, rating } = req.body;
+  
+    try {
+      const connection = await mysql.createConnection(conf);
+      await connection.execute('INSERT INTO customerfeedback (email, nickname, feedback, rating) VALUES (?, ?, ?, ?)', [email, nickname, feedback, rating]);
+      connection.end();
+      res.status(201).json({ message: 'Feedback submitted successfully' });
+    } catch (err) {
+      res.status(500).json({ error: err.message });
     }
-});
+  });
 
-const upload2 = multer({storage: storage});
-
-app.post('/image', upload2.single('pic'), async (req, res) => {
-
-    res.send('Ok');
-
-   const currentPath = req.file.path;
-    const dest = req.file.destination;
-    const category = req.body.category;
-    const filename = req.file.filename;
-
-    //linkki rakenne--> images/kotelot/329048294039kuvatiedosto.jpg
-    const imageUrl = 'images/'+category+'/'+filename;
-    const targetDir = 'public/images/'+category;
-
-    //if problemos
-    try{
-        if(!fs.existsSync(targetDir)) {
-            await fs.promises.mkdir(targetDir);
-        }
-        await fs.promises.rename(currentPath, targetDir + '/' + filename);
-
-        res.json({imageUrl: imageUrl});
-    } catch (error) {
-        res.json({error: error.message});
-    }
-
-    //res.send('images/'+req.file.filename);
-});
-
-/**/
+/**----FEEDBACK OSIO----- */

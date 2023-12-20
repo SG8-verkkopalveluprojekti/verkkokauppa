@@ -1,7 +1,7 @@
-import './Header.css';
-import {  Head  } from "./Head";
-import React from 'react'
-import { Navi } from './Navi';
+import "./Header.css";
+import { Head } from "./Head";
+import React from "react";
+import { Navi } from "./Navi";
 
 export const Header = () => {
   return (
@@ -9,5 +9,5 @@ export const Header = () => {
       <Head />
       <Navi />
     </>
-  )
-}
+  );
+};

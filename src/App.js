@@ -1,5 +1,5 @@
 import "./App.css";
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Header } from "./components/Header";
 import { Footer } from "./components/Footer";
 import { Search } from "./components/Search";
@@ -21,19 +21,22 @@ import { Muistit } from "./pages/Muisti";
 import { NotFound } from "./pages/NotFound";
 import {BottomNavbar} from "./pages/phonenavbar"
 import { SearchResultPage } from "./pages/SearchResultPage";
+import { Feedback } from "./pages/Feedback";
+import { Users } from "./pages/Users"
+import { OrderHistory } from "./pages/OrderHistory";
 
 
 
 
 
 
-function App() {
-  const [products, setProducts] = useState([]);
-  const [searchTerm, setSearchTerm] = useState("");
+function App({ products, searchTerm,   }) {
+  
+ 
   return (
     <>
     <Header />
-    <Search />
+    <Search  />
     
     <div className="App">
       <Routes>
@@ -54,6 +57,9 @@ function App() {
       <Route path="/muistit" element={<Muistit />} />
       <Route path="*" element={<NotFound />} />
       <Route path="/search-results" element={<SearchResultPage products={products} searchTerm={searchTerm}/>} /> 
+      <Route path="/feedback" element={<Feedback />} />
+      <Route path="/users" element={<Users />} />
+      <Route path="/order-history" element={<OrderHistory />} />
      
 
       

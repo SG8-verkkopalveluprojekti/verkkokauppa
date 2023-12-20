@@ -1,15 +1,14 @@
-import React from 'react'
-import axios from 'axios'
-import { useState, useEffect } from 'react';
-import { Card, Button, Modal } from 'react-bootstrap'
-import ProductDetails from '../components/ProductDetails';
-import { Image } from 'react-bootstrap';
+import React from "react";
+import axios from "axios";
+import MoreInfo from "../components/MoreInfo";
+import ProductCard from "../components/ProductCard";
+import { useState, useEffect } from "react";
 
 
 export const Cpu = () => {
-
   const [showModal, setShowModal] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState(null);
+  const [products, setProducts] = useState(null);
 
   const openModal = (product) => {
     setSelectedProduct(product);
@@ -21,61 +20,33 @@ export const Cpu = () => {
     setShowModal(false);
   };
 
-
-  const [products, setProducts] = useState(null);
   useEffect(() => {
-    axios.get('http://localhost:3001/products?category=Prosessorit')
-      .then(resp => setProducts(resp.data))
-      .catch(error => console.log(error.message));
+    axios
+      .get("http://localhost:3001/products?category=Prosessorit")
+      .then((resp) => setProducts(resp.data))
+      .catch((error) => console.log(error.message));
   }, []);
 
   return (
+    <>
+    <h3 className="text-center" style={{marginTop:"10px"}}>Prosessorit</h3>
     <div className="row justify-content-center">
-      {products && products.map(product => (
-        <Card key={product.id} className='col-3' style={{ width: '250px', backgroundColor: 'grey', marginTop: '30px', margin: '10px' }}>
-          <Card.Img variant="top" src={product.imageUrl || 'https://www.io-tech.fi/wp-content/uploads/2022/02/12400f-00.jpg'} style={{ height: '15rem', marginTop: '5px', padding: '15px' }} />
-          <Card.Body>
-            <Card.Title>{product.productName}</Card.Title>
-            <Card.Text>
-            </Card.Text>
-            <Card.Text style={{ fontSize: "25px" }}>
-              {product.price + "€" || 'ei hintaa'}
-            </Card.Text>
-            <Button className="btn btn-primary btn-md" style={{ width: "100%" }} variant="primary">
-              Lisää ostoskoriin
-            </Button>
-            <Button className="btn btn-primary btn-md"
-              style={{ width: "100%" }}
-              variant="primary"
-              onClick={() => openModal(product)}>
-              Lisätietoa
-            </Button>
-          </Card.Body>
-        </Card>
-      ))}
-      <Modal show={showModal} onHide={closeModal} size='lg'>
-        <Modal.Header closeButton>
-          <Modal.Title>
-            {selectedProduct && (
-              <>
-                <Image src={selectedProduct.imageUrl || 'default-image-url'}
-                 alt={selectedProduct.productName} 
-                 style={{ marginRight: '10px', maxHeight: '300px' }} />
-                {selectedProduct.productName}
-              </>
-            )}
-          </Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          {selectedProduct && <ProductDetails product={selectedProduct} />}
-          <Button className="btn btn-primary btn-md" style={{ width: "100%" }} variant="primary">
-            Lisää ostoskoriin
-          </Button>
-          <div>
-            tähän tulis arvostelujuttu alle
-          </div>
-        </Modal.Body>
-      </Modal>
+      {products &&
+        products.map((product) => (
+          <ProductCard
+            key={product.id}
+            product={product}
+            openModal={openModal}
+          />
+        ))}
+
+      {/* Render the modal using MoreInfo */}
+      <MoreInfo
+        showModal={showModal}
+        closeModal={closeModal}
+        selectedProduct={selectedProduct}
+      />
     </div>
+  </>
   );
-}
+};

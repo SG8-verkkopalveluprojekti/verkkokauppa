@@ -1,23 +1,23 @@
-import React from 'react';
-import Carousel from 'react-bootstrap/Carousel';
-import { Image } from 'react-bootstrap';
-import rtx4090 from "./Images/4090.jpg"
+import React from "react";
+import Carousel from "react-bootstrap/Carousel";
+import { Image } from "react-bootstrap";
+import rtx4090 from "./Images/4090.jpg";
 
 export const Carouselli = () => {
   const carouselItemStyle = {
-    width: '100%',
-    height: '500px', // Set a fixed height
+    width: "100%",
+    height: "500px", // Set a fixed height
   };
 
   const imageStyle = {
-    objectFit: 'cover', // Use 'contain' to maintain aspect ratio without stretching
-    width: '100%',
-    height: '100%',
-    borderRadius: '5px',
+    objectFit: "cover", // Use 'contain' to maintain aspect ratio without stretching
+    width: "100%",
+    height: "100%",
+    borderRadius: "5px",
   };
 
   return (
-    <Carousel className="text-center" style={{ marginTop: '20px' }}>
+    <Carousel className="text-center" style={{ marginTop: "20px" }}>
       <Carousel.Item style={carouselItemStyle}>
         <Image
           src={rtx4090}
@@ -26,8 +26,11 @@ export const Carouselli = () => {
           className="mx-auto"
         />
         <Carousel.Caption>
-          <h3>First slide label</h3>
-          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+          <h3>Huippuluokan näytönohjaimet</h3>
+          <p>
+            Tehokkaat näytönohjaimet tarjoavat upean pelikokemuksen ja nopean
+            suorituskyvyn videoeditoinnissa.
+          </p>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item style={carouselItemStyle}>
@@ -38,8 +41,11 @@ export const Carouselli = () => {
           className="mx-auto"
         />
         <Carousel.Caption>
-          <h3>Second slide label</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <h3>Intel-suorittimet</h3>
+          <p>
+            Intel-prosessorit tarjoavat huippuluokan suorituskyvyn ja
+            energiatehokkuuden monipuolisiin käyttötarkoituksiin.
+          </p>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item style={carouselItemStyle}>
@@ -50,8 +56,11 @@ export const Carouselli = () => {
           className="mx-auto"
         />
         <Carousel.Caption>
-          <h3>Third slide label</h3>
-          <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+          <h3>AMD Ryzen -prosessorit</h3>
+          <p>
+            AMD Ryzen -sarjan prosessorit tarjoavat monipuolisen suorituskyvyn
+            pelaamiseen ja multitaskingiin.
+          </p>
         </Carousel.Caption>
       </Carousel.Item>
     </Carousel>
